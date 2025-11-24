@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 // index.tsx — Single-file React page for Perth Concrete Care
 // Pure TSX. Drop into Next.js (e.g. app/page.tsx) or Vite entry.
@@ -157,15 +158,17 @@ export default function Site() {
       <section className="relative w-full overflow-hidden bg-white">
         {/* FULL-WIDTH background image */}
         <div className="absolute inset-0">
-          <img
-            src="/header-bg1.png"
-            alt="Swirled concrete texture background"
-            className="w-full h-full object-cover opacity-55"
-            loading="lazy"
-          />
-          {/* soft fade bottom */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/30 to-white" />
-        </div>
+        <Image
+       src="/header-bg1.png"
+        alt="Swirled concrete texture background"
+        fill
+        priority
+        className="object-cover opacity-55"
+        sizes="100vw"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/30 to-white" />
+    </div>
+
 
         {/* Foreground content */}
         <div className="relative max-w-7xl mx-auto px-4 py-10 md:py-14">
@@ -293,20 +296,24 @@ export default function Site() {
         <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {galleryItems.map((item, index) => (
             <figure
-              key={item.id}
-              className="aspect-video rounded-xl overflow-hidden border bg-white shadow-sm transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-emerald-400"
+            key={item.id}
+            className="aspect-video rounded-xl overflow-hidden border bg-white shadow-sm"
             >
-              <img
-                src={item.src}
-                alt={item.alt}
-                loading="lazy"
-                className="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105 hover:opacity-90"
-                onClick={() => openLightbox(index)}
-              />
-              <figcaption className="px-3 py-2 text-xs text-neutral-600 bg-white/90">
-                {item.label}
-              </figcaption>
-            </figure>
+              <div className="relative w-full h-full">
+              <Image
+              src={item.src}
+              alt={item.alt}
+              fill
+              loading="lazy"
+              className="object-cover cursor-pointer hover:opacity-90 transition"
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+              onClick={() => openLightbox(index)}
+            />
+          </div>
+          <figcaption className="px-3 py-2 text-xs text-neutral-600 bg-white/90">
+            {item.label}
+          </figcaption>
+        </figure>
           ))}
         </div>
       </section>
@@ -710,23 +717,30 @@ function BeforeAfter({ before, after }: { before: string; after: string }) {
 
         {/* FULL WIDTH / NO WHITE SPACES */}
         <div className="relative w-full aspect-[16/8] overflow-hidden rounded-2xl border bg-white shadow-sm">
-          {/* BEFORE IMAGE */}
-          <img
-            src={before}
-            alt="Garage concrete floor before grinding and hone & seal"
-            className="absolute inset-0 w-full h-full object-cover"
-            loading="lazy"
-          />
+  {/* BEFORE IMAGE */}
+  <Image
+    src={before}
+    alt="Garage concrete floor before grinding and hone & seal"
+    fill
+    loading="lazy"
+    className="object-cover"
+    sizes="100vw"
+  />
 
-          {/* AFTER IMAGE */}
-          <div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
-            <img
-              src={after}
-              alt="Garage concrete floor after paint removal and hone & seal finish"
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
-          </div>
+  {/* AFTER IMAGE */}
+  <div
+    className="absolute inset-0"
+    style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
+  >
+    <Image
+      src={after}
+      alt="Garage concrete floor after paint removal and hone & seal finish"
+      fill
+      loading="lazy"
+      className="object-cover"
+      sizes="100vw"
+    />
+  </div>
 
           {/* SLIDER */}
           <input
