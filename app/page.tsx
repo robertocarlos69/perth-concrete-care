@@ -31,6 +31,56 @@ export default function Site() {
     if (lightboxIndex === null) return
     setLightboxIndex((lightboxIndex - 1 + galleryItems.length) % galleryItems.length)
   }
+// -----------------------------
+// Quote form state + submit handler
+// -----------------------------
+const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+const handleQuoteSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  const form = e.currentTarget; // save form
+
+  setFormStatus('sending');
+
+  const formData = new FormData(form);
+
+  const payload = {
+    name: formData.get('name')?.toString() || '',
+    email: formData.get('email')?.toString() || '',
+    phone: formData.get('phone')?.toString() || '',
+    suburb: formData.get('suburb')?.toString() || '',
+    service: formData.get('service')?.toString() || '',
+    area: formData.get('area')?.toString() || '',
+    details: formData.get('details')?.toString() || '',
+  };
+
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+
+    if (!res.ok) {
+      console.error('Contact API error, status:', res.status);
+      setFormStatus('error');
+      return;
+    }
+
+    // ✅ Success
+    setFormStatus('success');
+
+    // ✅ Only reset if form is real & has reset()
+    if (form && typeof (form as HTMLFormElement).reset === 'function') {
+      (form as HTMLFormElement).reset();
+    }
+  } catch (err) {
+    console.error('Contact API error:', err);
+    setFormStatus('error');
+  } finally {
+    setTimeout(() => setFormStatus('idle'), 4000);
+  }
+};
 
   // Keyboard navigation for lightbox
   useEffect(() => {
@@ -89,10 +139,10 @@ export default function Site() {
           <span>Perth Metro — Two Rocks to Rockingham</span>
           <div className="flex items-center gap-3">
             <a
-              className="underline decoration-white/40 hover:decoration-white"
-              href="mailto:robert.samardali@gmail.com"
-            >
-              robert.samardali@gmail.com
+            className="underline decoration-white/40 hover:decoration-white"
+            href="mailto:sales@perthconcretecare.com.au"
+           >
+            sales@perthconcretecare.com.au
             </a>
             <a
               className="inline-flex items-center gap-2 bg-white text-neutral-900 px-3 py-1 rounded-md font-medium hover:opacity-90"
@@ -155,68 +205,78 @@ export default function Site() {
       </header>
 
       {/* Hero */}
-      <section className="relative w-full overflow-hidden bg-white">
-        {/* FULL-WIDTH background image */}
-        <div className="absolute inset-0">
-        <Image
-       src="/header-bg1.png"
-        alt="Swirled concrete texture background"
-        fill
-        priority
-        className="object-cover opacity-55"
-        sizes="100vw"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/30 to-white" />
+<section className="relative w-full bg-white">
+  {/* Background Image Wrapper — MUST have height */}
+  <div className="absolute inset-0 h-[520px] md:h-[620px]">
+    <Image
+      src="/header-bg1.png"
+      alt="Swirled concrete texture background"
+      fill
+      priority
+      className="object-cover opacity-60"
+      sizes="100vw"
+    />
+
+    {/* Soft fade for readability */}
+    <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/60 to-white" />
+  </div>
+
+  {/* Foreground content */}
+  <div className="relative max-w-7xl mx-auto px-4 pt-10 pb-20 md:pt-16 md:pb-28">
+    <div className="max-w-5xl md:-ml-12">
+      <h1 className="text-4xl md:text-5xl font-extrabold leading-tight drop-shadow-sm">
+        Concrete Grinding, Honing, Polishing,{' '}
+        <span className="text-emerald-600">Epoxy Flake</span> &{' '}
+        <span className="text-blue-600">Metallic</span> Floor Finishes
+      </h1>
+
+      <p className="mt-5 text-lg text-neutral-700">
+        Perth specialists in:
+      </p>
+
+      <ul className="mt-2 text-sm text-neutral-700 space-y-1">
+        <li>- Exposed concrete & washed aggregate</li>
+        <li>- Concrete grinding, honing & polished concrete</li>
+        <li>- Epoxy flake & metallic resin floors</li>
+      </ul>
+
+      {/* Buttons */}
+      <div className="mt-5 flex flex-wrap gap-3">
+        <a
+          href="#quote"
+          className="rounded-xl bg-emerald-600 text-white px-6 py-3 text-base font-semibold hover:bg-emerald-700 shadow-md transition-all duration-300 hover:scale-105"
+        >
+          Request Free Quote
+        </a>
+
+        <a
+          href="#services"
+          className="rounded-xl border border-emerald-600 text-emerald-700 px-5 py-3 font-medium hover:bg-emerald-50 transition-all duration-300 hover:scale-105"
+        >
+          Browse Services
+        </a>
+      </div>
+
+      {/* Trust badges */}
+      <div className="mt-5 flex flex-wrap items-center gap-2 text-xs text-neutral-600">
+        {[
+          'Fully insured',
+          'H-class dust control',
+          'WA owned & operated',
+          'Police cleared',
+        ].map((t) => (
+          <span
+            key={t}
+            className="px-3 py-1 rounded-full border bg-white/90 backdrop-blur-sm shadow-sm"
+          >
+            {t}
+          </span>
+        ))}
+      </div>
     </div>
+  </div>
+</section>
 
-
-        {/* Foreground content */}
-        <div className="relative max-w-7xl mx-auto px-4 py-10 md:py-14">
-          {/* keep heading aligned left, but limit width so it doesn’t run off screen */}
-          <div className="max-w-5xl">
-            <div className="md:-ml-16">
-              <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
-                Concrete Grinding, Honing, Polishing,{' '}
-                <span className="text-emerald-600">Epoxy Flake</span> &amp;{' '}
-                <span className="text-blue-600">Metallic</span> Floor Finishes
-              </h1>
-            </div>
-
-            {/* NEW: easier-to-scan hero copy */}
-            <p className="mt-5 text-lg text-neutral-600">Perth specialists in:</p>
-            <ul className="mt-2 text-sm text-neutral-700 space-y-1">
-              <li>- Exposed concrete & washed aggregate,</li>
-              <li>- Concrete grinding, honing & polished concrete,</li>
-              <li>- Epoxy flake & metallic resin floors</li>
-              
-            </ul>
-
-            <div className="mt-4 flex flex-wrap gap-3">
-              <a
-                href="#quote"
-                className="rounded-xl bg-emerald-600 text-white px-6 py-3 text-base font-semibold hover:bg-emerald-700 shadow-md transform transition-all duration-300 hover:scale-105"
-              >
-                Request Free Quote
-              </a>
-
-              <a
-                href="#services"
-                className="rounded-xl border border-emerald-600 text-emerald-700 px-5 py-3 font-medium hover:bg-emerald-50 transform transition-all duration-300 hover:scale-105"
-              >
-                Browse Services
-              </a>
-            </div>
-
-            <div className="mt-4 flex flex-wrap items-center gap-2 text-xs text-neutral-600">
-              {['Fully insured', 'H-class dust control', 'WA owned & operated', 'Police cleared'].map((t) => (
-                <span key={t} className="px-3 py-1 rounded-full border bg-white/80">
-                  {t}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Services – FULL-WIDTH BACKGROUND */}
       <section id="services" className="relative w-full py-24 overflow-hidden -mt-10 md:-mt-13">
@@ -318,74 +378,102 @@ export default function Site() {
         </div>
       </section>
 
-      {/* Process */}
-      <section id="process" className="bg-white/60">
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <h3 className="text-2xl md:text-3xl font-bold">How We Work</h3>
-          <p className="mt-2 text-neutral-600 max-w-3xl">
-            Clear steps from first visit to final handover, so you always know what&apos;s happening with your floor and
-            when.
+{/* Process */}
+<section id="process" className="bg-white/60">
+  <div className="max-w-7xl mx-auto px-4 py-12">
+    
+    <h3 className="text-2xl md:text-3xl font-bold">How We Work</h3>
+
+    <p className="mt-2 text-neutral-600 max-w-3xl">
+      Clear steps from first visit to final handover, so you always know what&apos;s happening with your floor and when.
+    </p>
+
+    {/* Horizontal scroll on mobile; same sizing as pricing cards */}
+    <div className="mt-8 flex gap-6 overflow-x-auto pb-4 md:overflow-visible">
+
+      {[
+        {
+          t: 'Free site visit & moisture check',
+          d: 'We come out, look at the slab and talk through your goals.',
+          bullets: [
+            'Measure slab moisture & hardness',
+            'Check access, falls & drainage',
+            'Discuss finish options & slip rating',
+          ],
+        },
+        {
+          t: 'Agree Price & Secure Deposit',
+          d: 'You receive a clear written quote with fixed inclusions.',
+          bullets: [
+            'Transparent pricing',
+            'No hidden extras',
+            'Deposit secures materials & booking',
+          ],
+        },
+        {
+          t: 'Surface prep',
+          d: 'We get the slab to the correct CSP profile for your system.',
+          bullets: [
+            'Dust-controlled grinding',
+            'Crack repair & patching',
+            'Glue/paint/membrane removal',
+          ],
+        },
+        {
+          t: 'Install system',
+          d: 'We install your chosen finish to spec & manufacturer standards.',
+          bullets: [
+            'Primer/moisture barrier if needed',
+            'Base coats, flakes or metallics',
+            'UV-stable or polyaspartic topcoat',
+          ],
+        },
+        {
+          t: 'Handover & aftercare',
+          d: 'We hand the floor back with clear instructions.',
+          bullets: [
+            'Final clean & inspection',
+            'Curing times & traffic rules',
+            'Maintenance guide included',
+          ],
+        },
+      ].map((step, i) => (
+        <div
+          key={step.t}
+          className="
+            min-w-[260px]
+            rounded-2xl border border-emerald-500 
+            bg-white p-6 
+            shadow-sm transition-all duration-300
+            hover:-translate-y-1 hover:shadow-lg hover:border-emerald-400
+          "
+        >
+          {/* Header */}
+          <div className="flex items-center gap-3">
+            <div className="h-10 w-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-semibold">
+              {i + 1}
+            </div>
+            <div className="font-semibold text-emerald-700 text-sm uppercase tracking-wide">
+              {step.t}
+            </div>
+          </div>
+
+          {/* Description */}
+          <p className="mt-3 text-sm text-neutral-700 leading-relaxed">
+            {step.d}
           </p>
 
-          {/* Scrollable horizontal row on mobile, single row on desktop */}
-          <div className="mt-8 flex gap-6 overflow-x-auto pb-4 md:overflow-visible">
-            {[
-              {
-                t: 'Free site visit & moisture check',
-                d: 'We come out, look at the slab and talk through your goals.',
-                bullets: [
-                  'Measure slab moisture & hardness',
-                  'Check access, falls & drainage',
-                  'Discuss finish options & slip rating',
-                ],
-              },
-              {
-                t: 'Agree Price & Secure Deposit',
-                d: 'You receive a clear written quote with fixed inclusions.',
-                bullets: ['Transparent pricing', 'No hidden extras', 'Deposit secures materials & booking'],
-              },
-              {
-                t: 'Surface prep',
-                d: 'We get the slab to the correct CSP profile for your system.',
-                bullets: ['Dust-controlled grinding', 'Crack repair & patching', 'Glue/paint/membrane removal'],
-              },
-              {
-                t: 'Install system',
-                d: 'We install your chosen finish to spec & manufacturer standards.',
-                bullets: ['Primer/moisture barrier if needed', 'Base coats, flakes or metallics', 'UV-stable or polyaspartic topcoat'],
-              },
-              {
-                t: 'Handover & aftercare',
-                d: 'We hand the floor back with clear instructions.',
-                bullets: ['Final clean & inspection', 'Curing times & traffic rules', 'Maintenance guide included'],
-              },
-            ].map((step, i) => (
-              <div
-                key={i}
-                className="min-w-[300px] rounded-2xl border border-emerald-500 bg-white p-6 shadow-sm transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-emerald-400
-                           transition duration-200
-                          "
-              >
-                <div className="flex items-center gap-3">
-                  <div className="h-9 w-9 rounded-full bg-emerald-600 text-white flex items-center justify-center font-semibold">
-                    {i + 1}
-                  </div>
-                  <div className="font-semibold text-emerald-700">{step.t}</div>
-                </div>
-
-                <p className="mt-2 text-sm text-neutral-600 ">{step.d}</p>
-
-                <ul className="mt-3 text-xs text-neutral-600 list-disc pl-5 space-y-1">
-                  {step.bullets.map((b: string) => (
-                    <li key={b}>{b}</li>
-                  ))}
-                </ul>
-              </div>
+          {/* Bullet list */}
+          <ul className="mt-4 text-sm text-neutral-700 list-disc pl-5 space-y-1">
+            {step.bullets.map((b) => (
+              <li key={b}>{b}</li>
             ))}
-          </div>
+          </ul>
         </div>
-      </section>
-
+      ))}
+    </div>
+  </div>
+</section>
       {/* Pricing / Packages – FULL-WIDTH BAND */}
       <section id="pricing" className="relative w-full bg-white/60 pt-4 pb-16">
         <div className="max-w-7xl mx-auto px-4">
@@ -482,7 +570,7 @@ export default function Site() {
         <div className="max-w-7xl mx-auto px-4 py-8">
           <div className="rounded-2xl border border-emerald-500 bg-white p-8 shadow-sm transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-emerald-400">
             <h3 className="text-2xl md:text-3xl font-bold">Get a Free Quote</h3>
-            <p className="mt-2 text-neutral-600">Send plans/photos and rough m². We’ll confirm on-site.</p>
+            <p className="mt-2 text-neutral-600">Send plans/photos and rough m². We'll confirm on-site.</p>
             {/* New: what you’ll get list */}
             <ul className="mt-3 text-sm text-neutral-700 list-disc pl-5 space-y-1">
               <li>Fixed-price written quote</li>
@@ -490,39 +578,77 @@ export default function Site() {
               <li>Most quotes replied to within 24 hours</li>
             </ul>
 
-            <form className="mt-6 grid md:grid-cols-2 gap-4" onSubmit={(e) => e.preventDefault()}>
-              <input className="w-full rounded-xl border px-4 py-3" placeholder="Full name" />
-              <input className="w-full rounded-xl border px-4 py-3" placeholder="Email" type="email" />
-              <input
-                className="w-full rounded-xl border px-4 py-3"
-                placeholder="Phone"
-                defaultValue="0448 483 226"
-              />
-              <input className="w-full rounded-xl border px-4 py-3" placeholder="Suburb (e.g. Joondalup)" />
-              <select className="w-full rounded-xl border px-4 py-3">
-                <option>Service needed</option>
-                {services.map((s) => (
-                  <option key={s.title}>{s.title}</option>
-                ))}
-              </select>
-              <input className="w-full rounded-xl border px-4 py-3" placeholder="Approx. area (m²)" />
-              <textarea
-                className="md:col-span-2 rounded-xl border px-4 py-3 min-h-[120px]"
-                placeholder="Project details (indoor/outdoor, new/old slab, deadlines, etc.)"
-              />
-              <div className="md:col-span-2 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-                <label className="text-sm text-neutral-600">
-                  You can also email details to{' '}
-                  <a className="underline" href="mailto:robert.samardali@gmail.com">
-                    robert.samardali@gmail.com
-                  </a>
-                  .
-                </label>
-                <button className="rounded-xl bg-emerald-600 text-white px-6 py-3 font-medium hover:bg-emerald-700">
-                  Send Request
-                </button>
-              </div>
-            </form>
+            <form
+  className="mt-6 grid md:grid-cols-2 gap-4"
+  onSubmit={handleQuoteSubmit}
+>
+  <input
+    name="name"
+    className="w-full rounded-xl border px-4 py-3"
+    placeholder="Full name"
+    required
+  />
+  <input
+    name="email"
+    className="w-full rounded-xl border px-4 py-3"
+    placeholder="Email"
+    type="email"
+    required
+  />
+  <input
+    name="phone"
+    className="w-full rounded-xl border px-4 py-3"
+    placeholder="Phone"
+  />
+  <input
+    name="suburb"
+    className="w-full rounded-xl border px-4 py-3"
+    placeholder="Suburb (e.g. Joondalup)"
+  />
+  <select
+    name="service"
+    className="w-full rounded-xl border px-4 py-3"
+  >
+    <option>Service needed</option>
+    {services.map((s) => (
+      <option key={s.title}>{s.title}</option>
+    ))}
+  </select>
+  <input
+    name="area"
+    className="w-full rounded-xl border px-4 py-3"
+    placeholder="Approx. area (m²)"
+  />
+  <textarea
+    name="details"
+    className="md:col-span-2 rounded-xl border px-4 py-3 min-h-[120px]"
+    placeholder="Project details (indoor/outdoor, new/old slab, deadlines, etc.)"
+  />
+  <div className="md:col-span-2 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+    <label className="text-sm text-neutral-600">
+      You can also email details to{' '}
+      <a className="underline" href="mailto:sales@perthconcretecare.com.au">
+        sales@perthconcretecare.com.au
+      </a>
+      .
+    </label>
+
+    <button
+      type="submit"
+      disabled={formStatus === 'sending'}
+      className="rounded-xl bg-emerald-600 text-white px-6 py-3 font-medium hover:bg-emerald-700 disabled:opacity-60 disabled:cursor-not-allowed"
+    >
+      {formStatus === 'sending'
+        ? 'Sending...'
+        : formStatus === 'success'
+        ? 'Sent ✔'
+        : formStatus === 'error'
+        ? 'Try again'
+        : 'Send Request'}
+    </button>
+  </div>
+</form>
+
             <p className="mt-3 text-xs text-neutral-500">
               We respect your privacy and never share your details with third parties.
             </p>
@@ -640,10 +766,10 @@ export default function Site() {
             <div className="font-semibold">Contact</div>
             <ul className="mt-2 text-sm space-y-1">
               <li>
-                <a href="mailto:robert.samardali@gmail.com" className="hover:underline">
-                  robert.samardali@gmail.com
-                </a>
-              </li>
+               <a href="mailto:sales@perthconcretecare.com.au" className="hover:underline">
+              sales@perthconcretecare.com.au
+            </a>
+          </li>
               <li>
                 <a href="tel:+61448483226" className="hover:underline">
                   0448 483 226
@@ -668,17 +794,18 @@ export default function Site() {
 
 function HeadTags() {
   const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'Perth Concrete Care',
-    url: 'https://perthconcretecare.com.au',
-    telephone: '+61 448 483 226',
-    areaServed: ['Perth', 'Joondalup', 'Wanneroo', 'Wangara', 'Malaga', 'Rockingham', 'Two Rocks'],
-    address: { '@type': 'PostalAddress', addressLocality: 'Perth', addressRegion: 'WA', addressCountry: 'AU' },
-    sameAs: [],
-    description:
-      'Perth Concrete Care: concrete grinding, polishing, epoxy floors with polyaspartic topcoats, surface preparation, and high-pressure cleaning in Perth.',
-  }
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Perth Concrete Care',
+  url: 'https://perthconcretecare.com.au',
+  telephone: '+61 448 483 226',
+  email: 'sales@perthconcretecare.com.au',
+  areaServed: ['Perth', 'Joondalup', 'Wanneroo', 'Wangara', 'Malaga', 'Rockingham', 'Two Rocks'],
+  address: { '@type': 'PostalAddress', addressLocality: 'Perth', addressRegion: 'WA', addressCountry: 'AU' },
+  sameAs: [],
+  description: 'Perth Concrete Care: concrete grinding, polishing, epoxy floors with polyaspartic topcoats, surface preparation, and high-pressure cleaning in Perth.',
+}
+
   const title = 'Perth Concrete Care — Concrete Grinding, Honing, Polishing & Epoxy Floors'
   const description =
     'Perth specialists in concrete grinding, hone & seal, polished concrete, epoxy flooring with polyaspartic coatings, surface prep, and pressure cleaning.'
@@ -947,7 +1074,7 @@ function runSelfTests() {
     pass: services.every((s) => Array.isArray(s.bullets) && s.bullets.length > 0),
   })
 
-  const email = 'robert.samardali@gmail.com'
+  const email = 'sales@perthconcretecare.com.au'
   const phone = '+61448483226'
   const emailOk = /.+@.+\..+/.test(email)
   const phoneOk = /^\+?\d{9,15}$/.test(phone)
