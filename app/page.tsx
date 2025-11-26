@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
+import Script from "next/script"
 
 // index.tsx — Single-file React page for Perth Concrete Care
 // Pure TSX. Drop into Next.js (e.g. app/page.tsx) or Vite entry.
@@ -139,10 +140,35 @@ const handleQuoteSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     setTouchEndX(null)
   }
 
+ export default function Site() {
+  // ...all your existing hooks & functions (useEffect, state, handleQuoteSubmit, etc.)
+
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 selection:bg-emerald-700 selection:text-white">
-      {/* SEO & Structured Data */}
-      <HeadTags />
+    <>
+      {/* Google Analytics 4 */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-H6TMS5HZK3"
+        strategy="afterInteractive"
+      />
+      <Script id="ga-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-H6TMS5HZK3');
+        `}
+      </Script>
+
+      <div className="min-h-screen bg-slate-50 text-slate-800 selection:bg-emerald-700 selection:text-white">
+        {/* 🔽 all your existing JSX stays exactly the same from here down */}
+        {/* SEO & Structured Data */}
+        <HeadTags />
+        {/* Top Bar, Navbar, Hero, Services, Quote form, etc. */}
+      </div>
+    </>
+  );
+}
+
 
       {/* Top Bar */}
       <div className="w-full bg-slate-900 text-white text-sm">
