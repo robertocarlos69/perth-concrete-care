@@ -34,54 +34,65 @@ export default function Site() {
 // -----------------------------
 // Quote form state + submit handler
 // -----------------------------
-const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>(
+  'idle',
+)
+
 const handleQuoteSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
+  e.preventDefault()
 
-  const form = e.currentTarget; // save form
+  const form = e.currentTarget
+  setFormStatus('sending')
 
-  setFormStatus('sending');
+  // --- Optional client-side photo limits ---
+  const MAX_FILES = 5
+  const MAX_SIZE = 2 * 1024 * 1024 // 2 MB
 
-  const formData = new FormData(form);
+  const fileInput = form.elements.namedItem('photos') as HTMLInputElement | null
+  const files = fileInput?.files
 
-  const payload = {
-    name: formData.get('name')?.toString() || '',
-    email: formData.get('email')?.toString() || '',
-    phone: formData.get('phone')?.toString() || '',
-    suburb: formData.get('suburb')?.toString() || '',
-    service: formData.get('service')?.toString() || '',
-    area: formData.get('area')?.toString() || '',
-    details: formData.get('details')?.toString() || '',
-  };
+  if (files && files.length > 0) {
+    if (files.length > MAX_FILES) {
+      alert(`Please upload up to ${MAX_FILES} photos only.`)
+      setFormStatus('idle')
+      return
+    }
+
+    for (const file of Array.from(files)) {
+      if (file.size > MAX_SIZE) {
+        alert(`Each photo must be smaller than 2 MB.`)
+        setFormStatus('idle')
+        return
+      }
+    }
+  }
+  // ----------------------------------------
+
+  // Use FormData so text fields + photos are sent together
+  const formData = new FormData(form)
 
   try {
     const res = await fetch('/api/contact', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    });
+      body: formData, // browser sets the multipart/form-data headers for us
+    })
 
     if (!res.ok) {
-      console.error('Contact API error, status:', res.status);
-      setFormStatus('error');
-      return;
+      console.error('Contact API error, status:', res.status)
+      setFormStatus('error')
+      return
     }
 
-    // ✅ Success
-    setFormStatus('success');
-
-    // ✅ Only reset if form is real & has reset()
-    if (form && typeof (form as HTMLFormElement).reset === 'function') {
-      (form as HTMLFormElement).reset();
-    }
+    setFormStatus('success')
+    form.reset()
   } catch (err) {
-    console.error('Contact API error:', err);
-    setFormStatus('error');
+    console.error('Contact API error:', err)
+    setFormStatus('error')
   } finally {
-    setTimeout(() => setFormStatus('idle'), 4000);
+    // back to idle after a few seconds
+    setTimeout(() => setFormStatus('idle'), 4000)
   }
-};
-
+}
   // Keyboard navigation for lightbox
   useEffect(() => {
     if (lightboxIndex === null) return
@@ -564,97 +575,120 @@ const handleQuoteSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           </div>
         </div>
       </section>
+{/* Quote Form */}
+<section id="quote" className="bg-white/60">
+  <div className="max-w-7xl mx-auto px-4 py-8">
+    <div className="rounded-2xl border border-emerald-500 bg-white p-8 shadow-sm transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-emerald-400">
+      <h3 className="text-2xl md:text-3xl font-bold">Get a Free Quote</h3>
+      <p className="mt-2 text-neutral-600">
+        Send plans/photos and rough m². We&apos;ll confirm on-site.
+      </p>
 
-      {/* Quote Form */}
-      <section id="quote" className="bg-white/60">
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="rounded-2xl border border-emerald-500 bg-white p-8 shadow-sm transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-emerald-400">
-            <h3 className="text-2xl md:text-3xl font-bold">Get a Free Quote</h3>
-            <p className="mt-2 text-neutral-600">Send plans/photos and rough m². We'll confirm on-site.</p>
-            {/* New: what you’ll get list */}
-            <ul className="mt-3 text-sm text-neutral-700 list-disc pl-5 space-y-1">
-              <li>Fixed-price written quote</li>
-              <li>No obligation – we don&apos;t hard-sell</li>
-              <li>Most quotes replied to within 24 hours</li>
-            </ul>
+      {/* What you’ll get list */}
+      <ul className="mt-3 text-sm text-neutral-700 list-disc pl-5 space-y-1">
+        <li>Fixed-price written quote</li>
+        <li>No obligation – we don&apos;t hard-sell</li>
+        <li>Most quotes replied to within 24 hours</li>
+      </ul>
 
-            <form
-  className="mt-6 grid md:grid-cols-2 gap-4"
-  onSubmit={handleQuoteSubmit}
->
-  <input
-    name="name"
-    className="w-full rounded-xl border px-4 py-3"
-    placeholder="Full name"
-    required
-  />
-  <input
-    name="email"
-    className="w-full rounded-xl border px-4 py-3"
-    placeholder="Email"
-    type="email"
-    required
-  />
-  <input
-    name="phone"
-    className="w-full rounded-xl border px-4 py-3"
-    placeholder="Phone"
-  />
-  <input
-    name="suburb"
-    className="w-full rounded-xl border px-4 py-3"
-    placeholder="Suburb (e.g. Joondalup)"
-  />
-  <select
-    name="service"
-    className="w-full rounded-xl border px-4 py-3"
-  >
-    <option>Service needed</option>
-    {services.map((s) => (
-      <option key={s.title}>{s.title}</option>
-    ))}
-  </select>
-  <input
-    name="area"
-    className="w-full rounded-xl border px-4 py-3"
-    placeholder="Approx. area (m²)"
-  />
-  <textarea
-    name="details"
-    className="md:col-span-2 rounded-xl border px-4 py-3 min-h-[120px]"
-    placeholder="Project details (indoor/outdoor, new/old slab, deadlines, etc.)"
-  />
-  <div className="md:col-span-2 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-    <label className="text-sm text-neutral-600">
-      You can also email details to{' '}
-      <a className="underline" href="mailto:sales@perthconcretecare.com.au">
-        sales@perthconcretecare.com.au
-      </a>
-      .
-    </label>
+      <form
+        className="mt-6 grid md:grid-cols-2 gap-4"
+        onSubmit={handleQuoteSubmit}
+        encType="multipart/form-data"
+      >
+        <input
+          name="name"
+          className="w-full rounded-xl border px-4 py-3"
+          placeholder="Full name"
+          required
+        />
+        <input
+          name="email"
+          className="w-full rounded-xl border px-4 py-3"
+          placeholder="Email"
+          type="email"
+          required
+        />
+        <input
+          name="phone"
+          className="w-full rounded-xl border px-4 py-3"
+          placeholder="Phone"
+        />
+        <input
+          name="suburb"
+          className="w-full rounded-xl border px-4 py-3"
+          placeholder="Suburb (e.g. Joondalup)"
+        />
+        <select
+          name="service"
+          className="w-full rounded-xl border px-4 py-3"
+        >
+          <option value="">Service needed</option>
+          {services.map((s) => (
+            <option key={s.title}>{s.title}</option>
+          ))}
+        </select>
+        <input
+          name="area"
+          className="w-full rounded-xl border px-4 py-3"
+          placeholder="Approx. area (m²)"
+        />
 
-    <button
-      type="submit"
-      disabled={formStatus === 'sending'}
-      className="rounded-xl bg-emerald-600 text-white px-6 py-3 font-medium hover:bg-emerald-700 disabled:opacity-60 disabled:cursor-not-allowed"
-    >
-      {formStatus === 'sending'
-        ? 'Sending...'
-        : formStatus === 'success'
-        ? 'Sent ✔'
-        : formStatus === 'error'
-        ? 'Try again'
-        : 'Send Request'}
-    </button>
-  </div>
-</form>
-
-            <p className="mt-3 text-xs text-neutral-500">
-              We respect your privacy and never share your details with third parties.
-            </p>
-          </div>
+        {/* NEW: photo upload field */}
+        <div className="md:col-span-2 flex flex-col gap-1 text-sm">
+          <label className="font-medium text-neutral-700">
+            Photos (optional)
+          </label>
+          <input
+            name="photos"
+            type="file"
+            accept="image/*"
+            multiple
+            className="w-full rounded-xl border px-4 py-2 text-sm"
+          />
+          <p className="text-xs text-neutral-500">
+            You can attach up to 5 photos, max 2&nbsp;MB each (garage, alfresco,
+            close-ups of cracks, etc.).
+          </p>
         </div>
-      </section>
+
+        <textarea
+          name="details"
+          className="md:col-span-2 rounded-xl border px-4 py-3 min-h-[120px]"
+          placeholder="Project details (indoor/outdoor, new/old slab, deadlines, etc.)"
+        />
+
+        <div className="md:col-span-2 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+          <label className="text-sm text-neutral-600">
+            You can also email details to{' '}
+            <a className="underline" href="mailto:sales@perthconcretecare.com.au">
+              sales@perthconcretecare.com.au
+            </a>
+            .
+          </label>
+
+          <button
+            type="submit"
+            disabled={formStatus === 'sending'}
+            className="rounded-xl bg-emerald-600 text-white px-6 py-3 font-medium hover:bg-emerald-700 disabled:opacity-60 disabled:cursor-not-allowed"
+          >
+            {formStatus === 'sending'
+              ? 'Sending...'
+              : formStatus === 'success'
+              ? 'Sent ✔'
+              : formStatus === 'error'
+              ? 'Try again'
+              : 'Send Request'}
+          </button>
+        </div>
+      </form>
+
+      <p className="mt-3 text-xs text-neutral-500">
+        We respect your privacy and never share your details with third parties.
+      </p>
+    </div>
+  </div>
+</section>
 
       {/* FAQ */}
       <section id="faq" className="relative bg-[url('/faq-metallic.png')] bg-cover bg-center">
