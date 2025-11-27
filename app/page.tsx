@@ -265,9 +265,9 @@ export default function Site() {
               <p className="mt-5 text-lg text-neutral-700">Perth specialists in:</p>
 
               <ul className="mt-2 text-sm text-neutral-700 space-y-1">
-                <li>- Exposed concrete & washed aggregate</li>
-                <li>- Concrete grinding, honing & polished concrete</li>
-                <li>- Epoxy flake & metallic resin floors</li>
+                <li>- Exposed concrete & washed aggregate driveways and paths</li>
+                <li>- Concrete grinding, honing & slab levelling, paint & glue removal</li>
+                <li>- Epoxy garage floors, flake systems & metallic epoxy floors across Perth</li>
               </ul>
 
               {/* Buttons */}
@@ -333,14 +333,14 @@ export default function Site() {
             <h2 className="text-3xl md:text-4xl font-bold">Services</h2>
 
             <p className="mt-2 text-neutral-700">
-              End-to-end concrete preparation and finishes across Perth. Our floor
-              preparation is all done to Australian Specifications (e.g., AS-1884,
-              AS-3730, AS-3610, CSP/ICRI profiles) to ensure the right level of
-              grinding before coatings and sealers are applied.
+              Perth Concrete Care provides end-to-end concrete preparation and finishes – from grinding and honing through
+             to polished concrete, epoxy garage floors and outdoor washed aggregate / exposed concrete.
+             All floor preparation is carried out to Australian Standards (AS 1884, AS 3730, AS 3610 and CSP/ICRI profiles)
+              so coatings and sealers bond properly and don&apos;t peel.
             </p>
             <p className="mt-2 text-sm text-neutral-700">
-              We regularly service Joondalup, Wanneroo, Wangara, Malaga, Rockingham,
-              Two Rocks and surrounding suburbs.
+               We regularly complete epoxy garage floors, metallic epoxy feature areas, honed concrete and paint removal
+               projects across Perth metro area.
             </p>
 
             <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
