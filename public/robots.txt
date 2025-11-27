@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
 
-google-site-verification: H1P7ZJW0L6KPhL0mBPd59w9Sirth_QkOPAbFmx2L1_o
-
 Sitemap: https://perthconcretecare.com.au/sitemap.xml

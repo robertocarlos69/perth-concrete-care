@@ -871,64 +871,217 @@ export default function Site() {
 
 function HeadTags() {
   const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: "Perth Concrete Care",
-    url: "https://perthconcretecare.com.au",
-    telephone: "+61 448 483 226",
-    email: "sales@perthconcretecare.com.au",
-    areaServed: [
-      "Perth",
-      "Joondalup",
-      "Wanneroo",
-      "Wangara",
-      "Malaga",
-      "Rockingham",
-      "Two Rocks",
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'LocalBusiness',
+        '@id': 'https://perthconcretecare.com.au/#localbusiness',
+        name: 'Perth Concrete Care',
+        url: 'https://perthconcretecare.com.au',
+        image: 'https://perthconcretecare.com.au/og-image.jpg',
+        telephone: '+61 448 483 226',
+        email: 'sales@perthconcretecare.com.au',
+        priceRange: '$$',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Perth',
+          addressRegion: 'WA',
+          addressCountry: 'AU',
+        },
+        areaServed: [
+          'Perth',
+          'Joondalup',
+          'Edgewater',
+          'Padbury',
+          'Sorrento',
+          'Wanneroo',
+          'Wangara',
+          'Malaga',
+          'Burns Beach',
+          'Two Rocks',
+          'Clarkson',
+          'Butler',
+          'Catalina',
+          'Mindarie',
+          'Hillarys',
+          'Mullaloo',
+          'Ocean Reef',
+          'Currambine',
+          'Kinross',
+          'Tapping',
+          'Eglinton',
+          'Yanchep',
+          'Ridgewood',
+          'Nowergup',
+          'Carabooda',
+          'Neerabup',
+          'Landsdale',
+          'Darch',
+          'Mariginiup',
+          'Wembley Downs',
+          'Woodvale',
+          'Kingsley',
+          'Padbury',
+          'Hepburn Heights',
+          'Craigie',
+          'Beldon',
+          'Edgewater',
+          'Greenwood',
+          'Warwick',
+          'Girrawheen',
+          'Alkimos',
+          'Ashby',
+          'Jindalee',
+          'Ridgewood',
+          'Merriwa',
+          'iluka',
+          'Tamala Park',
+          'Rockingham',
+          'Kwinana',
+          'Safety Bay',
+          'Port Kennedy',
+          'Baldivis',
+          'Cooloongup',
+          'Warnbro',
+          'Dalkeith',
+          'Claremont',
+          'Cottesloe',
+          'Mosman Park',
+          'Fremantle',
+          'East Fremantle',
+          'Palmyra',
+          'Melville',
+          'Bicton',
+          'Attadale',
+          'Applecross',
+          'Mount Pleasant',
+          'Como',
+          'South Perth',
+          'Victoria Park',
+          'Lathlain',
+          'Bentley',
+          'St James',
+          'Wilson',
+          'Cannington',
+          'Queens Park',
+          'Beckenham',
+          'Kenwick',
+          'Maddington',
+          'Gosnells',
+          'Thornlie',
+          'Langford',
+          'Ferndale',
+          'Willetton',
+          'Riverton',
+          'Bull Creek',
+          'Leeming',
+          'Murdoch',
+          'Bibra Lake',
+          'Yangebup',
+          'Success',
+          'Cockburn Central',
+          'Jandakot',
+          'Hamilton Hill',
+          'Spearwood',
+          'Henderson',
+          'Rockingham Beach',
+          'Port Kennedy',
+          'Secret Harbour',
+          'Banksia Grove',
+        ],
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: [
+              'Monday',
+              'Tuesday',
+              'Wednesday',
+              'Thursday',
+              'Friday',
+              'Saturday',
+            ],
+            opens: '07:00',
+            closes: '18:00',
+          },
+        ],
+        // Core services you want to rank for
+        serviceType: [
+          'Concrete grinding',
+          'Concrete honing',
+          'Concrete polishing',
+          'Epoxy garage floors',
+          'Epoxy flake floors',
+          'Metallic epoxy floors',
+          'Washed aggregate',
+          'Exposed / honed concrete',
+          'Concrete paint removal',
+          'Pressure cleaning',
+        ],
+      },
+      {
+        '@type': 'WebSite',
+        '@id': 'https://perthconcretecare.com.au/#website',
+        url: 'https://perthconcretecare.com.au',
+        name: 'Perth Concrete Care',
+        publisher: {
+          '@id': 'https://perthconcretecare.com.au/#localbusiness',
+        },
+        potentialAction: {
+          '@type': 'SearchAction',
+          target:
+            'https://perthconcretecare.com.au/?s={search_term_string}',
+          'query-input': 'required name=search_term_string',
+        },
+      },
     ],
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Perth",
-      addressRegion: "WA",
-      addressCountry: "AU",
-    },
-    sameAs: [],
-    description:
-      "Perth Concrete Care: concrete grinding, polishing, epoxy floors with polyaspartic topcoats, surface preparation, and high-pressure cleaning in Perth.",
-  };
+  }
 
+  // Home page SEO targeting: honing, polishing, epoxy garage, metallic, washed aggregate, exposed concrete, paint removal, Perth
   const title =
-    "Perth Concrete Care — Concrete Grinding, Honing, Polishing & Epoxy Floors";
+    'Perth Concrete Grinding, Honing, Polishing & Epoxy Garage Floors | Perth Concrete Care'
+
   const description =
-    "Perth specialists in concrete grinding, hone & seal, polished concrete, epoxy flooring with polyaspartic coatings, surface prep, and pressure cleaning.";
+    'Perth Concrete Care specialises in concrete grinding, honing, polished concrete, epoxy garage floors, metallic epoxy floors, washed aggregate, exposed (honed) concrete and paint removal across Perth Metro, Joondalup, Wanneroo, Wangara, Malaga and Rockingham.'
+
+  const keywords =
+    'epoxy garage floors Perth, epoxy garage Joondalup, metallic epoxy floors Perth, concrete grinding Perth, concrete honing Perth, concrete polishing Perth, washed aggregate Perth, exposed concrete Perth, honed concrete Perth, concrete paint removal Perth'
+
+  const url = 'https://perthconcretecare.com.au'
+  const ogImage = 'https://perthconcretecare.com.au/og-image.jpg'
 
   return (
     <>
+      {/* Basic SEO */}
       <title>{title}</title>
       <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
+
+      {/* Canonical */}
+      <link rel="canonical" href={url} />
 
       {/* Open Graph / Social */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      {/* Replace this with your actual hosted OG image when live */}
-      <meta
-        property="og:image"
-        content="https://perthconcretecare.com.au/og-image.jpg"
-      />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://perthconcretecare.com.au" />
+      <meta property="og:url" content={url} />
+      <meta property="og:image" content={ogImage} />
 
+      {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={ogImage} />
 
+      {/* LocalBusiness + Website schema */}
       <script
         type="application/ld+json"
+        // stringify so it becomes valid JSON inside the script tag
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
     </>
-  );
+  )
 }
+
 
 function BeforeAfter({ before, after }: { before: string; after: string }) {
   const [pos, setPos] = useState(50);
