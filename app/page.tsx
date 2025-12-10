@@ -30,7 +30,9 @@ export default function Site() {
 
   const prevImage = () => {
     if (lightboxIndex === null) return;
-    setLightboxIndex((lightboxIndex - 1 + galleryItems.length) % galleryItems.length);
+    setLightboxIndex(
+      (lightboxIndex - 1 + galleryItems.length) % galleryItems.length
+    );
   };
 
   // -----------------------------
@@ -50,7 +52,9 @@ export default function Site() {
     const MAX_FILES = 5;
     const MAX_SIZE = 2 * 1024 * 1024; // 2 MB
 
-    const fileInput = form.elements.namedItem("photos") as HTMLInputElement | null;
+    const fileInput = form.elements.namedItem(
+      "photos"
+    ) as HTMLInputElement | null;
     const files = fileInput?.files;
 
     if (files && files.length > 0) {
@@ -262,12 +266,22 @@ export default function Site() {
                 <span className="text-blue-600">Metallic</span> Floor Finishes
               </h1>
 
-              <p className="mt-5 text-lg text-neutral-700">Perth specialists in:</p>
+              <p className="mt-5 text-lg text-neutral-700">
+                Perth specialists in:
+              </p>
 
               <ul className="mt-2 text-sm text-neutral-700 space-y-1">
-                <li>- Exposed concrete & washed aggregate driveways and paths</li>
-                <li>- Concrete grinding, honing & slab levelling, paint & glue removal</li>
-                <li>- Epoxy garage floors, flake systems & metallic epoxy floors across Perth</li>
+                <li>
+                  - Exposed concrete & washed aggregate driveways and paths
+                </li>
+                <li>
+                  - Concrete grinding, honing & slab levelling, paint & glue
+                  removal
+                </li>
+                <li>
+                  - Epoxy garage floors, flake systems & metallic epoxy floors
+                  across Perth
+                </li>
               </ul>
 
               {/* Buttons */}
@@ -307,6 +321,34 @@ export default function Site() {
           </div>
         </section>
 
+        {/* SEO text block – Perth concrete services */}
+        <section className="bg-slate-50">
+          <div className="max-w-7xl mx-auto px-4 pb-10">
+            <h2 className="text-2xl font-bold mb-3">
+              Honed Concrete, Polished Concrete & Epoxy Garage Floors in Perth
+            </h2>
+            <p className="text-sm md:text-base text-neutral-700 mb-3">
+              Perth Concrete Care provides{" "}
+              <strong>honed concrete in Perth</strong>,{" "}
+              <strong>polished concrete</strong>,{" "}
+              <strong>epoxy garage floors</strong>,{" "}
+              <strong>epoxy flake floors</strong>,{" "}
+              <strong>metallic epoxy finishes</strong> and{" "}
+              <strong>washed aggregate</strong> across both north and south of
+              the river. We focus on proper concrete grinding and surface
+              preparation so coatings bond correctly and last longer.
+            </p>
+            <p className="text-sm md:text-base text-neutral-700">
+              If you are searching for{" "}
+              <strong>concrete grinding Perth</strong>,{" "}
+              <strong>epoxy garage Joondalup</strong> or{" "}
+              <strong>honed concrete around Perth&apos;s coastal suburbs</strong>
+              , our mobile team services homes, builders and commercial clients
+              with dust-controlled equipment and clear, fixed-price quotes.
+            </p>
+          </div>
+        </section>
+
         {/* Services – FULL-WIDTH BACKGROUND */}
         <section
           id="services"
@@ -333,24 +375,25 @@ export default function Site() {
             <h2 className="text-3xl md:text-4xl font-bold">Services</h2>
 
             <p className="mt-2 text-neutral-700">
-              Perth Concrete Care provides end-to-end concrete preparation and finishes – from grinding and honing through
-             to polished concrete, epoxy garage floors and outdoor washed aggregate / exposed concrete.
-             All floor preparation is carried out to Australian Standards (AS 1884, AS 3730, AS 3610 and CSP/ICRI profiles)
-              so coatings and sealers bond properly and don&apos;t peel.
+              Perth Concrete Care provides end-to-end concrete preparation and
+              finishes – from grinding and honing through to polished concrete,
+              epoxy garage floors and outdoor washed aggregate / exposed
+              concrete. All floor preparation is carried out to Australian
+              Standards (AS 1884, AS 3730, AS 3610 and CSP/ICRI profiles) so
+              coatings and sealers bond properly and don&apos;t peel.
             </p>
             <p className="mt-2 text-sm text-neutral-700">
-               We regularly complete epoxy garage floors, metallic epoxy feature areas, honed concrete and paint removal
-               projects across Perth metro area.
+              We regularly complete epoxy garage floors, metallic epoxy feature
+              areas, honed concrete and paint removal projects across Perth
+              metro area.
             </p>
 
             <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map((s) => (
                 <div
                   key={s.title}
-                  className="
-                  rounded-2xl border border-emerald-500 bg-white p-6 shadow-sm transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-emerald-400
-                  transition duration-200
-                "
+                  className="rounded-2xl border border-emerald-500 bg-white p-6 shadow-sm transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-emerald-400
+                  transition duration-200"
                 >
                   <div className="flex items-center gap-2">
                     {s.icon && (
@@ -473,13 +516,10 @@ export default function Site() {
               ].map((step, i) => (
                 <div
                   key={step.t}
-                  className="
-            min-w-[260px]
-            rounded-2xl border border-emerald-500 
+                  className="min-w-[260px] rounded-2xl border border-emerald-500 
             bg-white p-6 
             shadow-sm transition-all duration-300
-            hover:-translate-y-1 hover:shadow-lg hover:border-emerald-400
-          "
+            hover:-translate-y-1 hover:shadow-lg hover:border-emerald-400"
                 >
                   {/* Header */}
                   <div className="flex items-center gap-3">
@@ -523,8 +563,7 @@ export default function Site() {
                 <div
                   key={p.name}
                   className="min-w-[260px] rounded-2xl border border-emerald-500 bg-white p-6 shadow-sm transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-emerald-400
-                           transition duration-200
-                           "
+                           transition duration-200"
                 >
                   <div className="text-sm uppercase tracking-wide text-emerald-700 font-semibold">
                     {p.name}
@@ -576,6 +615,12 @@ export default function Site() {
               <h3 className="text-2xl md:text-3xl font-bold">
                 Servicing all Perth Metro from Two Rocks to Rockingham
               </h3>
+              <p className="mt-3 text-neutral-600 text-sm md:text-base">
+                We install honed concrete, polished concrete, epoxy garage
+                floors, epoxy flake systems and washed aggregate across Perth
+                suburbs including Joondalup, Wanneroo, Alkimos, Butler, Yanchep,
+                Ellenbrook, Wangara, Malaga, Rockingham and nearby areas.
+              </p>
 
               {/* BADGES */}
               <div className="mt-4 flex flex-wrap gap-2 text-sm">
@@ -815,8 +860,8 @@ export default function Site() {
                 <div className="font-semibold">Perth Concrete Care</div>
               </div>
               <p className="mt-3 text-sm text-neutral-400">
-                Concrete grinding, honing, polishing, epoxy floors, and surface prep
-                across Perth Metro. Indoor &amp; outdoor.
+                Concrete grinding, honing, polishing, epoxy floors, and surface
+                prep across Perth Metro. Indoor &amp; outdoor.
               </p>
               <div className="mt-3 text-sm">ABN: 63 775 263 307</div>
             </div>
@@ -871,183 +916,177 @@ export default function Site() {
 
 function HeadTags() {
   const jsonLd = {
-    '@context': 'https://schema.org',
-    '@graph': [
+    "@context": "https://schema.org",
+    "@graph": [
       {
-        '@type': 'LocalBusiness',
-        '@id': 'https://perthconcretecare.com.au/#localbusiness',
-        name: 'Perth Concrete Care',
-        url: 'https://perthconcretecare.com.au',
-        image: 'https://perthconcretecare.com.au/og-image.jpg',
-        telephone: '+61 448 483 226',
-        email: 'sales@perthconcretecare.com.au',
-        priceRange: '$$',
+        "@type": "LocalBusiness",
+        "@id": "https://perthconcretecare.com.au/#localbusiness",
+        name: "Perth Concrete Care",
+        url: "https://perthconcretecare.com.au",
+        image: "https://perthconcretecare.com.au/og-image.jpg",
+        telephone: "+61 448 483 226",
+        email: "sales@perthconcretecare.com.au",
+        priceRange: "$$",
         address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Perth',
-          addressRegion: 'WA',
-          addressCountry: 'AU',
+          "@type": "PostalAddress",
+          addressLocality: "Perth",
+          addressRegion: "WA",
+          addressCountry: "AU",
         },
         areaServed: [
-          'Perth',
-          'Joondalup',
-          'Edgewater',
-          'Padbury',
-          'Sorrento',
-          'Wanneroo',
-          'Wangara',
-          'Malaga',
-          'Burns Beach',
-          'Two Rocks',
-          'Clarkson',
-          'Butler',
-          'Catalina',
-          'Mindarie',
-          'Hillarys',
-          'Mullaloo',
-          'Ocean Reef',
-          'Currambine',
-          'Kinross',
-          'Tapping',
-          'Eglinton',
-          'Yanchep',
-          'Ridgewood',
-          'Nowergup',
-          'Carabooda',
-          'Neerabup',
-          'Landsdale',
-          'Darch',
-          'Mariginiup',
-          'Wembley Downs',
-          'Woodvale',
-          'Kingsley',
-          'Padbury',
-          'Hepburn Heights',
-          'Craigie',
-          'Beldon',
-          'Edgewater',
-          'Greenwood',
-          'Warwick',
-          'Girrawheen',
-          'Alkimos',
-          'Ashby',
-          'Jindalee',
-          'Ridgewood',
-          'Merriwa',
-          'iluka',
-          'Tamala Park',
-          'Rockingham',
-          'Kwinana',
-          'Safety Bay',
-          'Port Kennedy',
-          'Baldivis',
-          'Cooloongup',
-          'Warnbro',
-          'Dalkeith',
-          'Claremont',
-          'Cottesloe',
-          'Mosman Park',
-          'Fremantle',
-          'East Fremantle',
-          'Palmyra',
-          'Melville',
-          'Bicton',
-          'Attadale',
-          'Applecross',
-          'Mount Pleasant',
-          'Como',
-          'South Perth',
-          'Victoria Park',
-          'Lathlain',
-          'Bentley',
-          'St James',
-          'Wilson',
-          'Cannington',
-          'Queens Park',
-          'Beckenham',
-          'Kenwick',
-          'Maddington',
-          'Gosnells',
-          'Thornlie',
-          'Langford',
-          'Ferndale',
-          'Willetton',
-          'Riverton',
-          'Bull Creek',
-          'Leeming',
-          'Murdoch',
-          'Bibra Lake',
-          'Yangebup',
-          'Success',
-          'Cockburn Central',
-          'Jandakot',
-          'Hamilton Hill',
-          'Spearwood',
-          'Henderson',
-          'Rockingham Beach',
-          'Port Kennedy',
-          'Secret Harbour',
-          'Banksia Grove',
+          "Perth",
+          "Joondalup",
+          "Edgewater",
+          "Padbury",
+          "Sorrento",
+          "Wanneroo",
+          "Wangara",
+          "Malaga",
+          "Burns Beach",
+          "Two Rocks",
+          "Clarkson",
+          "Butler",
+          "Catalina",
+          "Mindarie",
+          "Hillarys",
+          "Mullaloo",
+          "Ocean Reef",
+          "Currambine",
+          "Kinross",
+          "Tapping",
+          "Eglinton",
+          "Yanchep",
+          "Ridgewood",
+          "Nowergup",
+          "Carabooda",
+          "Neerabup",
+          "Landsdale",
+          "Darch",
+          "Mariginiup",
+          "Wembley Downs",
+          "Woodvale",
+          "Kingsley",
+          "Hepburn Heights",
+          "Craigie",
+          "Beldon",
+          "Greenwood",
+          "Warwick",
+          "Girrawheen",
+          "Alkimos",
+          "Ashby",
+          "Jindalee",
+          "Merriwa",
+          "Iluka",
+          "Tamala Park",
+          "Rockingham",
+          "Kwinana",
+          "Safety Bay",
+          "Port Kennedy",
+          "Baldivis",
+          "Cooloongup",
+          "Warnbro",
+          "Dalkeith",
+          "Claremont",
+          "Cottesloe",
+          "Mosman Park",
+          "Fremantle",
+          "East Fremantle",
+          "Palmyra",
+          "Melville",
+          "Bicton",
+          "Attadale",
+          "Applecross",
+          "Mount Pleasant",
+          "Como",
+          "South Perth",
+          "Victoria Park",
+          "Lathlain",
+          "Bentley",
+          "St James",
+          "Wilson",
+          "Cannington",
+          "Queens Park",
+          "Beckenham",
+          "Kenwick",
+          "Maddington",
+          "Gosnells",
+          "Thornlie",
+          "Langford",
+          "Ferndale",
+          "Willetton",
+          "Riverton",
+          "Bull Creek",
+          "Leeming",
+          "Murdoch",
+          "Bibra Lake",
+          "Yangebup",
+          "Success",
+          "Cockburn Central",
+          "Jandakot",
+          "Hamilton Hill",
+          "Spearwood",
+          "Henderson",
+          "Rockingham Beach",
+          "Secret Harbour",
+          "Banksia Grove",
         ],
         openingHoursSpecification: [
           {
-            '@type': 'OpeningHoursSpecification',
+            "@type": "OpeningHoursSpecification",
             dayOfWeek: [
-              'Monday',
-              'Tuesday',
-              'Wednesday',
-              'Thursday',
-              'Friday',
-              'Saturday',
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
             ],
-            opens: '07:00',
-            closes: '18:00',
+            opens: "07:00",
+            closes: "18:00",
           },
         ],
-        // Core services you want to rank for
         serviceType: [
-          'Concrete grinding',
-          'Concrete honing',
-          'Concrete polishing',
-          'Epoxy garage floors',
-          'Epoxy flake floors',
-          'Metallic epoxy floors',
-          'Washed aggregate',
-          'Exposed / honed concrete',
-          'Concrete paint removal',
-          'Pressure cleaning',
+          "Concrete grinding",
+          "Concrete honing",
+          "Concrete polishing",
+          "Epoxy garage floors",
+          "Epoxy flake floors",
+          "Metallic epoxy floors",
+          "Washed aggregate",
+          "Exposed / honed concrete",
+          "Concrete paint removal",
+          "Pressure cleaning",
         ],
       },
       {
-        '@type': 'WebSite',
-        '@id': 'https://perthconcretecare.com.au/#website',
-        url: 'https://perthconcretecare.com.au',
-        name: 'Perth Concrete Care',
+        "@type": "WebSite",
+        "@id": "https://perthconcretecare.com.au/#website",
+        url: "https://perthconcretecare.com.au",
+        name: "Perth Concrete Care",
         publisher: {
-          '@id': 'https://perthconcretecare.com.au/#localbusiness',
+          "@id": "https://perthconcretecare.com.au/#localbusiness",
         },
         potentialAction: {
-          '@type': 'SearchAction',
-          target:
-            'https://perthconcretecare.com.au/?s={search_term_string}',
-          'query-input': 'required name=search_term_string',
+          "@type": "SearchAction",
+          target: "https://perthconcretecare.com.au/?s={search_term_string}",
+          "query-input": "required name=search_term_string",
         },
       },
     ],
-  }
+  };
 
   // Home page SEO targeting: honing, polishing, epoxy garage, metallic, washed aggregate, exposed concrete, paint removal, Perth
   const title =
-    'Perth Concrete Grinding, Honing, Polishing & Epoxy Garage Floors | Perth Concrete Care'
+    "Perth Concrete Grinding, Honing, Polishing & Epoxy Garage Floors | Perth Concrete Care";
 
   const description =
-    'Perth Concrete Care specialises in concrete grinding, honing, polished concrete, epoxy garage floors, metallic epoxy floors, washed aggregate, exposed (honed) concrete and paint removal across Perth Metro, Joondalup, Wanneroo, Wangara, Malaga and Rockingham.'
+    "Perth Concrete Care specialises in concrete grinding, honing, polished concrete, epoxy garage floors, metallic epoxy floors, washed aggregate, exposed (honed) concrete and paint removal across Perth Metro, Joondalup, Wanneroo, Wangara, Malaga and Rockingham.";
 
   const keywords =
-    'epoxy garage floors Perth, epoxy garage Joondalup, metallic epoxy floors Perth, concrete grinding Perth, concrete honing Perth, concrete polishing Perth, washed aggregate Perth, exposed concrete Perth, honed concrete Perth, concrete paint removal Perth'
+    "epoxy garage floors Perth, epoxy garage Joondalup, metallic epoxy floors Perth, concrete grinding Perth, concrete honing Perth, concrete polishing Perth, washed aggregate Perth, exposed concrete Perth, honed concrete Perth, concrete paint removal Perth";
 
-  const url = 'https://perthconcretecare.com.au'
-  const ogImage = 'https://perthconcretecare.com.au/og-image.jpg'
+  const url = "https://perthconcretecare.com.au";
+  const ogImage = "https://perthconcretecare.com.au/og-image.jpg";
 
   return (
     <>
@@ -1075,13 +1114,11 @@ function HeadTags() {
       {/* LocalBusiness + Website schema */}
       <script
         type="application/ld+json"
-        // stringify so it becomes valid JSON inside the script tag
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
     </>
-  )
+  );
 }
-
 
 function BeforeAfter({ before, after }: { before: string; after: string }) {
   const [pos, setPos] = useState(50);
@@ -1149,9 +1186,9 @@ function BeforeAfter({ before, after }: { before: string; after: string }) {
         {/* Short explainer under slider */}
         <p className="mt-4 text-sm text-neutral-600 max-w-3xl">
           This garage had old paint, tyre marks and uneven patches. We
-          mechanically ground the slab, removed all coatings and installed a hone
-          &amp; seal finish for a cleaner, brighter, easier-to-maintain floor
-          with improved traction.
+          mechanically ground the slab, removed all coatings and installed a
+          hone &amp; seal finish for a cleaner, brighter, easier-to-maintain
+          floor with improved traction.
         </p>
       </div>
     </section>
@@ -1332,8 +1369,8 @@ const faqs = [
     a: "We use H-class HEPA extractors and shrouds. Expect minimal dust; we mask and protect adjacent areas.",
   },
   {
-    q: "How soon can we park on epoxy flake garage?",
-    a: "Light foot traffic ~12–24h. Vehicles typically 72h depending on temperature and system.",
+    q: "How soon can we park on an epoxy flake garage floor?",
+    a: "Light foot traffic is usually fine after 12–24 hours. Vehicles typically 72 hours depending on temperature and the system installed.",
   },
   {
     q: "Can you remove carpet glue and tile adhesive?",
@@ -1364,8 +1401,8 @@ const faqs = [
     a: "Metallic floors use more resin, multi-colour pigments, and require artistic blending. Adding highlights (liquid diamonds, veining, spray effects) increases labour and design time, so highlighted metallic floors sit at the premium end of epoxy pricing.",
   },
   {
-    q: "What is the difference between exposed concrete and washed aggregate?",
-    a: "Washed aggregate is done by spraying a retarder on fresh concrete and pressure-washing it the next day to expose the stones. Exposed (honed) concrete is poured normally, cured, then ground and honed a few days later for a smoother, more modern finish. Washed agg is more rustic and textured, while honed concrete is smoother and easier to clean.",
+    q: "What’s the difference between washed aggregate and honed concrete in Perth?",
+    a: "Washed aggregate is created by spraying a surface retarder onto fresh concrete and pressure-washing it the next day to expose the stones. Honed concrete is poured and cured normally, then ground and honed later for a smoother, more modern finish. Washed aggregate feels more textured and rustic, while honed concrete is flatter underfoot and easier to clean, which many Perth clients prefer around pools and alfresco areas.",
   },
 ];
 
