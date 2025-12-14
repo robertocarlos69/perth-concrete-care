@@ -1179,8 +1179,14 @@ const galleryItems = [
   {
     id: 3,
     src: "/gallery/exposed-concrete-1.jpg",
-    label: "Exposed Concrete Pathway",
+    label: "Exposed Concrete Pathway - Burns Beach",
     alt: "Exposed concrete pathway with decorative aggregate",
+  },
+  {
+    id: 4,
+    src: "/gallery/drive-way-1.jpg",
+    label: "Exposed / Washed Aggregate Driveway – Ashby",
+    alt: "Exposed or washed aggregate driveway finish in Ashby, Western Australia",
   },
 ];
 
