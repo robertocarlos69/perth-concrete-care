@@ -1297,7 +1297,7 @@ const pricing = [
   },
   {
     name: "Epoxy Flake Floor System",
-    price: "$85–$110",
+    price: "$75–$100",
     unit: "/m²",
     features: [
       "Moisture-tolerant primer",
@@ -1316,8 +1316,8 @@ const pricing = [
     ],
   },
   {
-    name: "Hone & Seal (Outdoor)",
-    price: "$60–$95",
+    name: "Honed & Seal (Outdoor)",
+    price: "$70–$95",
     unit: "/m²",
     features: [
       "Honed finish (P4–P5 slip-rated)",
@@ -1332,7 +1332,6 @@ const pricing = [
     features: [
       "Premium washed or exposed stone finish",
       "Slip-resistant and ideal for outdoor areas",
-      "Driveways, paths, alfresco & pool surrounds",
     ],
   },
 ];
