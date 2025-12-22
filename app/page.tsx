@@ -266,8 +266,8 @@ export default function Site() {
 
               <ul className="mt-2 text-sm text-neutral-700 space-y-1">
                 <li>- Exposed concrete &amp; washed aggregate driveways, paths &amp; alfrescos</li>
-                <li>- Concrete grinding Perth, honed concrete &amp; slab levelling, paint &amp; glue removal</li>
-                <li>- Epoxy garage floors Perth, flake systems &amp; metallic epoxy floors for homes &amp; workshops</li>
+                <li>- Concrete grinding, honed concrete &amp; slab levelling, paint &amp; glue removal</li>
+                <li>- Epoxy garage floors, flake systems &amp; metallic epoxy floors for residential &amp; workshops</li>
               </ul>
 
               {/* Buttons */}
@@ -426,11 +426,11 @@ export default function Site() {
             <div className="mt-8 flex gap-6 overflow-x-auto pb-4 md:overflow-visible">
               {[
                 {
-                  t: "Free site visit & moisture check",
+                  t: "Free site visit & consultation",
                   d: "We come out, look at the slab and talk through your goals.",
                   bullets: [
-                    "Measure slab moisture & hardness",
-                    "Check access, falls & drainage",
+                    "Asses the concrete condition",
+                    "Select flakes/colours if epoxy",
                     "Discuss finish options & slip rating",
                   ],
                 },
@@ -513,7 +513,7 @@ export default function Site() {
           <div className="max-w-7xl mx-auto px-4">
             <h3 className="text-2xl md:text-3xl font-bold">Typical Packages</h3>
             <p className="mt-2 text-neutral-600">
-              Every slab is different; these ballparks help planning. Get a free
+              Every project is different; these ballparks help planning. Get a free
               on-site quote.
             </p>
 
