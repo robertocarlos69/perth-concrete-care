@@ -259,7 +259,7 @@ export default function Site() {
               <h1 className="text-4xl md:text-5xl font-extrabold leading-tight drop-shadow-sm">
                 Perth Concrete Grinding, Honed &amp; Polished Concrete,{" "}
                 <span className="text-emerald-600">Epoxy Flake</span> &amp;{" "}
-                <span className="text-blue-600">Metallic</span> Garage Floors
+                <span className="text-blue-600">Metallic</span> Floors
               </h1>
 
               <p className="mt-5 text-lg text-neutral-700">Perth specialists in:</p>
