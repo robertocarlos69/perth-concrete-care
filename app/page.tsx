@@ -250,9 +250,8 @@ export default function Site() {
             />
 
             {/* Soft fade for readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/60 to-white" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/60 to-stone-100" />
           </div>
-
           {/* Foreground content */}
           <div className="relative max-w-7xl mx-auto px-4 pt-10 pb-20 md:pt-16 md:pb-28">
             <div className="max-w-5xl md:-ml-12">
@@ -735,7 +734,9 @@ export default function Site() {
           className="relative bg-[url('/faq-metallic.png')] bg-cover bg-center"
         >
           {/* Top fade to blend with section above */}
-          <div className="pointer-events-none absolute top-0 left-0 right-0 h-13 bg-gradient-to-b from-[#f8fafc] via-[#f8fafc]/70 to-transparent" />
+          <div className="pointer-events-none absolute -top-32 left-0 right-0 h-32
+  bg-gradient-to-b from-transparent via-white/40 to-transparent"
+/>
 
           {/* light overlay so text stays readable */}
           <div className="bg-white/75 relative">
@@ -1095,8 +1096,7 @@ function BeforeAfter({ before, after }: { before: string; after: string }) {
     <section className="bg-white/60">
       <div className="max-w-7xl mx-auto px-4 pt-4 pb-4">
         <h2 className="text-2xl md:text-3xl font-bold mb-4">
-          Before &amp; After from our most recent project: Paint removal with a
-          hone &amp; seal
+          Before &amp; After: Paint Removal & Hone-and-Seal Finish
         </h2>
 
         {/* FULL WIDTH / NO WHITE SPACES */}
@@ -1153,10 +1153,7 @@ function BeforeAfter({ before, after }: { before: string; after: string }) {
 
         {/* Short explainer under slider */}
         <p className="mt-4 text-sm text-neutral-600 max-w-3xl">
-          This garage had old paint, tyre marks and uneven patches. We
-          mechanically ground the slab, removed all coatings and installed a hone
-          &amp; seal finish for a cleaner, brighter, easier-to-maintain floor
-          with improved traction.
+          This pathway had old paint and uneven patches. We mechanically ground the slab, removed all coatings and sealed the finish for a cleaner, brighter, easier-to-maintain floor.
         </p>
       </div>
     </section>
