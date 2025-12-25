@@ -239,7 +239,7 @@ export default function Site() {
         {/* Hero */}
         <section className="relative w-full bg-white">
           {/* Background Image Wrapper — MUST have height */}
-          <div className="absolute inset-0 h-[520px] md:h-[620px]">
+          <div className="absolute inset-0 h-[680px] sm:h-[620px] md:h-[620px]">
             <Image
               src="/header-bg1.png"
               alt="Swirled concrete texture background"
