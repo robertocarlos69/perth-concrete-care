@@ -309,7 +309,7 @@ export default function Site() {
         {/* Services – FULL-WIDTH BACKGROUND */}
         <section
           id="services"
-          className="relative w-full py-24 overflow-hidden -mt-10 md:-mt-13"
+          className="relative w-full py-24 overflow-hidden -mt-12 md:-mt-16"
         >
           {/* Background image goes edge-to-edge */}
           <div
