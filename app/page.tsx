@@ -1239,6 +1239,12 @@ const galleryItems = [
     label: "Exposed / Washed Aggregate Driveway – Ashby",
     alt: "Exposed or washed aggregate driveway finish in Ashby, Western Australia",
   },
+  {
+    id: 5,
+    src: "/gallery/Epoxy-Flake-Floor-Wanneroo.jpg",
+    label: "Epoxy Flake Floor – Wanneroo Garage",
+    alt: "Black and white epoxy flake garage floor in Wanneroo, Perth",
+  },
 ];
 
 // Data
