@@ -1342,17 +1342,7 @@ const services = [
 ];
 
 const pricing = [
-  {
-    name: "Concrete Grind & Seal",
-    price: "$45–$70",
-    unit: "/m²",
-    features: [
-      "Light–medium grind (CSP-2/3)",
-      "One-coat or two-coat clear sealer",
-      "Edges & corners included",
-    ],
-  },
-  {
+    {
     name: "Epoxy Flake Floor System",
     price: "$75–$100",
     unit: "/m²",
