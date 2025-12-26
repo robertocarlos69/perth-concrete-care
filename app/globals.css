@@ -27,3 +27,15 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+/* Remove native <summary> disclosure arrows in ALL browsers */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::marker {
+  display: none;
+}
+
+summary {
+  list-style: none;
+}

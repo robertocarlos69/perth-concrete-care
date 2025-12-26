@@ -728,35 +728,89 @@ export default function Site() {
           </div>
         </section>
 
-        {/* FAQ */}
-        <section
-          id="faq"
-          className="relative bg-[url('/faq-metallic.png')] bg-cover bg-center"
-        >
-          {/* Top fade to blend with section above */}
-          <div className="pointer-events-none absolute -top-32 left-0 right-0 h-32
-  bg-gradient-to-b from-transparent via-white/40 to-transparent"
-/>
+{/* FAQ */}
+<section
+  id="faq"
+  className="relative bg-[url('/faq-metallic.png')] bg-cover bg-center"
+>
+  {/* Top fade to blend with section above */}
+  <div
+    className="pointer-events-none absolute -top-32 left-0 right-0 h-32
+    bg-gradient-to-b from-transparent via-white/40 to-transparent"
+  />
 
-          {/* light overlay so text stays readable */}
-          <div className="bg-white/75 relative">
-            <div className="max-w-7xl mx-auto px-4 py-12">
-              <h3 className="text-2xl md:text-3xl font-bold">FAQ</h3>
+  {/* Light overlay for readability */}
+  <div className="bg-white/75 relative">
+    <div className="max-w-7xl mx-auto px-4 py-12">
+      <h3 className="text-2xl md:text-3xl font-bold">FAQ</h3>
+      <p className="mt-2 text-sm text-neutral-600">
+        Click a question to expand.
+      </p>
 
-              <div className="mt-8 grid md:grid-cols-2 gap-6">
-                {faqs.map((f, i) => (
-                  <div
-                    key={i}
-                    className="rounded-2xl border border-emerald-500 bg-white/90 p-6 shadow-sm transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-emerald-400"
-                  >
-                    <div className="font-semibold">{f.q}</div>
-                    <div className="mt-2 text-sm text-neutral-600">{f.a}</div>
-                  </div>
-                ))}
-              </div>
+      <div className="mt-8 w-full">
+        {faqs.map((f, i) => (
+          <details
+            key={i}
+            className="
+              group mb-4 md:mb-5
+              rounded-2xl border border-emerald-500
+              bg-white/90 shadow-sm
+              transition-all duration-300
+              hover:shadow-lg hover:border-emerald-400
+            "
+          >
+            {/* QUESTION ROW */}
+<summary className="cursor-pointer list-none select-none">
+  <div
+    className="
+      flex items-center justify-between gap-4
+      px-8 py-3 md:py-4
+    "
+  >
+    <span className="text-sm md:text-[15px] leading-snug font-semibold text-neutral-900">
+      {f.q}
+    </span>
+
+    <span
+      className="
+        inline-flex h-8 w-8 items-center justify-center
+        rounded-full bg-emerald-50 text-emerald-800
+        border border-emerald-200
+        transition-transform duration-200
+        group-open:rotate-180
+        shrink-0
+      "
+      aria-hidden="true"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        className="h-4 w-4"
+        stroke="currentColor"
+        strokeWidth="2"
+      >
+        <path d="M6 9l6 6 6-6" />
+      </svg>
+    </span>
+  </div>
+</summary>
+
+
+            {/* ANSWER */}
+            <div className="px-8 pb-7 -mt-2">
+              <div className="h-px bg-emerald-100/80 mb-4" />
+              <p className="text-sm text-neutral-600 leading-relaxed">
+                {f.a}
+              </p>
             </div>
-          </div>
-        </section>
+          </details>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
         {/* LIGHTBOX MODAL FOR RECENT WORK */}
         {lightboxIndex !== null && (
