@@ -255,7 +255,7 @@ export default function HomeClient() {
           <div className="relative max-w-7xl mx-auto px-4 pt-10 pb-20 md:pt-16 md:pb-28">
             <div className="max-w-5xl md:-ml-12">
               <h1 className="text-4xl md:text-5xl font-extrabold leading-tight drop-shadow-sm">
-                Perth Concrete Grinding, Honed, Polished, {" "}
+                Perth Concrete Grinding, Honed,{" "}
                 <span className="text-emerald-600">Epoxy Flake</span> &amp;{" "}
                 <span className="text-blue-600">Metallic</span> Floors
               </h1>
