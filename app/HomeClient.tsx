@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Script from "next/script";
+import Link from "next/link";
 
 
 // index.tsx — Single-file React page for Perth Concrete Care
@@ -188,12 +189,20 @@ export default function HomeClient() {
         {/* Navbar */}
         <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 border-b border-emerald-100">
           <nav className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="h-9 w-9 rounded-xl bg-neutral-900 flex items-center justify-center text-white font-bold">
-                PCC
-              </div>
-              <span className="font-semibold">Perth Concrete Care</span>
-            </div>
+ <Link href="/" className="flex items-center gap-3">
+  <div className="h-12 w-12 rounded-xl bg-white shadow-sm ring-1 ring-neutral-200 flex items-center justify-center">
+    <Image
+      src="/logo.png"
+      alt="Perth Concrete Care"
+      width={44}
+      height={44}
+      className="object-contain"
+      priority
+    />
+  </div>
+  <span className="font-semibold">Perth Concrete Care</span>
+</Link>
+
             <ul className="hidden md:flex items-center gap-6 text-sm">
               <li>
                 <a className="hover:text-neutral-500" href="#services">
@@ -336,12 +345,7 @@ export default function HomeClient() {
               All floor preparation is carried out to Australian Standards (AS 1884, AS 3730, AS 3610 and CSP/ICRI profiles)
               so coatings and sealers bond properly and don&apos;t peel.
             </p>
-          <p className="mt-2 text-sm text-neutral-700">
-            We regularly complete concrete grinding Perth projects, epoxy garage floors, metallic epoxy feature areas, honed
-            concrete and paint removal jobs across Perth metro suburbs.
-          </p>
-
-            <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map((s) => (
                 <div
                   key={s.title}
@@ -1131,7 +1135,7 @@ const services = [
 const pricing = [
     {
     name: "Epoxy Flake Floors",
-    price: "$75–$100",
+    price: "$70–$100",
     unit: "/m²",
     features: [
       "Moisture-tolerant primer",
@@ -1151,7 +1155,7 @@ const pricing = [
   },
   {
     name: "Honed & Seal (Outdoor)",
-    price: "$70–$95",
+    price: "$75–$95",
     unit: "/m²",
     features: [
       "Honed finish (P4–P5 slip-rated)",
