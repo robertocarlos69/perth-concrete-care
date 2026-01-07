@@ -1130,7 +1130,7 @@ const services = [
 
 const pricing = [
     {
-    name: "Epoxy Flake Floor System",
+    name: "Epoxy Flake Floors",
     price: "$75–$100",
     unit: "/m²",
     features: [
@@ -1140,7 +1140,7 @@ const pricing = [
     ],
   },
   {
-    name: "Metallic Epoxy Floor System",
+    name: "Metallic Epoxy Floors",
     price: "$90–$180",
     unit: "/m²",
     features: [
