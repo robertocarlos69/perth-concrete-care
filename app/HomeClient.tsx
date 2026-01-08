@@ -2,9 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import Script from "next/script";
 import Link from "next/link";
-
 
 // index.tsx — Single-file React page for Perth Concrete Care
 // Pure TSX. Drop into Next.js (e.g. app/page.tsx) or Vite entry.
@@ -32,7 +30,9 @@ export default function HomeClient() {
 
   const prevImage = () => {
     if (lightboxIndex === null) return;
-    setLightboxIndex((lightboxIndex - 1 + galleryItems.length) % galleryItems.length);
+    setLightboxIndex(
+      (lightboxIndex - 1 + galleryItems.length) % galleryItems.length
+    );
   };
 
   // -----------------------------
@@ -149,101 +149,7 @@ export default function HomeClient() {
   // -----------------------------
   return (
     <>
-      {/* Google Analytics 4 */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-H6TMS5HZK3"
-        strategy="afterInteractive"
-      />
-      <Script id="ga-init" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-H6TMS5HZK3');
-        `}
-      </Script>
-
       <div className="min-h-screen bg-slate-50 text-slate-800 selection:bg-emerald-700 selection:text-white">
-        {/* SEO & Structured Data */}
-        {/* Top Bar */}
-        <div className="w-full bg-slate-900 text-white text-sm">
-          <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-4">
-            <span>Perth Metro — Two Rocks to Rockingham</span>
-            <div className="flex items-center gap-3">
-              <a
-                className="underline decoration-white/40 hover:decoration-white"
-                href="mailto:sales@perthconcretecare.com.au"
-              >
-                sales@perthconcretecare.com.au
-              </a>
-              <a
-                className="inline-flex items-center gap-2 bg-white text-neutral-900 px-3 py-1 rounded-md font-medium hover:opacity-90"
-                href="tel:+61448483226"
-              >
-                Call 0448 483 226
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Navbar */}
-        <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 border-b border-emerald-100">
-          <nav className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
- <Link href="/" className="flex items-center gap-3">
-  <div className="h-12 w-12 rounded-xl bg-white shadow-sm ring-1 ring-neutral-200 flex items-center justify-center">
-    <Image
-      src="/logo.png"
-      alt="Perth Concrete Care"
-      width={44}
-      height={44}
-      className="object-contain"
-      priority
-    />
-  </div>
-  <span className="font-semibold">Perth Concrete Care</span>
-</Link>
-
-            <ul className="hidden md:flex items-center gap-6 text-sm">
-              <li>
-                <a className="hover:text-neutral-500" href="#services">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a className="hover:text-neutral-500" href="#gallery">
-                  Gallery
-                </a>
-              </li>
-              <li>
-                <a className="hover:text-neutral-500" href="#process">
-                  Process
-                </a>
-              </li>
-              <li>
-                <a className="hover:text-neutral-500" href="#pricing">
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a className="hover:text-neutral-500" href="#faq">
-                  FAQ
-                </a>
-              </li>
-              <li>
-                <a className="hover:text-neutral-500" href="#contact">
-                  Contact
-                </a>
-              </li>
-            </ul>
-            <a
-              href="#quote"
-              className="ml-4 inline-flex items-center rounded-xl bg-emerald-600 text-white px-6 py-3 text-sm md:text-base font-semibold hover:bg-emerald-700 shadow-md"
-            >
-              Get a Quote
-            </a>
-          </nav>
-        </header>
-
         {/* Hero */}
         <section className="relative w-full bg-white">
           {/* Background Image Wrapper — MUST have height */}
@@ -260,6 +166,7 @@ export default function HomeClient() {
             {/* Soft fade for readability */}
             <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/60 to-stone-100" />
           </div>
+
           {/* Foreground content */}
           <div className="relative max-w-7xl mx-auto px-4 pt-10 pb-20 md:pt-16 md:pb-28">
             <div className="max-w-5xl md:-ml-12">
@@ -296,12 +203,7 @@ export default function HomeClient() {
 
               {/* Trust badges */}
               <div className="mt-5 flex flex-wrap items-center gap-2 text-xs text-neutral-600">
-                {[
-                  "Fully insured",
-                  "H-class dust control",
-                  "WA owned & operated",
-                  "Police cleared",
-                ].map((t) => (
+                {["Fully insured", "H-class dust control", "WA owned & operated", "Police cleared"].map((t) => (
                   <span
                     key={t}
                     className="px-3 py-1 rounded-full border bg-white/90 backdrop-blur-sm shadow-sm"
@@ -345,14 +247,15 @@ export default function HomeClient() {
               All floor preparation is carried out to Australian Standards (AS 1884, AS 3730, AS 3610 and CSP/ICRI profiles)
               so coatings and sealers bond properly and don&apos;t peel.
             </p>
-           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map((s) => (
                 <div
                   key={s.title}
                   className="
-                  rounded-2xl border border-emerald-500 bg-white p-6 shadow-sm transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-emerald-400
-                  transition duration-200
-                "
+                    rounded-2xl border border-emerald-500 bg-white p-6 shadow-sm
+                    transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-emerald-400
+                  "
                 >
                   <div className="flex items-center gap-2">
                     {s.icon && (
@@ -370,6 +273,22 @@ export default function HomeClient() {
                       <li key={i}>{b}</li>
                     ))}
                   </ul>
+
+                  {s.title === "Epoxy Flake Floors" && (
+                    <div className="mt-5">
+                      <Link
+                        href="/epoxy-flake-flooring-perth"
+                        className="
+                          inline-flex items-center justify-center gap-2
+                          rounded-xl bg-emerald-600 px-4 py-2
+                          text-sm font-semibold text-white shadow-sm
+                          hover:bg-emerald-700 hover:shadow-md transition
+                        "
+                      >
+                        View Flake Colours Selection <span aria-hidden="true">→</span>
+                      </Link>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -424,7 +343,6 @@ export default function HomeClient() {
               what&apos;s happening with your floor and when.
             </p>
 
-            {/* Horizontal scroll on mobile; same sizing as pricing cards */}
             <div className="mt-8 flex gap-6 overflow-x-auto pb-4 md:overflow-visible">
               {[
                 {
@@ -439,20 +357,12 @@ export default function HomeClient() {
                 {
                   t: "Agree Price & Secure Deposit",
                   d: "You receive a clear written quote with fixed inclusions.",
-                  bullets: [
-                    "Transparent pricing",
-                    "No hidden extras",
-                    "Deposit secures materials & booking",
-                  ],
+                  bullets: ["Transparent pricing", "No hidden extras", "Deposit secures materials & booking"],
                 },
                 {
                   t: "Surface prep",
                   d: "We get the slab to the correct CSP profile for your system.",
-                  bullets: [
-                    "Dust-controlled grinding",
-                    "Crack repair & patching",
-                    "Glue/paint/membrane removal",
-                  ],
+                  bullets: ["Dust-controlled grinding", "Crack repair & patching", "Glue/paint/membrane removal"],
                 },
                 {
                   t: "Install system",
@@ -466,24 +376,17 @@ export default function HomeClient() {
                 {
                   t: "Handover & aftercare",
                   d: "We hand the floor back with clear instructions.",
-                  bullets: [
-                    "Final clean & inspection",
-                    "Curing times & traffic rules",
-                    "Maintenance guide included",
-                  ],
+                  bullets: ["Final clean & inspection", "Curing times & traffic rules", "Maintenance guide included"],
                 },
               ].map((step, i) => (
                 <div
                   key={step.t}
                   className="
-            min-w-[260px]
-            rounded-2xl border border-emerald-500 
-            bg-white p-6 
-            shadow-sm transition-all duration-300
-            hover:-translate-y-1 hover:shadow-lg hover:border-emerald-400
-          "
+                    min-w-[260px]
+                    rounded-2xl border border-emerald-500 bg-white p-6 shadow-sm
+                    transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-emerald-400
+                  "
                 >
-                  {/* Header */}
                   <div className="flex items-center gap-3">
                     <div className="h-10 w-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-semibold">
                       {i + 1}
@@ -493,12 +396,8 @@ export default function HomeClient() {
                     </div>
                   </div>
 
-                  {/* Description */}
-                  <p className="mt-3 text-sm text-neutral-700 leading-relaxed">
-                    {step.d}
-                  </p>
+                  <p className="mt-3 text-sm text-neutral-700 leading-relaxed">{step.d}</p>
 
-                  {/* Bullet list */}
                   <ul className="mt-4 text-sm text-neutral-700 list-disc pl-5 space-y-1">
                     {step.bullets.map((b) => (
                       <li key={b}>{b}</li>
@@ -510,7 +409,7 @@ export default function HomeClient() {
           </div>
         </section>
 
-        {/* Pricing / Packages – FULL-WIDTH BAND */}
+        {/* Pricing / Packages */}
         <section id="pricing" className="relative w-full bg-white/60 pt-4 pb-16">
           <div className="max-w-7xl mx-auto px-4">
             <h3 className="text-2xl md:text-3xl font-bold">Typical Packages</h3>
@@ -519,14 +418,14 @@ export default function HomeClient() {
               on-site quote.
             </p>
 
-            {/* Horizontal scroll row like Process section */}
             <div className="mt-8 flex gap-6 overflow-x-auto pb-4 md:overflow-visible">
               {pricing.map((p) => (
                 <div
                   key={p.name}
-                  className="min-w-[260px] rounded-2xl border border-emerald-500 bg-white p-6 shadow-sm transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-emerald-400
-                           transition duration-200
-                           "
+                  className="
+                    min-w-[260px] rounded-2xl border border-emerald-500 bg-white p-6 shadow-sm
+                    transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-emerald-400
+                  "
                 >
                   <div className="text-sm uppercase tracking-wide text-emerald-700 font-semibold">
                     {p.name}
@@ -534,9 +433,7 @@ export default function HomeClient() {
 
                   <div className="mt-3 flex items-baseline gap-1">
                     <span className="text-3xl font-extrabold">{p.price}</span>
-                    <span className="text-sm font-medium text-neutral-500">
-                      {p.unit}
-                    </span>
+                    <span className="text-sm font-medium text-neutral-500">{p.unit}</span>
                   </div>
 
                   <ul className="mt-4 text-sm list-disc pl-5 space-y-1 text-neutral-700">
@@ -547,8 +444,7 @@ export default function HomeClient() {
 
                   <a
                     href="#quote"
-                    className="mt-6 inline-flex items-center justify-center rounded-full bg-emerald-600 transform transition-all duration-300 hover:scale-105 hover:shadow-md
-                           text-white px-4 py-2 text-sm font-medium hover:bg-emerald-700"
+                    className="mt-6 inline-flex items-center justify-center rounded-full bg-emerald-600 text-white px-4 py-2 text-sm font-medium hover:bg-emerald-700"
                   >
                     Free Quote
                   </a>
@@ -573,7 +469,6 @@ export default function HomeClient() {
         {/* Service Area + Map */}
         <section className="bg-white/60">
           <div className="max-w-7xl mx-auto px-4 py-8 grid md:grid-cols-2 gap-8 items-start">
-            {/* LEFT SIDE */}
             <div>
               <h3 className="text-2xl md:text-3xl font-bold">
                 Servicing all Perth Metro from Two Rocks to Rockingham
@@ -585,7 +480,6 @@ export default function HomeClient() {
                 Ellenbrook, Wangara, Malaga, Rockingham and nearby areas.
               </p>
 
-              {/* BADGES */}
               <div className="mt-4 flex flex-wrap gap-2 text-sm">
                 <span className="px-3 py-1 rounded-full border bg-emerald-50 text-emerald-800 border-emerald-200">
                   Rapid quotes with photos &amp; m²
@@ -599,7 +493,6 @@ export default function HomeClient() {
               </div>
             </div>
 
-            {/* RIGHT SIDE – MAP */}
             <div className="aspect-video w-full rounded-xl border overflow-hidden">
               <iframe
                 title="Perth Concrete Care — Service Area"
@@ -621,7 +514,6 @@ export default function HomeClient() {
                 Send plans/photos and rough m². We&apos;ll confirm on-site.
               </p>
 
-              {/* What you’ll get list */}
               <ul className="mt-3 text-sm text-neutral-700 list-disc pl-5 space-y-1">
                 <li>Fixed-price written quote</li>
                 <li>No obligation – we don&apos;t hard-sell</li>
@@ -633,49 +525,20 @@ export default function HomeClient() {
                 onSubmit={handleQuoteSubmit}
                 encType="multipart/form-data"
               >
-                <input
-                  name="name"
-                  className="w-full rounded-xl border px-4 py-3"
-                  placeholder="Full name"
-                  required
-                />
-                <input
-                  name="email"
-                  className="w-full rounded-xl border px-4 py-3"
-                  placeholder="Email"
-                  type="email"
-                  required
-                />
-                <input
-                  name="phone"
-                  className="w-full rounded-xl border px-4 py-3"
-                  placeholder="Phone"
-                />
-                <input
-                  name="suburb"
-                  className="w-full rounded-xl border px-4 py-3"
-                  placeholder="Suburb (e.g. Joondalup)"
-                />
-                <select
-                  name="service"
-                  className="w-full rounded-xl border px-4 py-3"
-                >
+                <input name="name" className="w-full rounded-xl border px-4 py-3" placeholder="Full name" required />
+                <input name="email" className="w-full rounded-xl border px-4 py-3" placeholder="Email" type="email" required />
+                <input name="phone" className="w-full rounded-xl border px-4 py-3" placeholder="Phone" />
+                <input name="suburb" className="w-full rounded-xl border px-4 py-3" placeholder="Suburb (e.g. Joondalup)" />
+                <select name="service" className="w-full rounded-xl border px-4 py-3">
                   <option value="">Service needed</option>
                   {services.map((s) => (
                     <option key={s.title}>{s.title}</option>
                   ))}
                 </select>
-                <input
-                  name="area"
-                  className="w-full rounded-xl border px-4 py-3"
-                  placeholder="Approx. area (m²)"
-                />
+                <input name="area" className="w-full rounded-xl border px-4 py-3" placeholder="Approx. area (m²)" />
 
-                {/* NEW: photo upload field */}
                 <div className="md:col-span-2 flex flex-col gap-1 text-sm">
-                  <label className="font-medium text-neutral-700">
-                    Photos (optional)
-                  </label>
+                  <label className="font-medium text-neutral-700">Photos (optional)</label>
                   <input
                     name="photos"
                     type="file"
@@ -698,10 +561,7 @@ export default function HomeClient() {
                 <div className="md:col-span-2 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
                   <label className="text-sm text-neutral-600">
                     You can also email details to{" "}
-                    <a
-                      className="underline"
-                      href="mailto:sales@perthconcretecare.com.au"
-                    >
+                    <a className="underline" href="mailto:sales@perthconcretecare.com.au">
                       sales@perthconcretecare.com.au
                     </a>
                     .
@@ -724,96 +584,78 @@ export default function HomeClient() {
               </form>
 
               <p className="mt-3 text-xs text-neutral-500">
-                We respect your privacy and never share your details with third
-                parties.
+                We respect your privacy and never share your details with third parties.
               </p>
             </div>
           </div>
         </section>
 
-{/* FAQ */}
-<section
-  id="faq"
-  className="relative bg-[url('/faq-metallic.png')] bg-cover bg-center"
->
-  {/* Top fade to blend with section above */}
-  <div
-    className="pointer-events-none absolute -top-32 left-0 right-0 h-32
-    bg-gradient-to-b from-transparent via-white/40 to-transparent"
-  />
+        {/* FAQ */}
+        <section
+          id="faq"
+          className="relative bg-[url('/faq-metallic.png')] bg-cover bg-center"
+        >
+          <div
+            className="pointer-events-none absolute -top-32 left-0 right-0 h-32
+            bg-gradient-to-b from-transparent via-white/40 to-transparent"
+          />
+          <div className="bg-white/75 relative">
+            <div className="max-w-7xl mx-auto px-4 py-12">
+              <h3 className="text-2xl md:text-3xl font-bold">FAQ</h3>
+              <p className="mt-2 text-sm text-neutral-600">Click a question to expand.</p>
 
-  {/* Light overlay for readability */}
-  <div className="bg-white/75 relative">
-    <div className="max-w-7xl mx-auto px-4 py-12">
-      <h3 className="text-2xl md:text-3xl font-bold">FAQ</h3>
-      <p className="mt-2 text-sm text-neutral-600">
-        Click a question to expand.
-      </p>
+              <div className="mt-8 w-full">
+                {faqs.map((f, i) => (
+                  <details
+                    key={i}
+                    className="
+                      group mb-4 md:mb-5
+                      rounded-2xl border border-emerald-500
+                      bg-white/90 shadow-sm
+                      transition-all duration-300
+                      hover:shadow-lg hover:border-emerald-400
+                    "
+                  >
+                    <summary className="cursor-pointer list-none select-none">
+                      <div className="flex items-center justify-between gap-4 px-8 py-3 md:py-4">
+                        <span className="text-sm md:text-[15px] leading-snug font-semibold text-neutral-900">
+                          {f.q}
+                        </span>
 
-      <div className="mt-8 w-full">
-        {faqs.map((f, i) => (
-          <details
-            key={i}
-            className="
-              group mb-4 md:mb-5
-              rounded-2xl border border-emerald-500
-              bg-white/90 shadow-sm
-              transition-all duration-300
-              hover:shadow-lg hover:border-emerald-400
-            "
-          >
-            {/* QUESTION ROW */}
-<summary className="cursor-pointer list-none select-none">
-  <div
-    className="
-      flex items-center justify-between gap-4
-      px-8 py-3 md:py-4
-    "
-  >
-    <span className="text-sm md:text-[15px] leading-snug font-semibold text-neutral-900">
-      {f.q}
-    </span>
+                        <span
+                          className="
+                            inline-flex h-8 w-8 items-center justify-center
+                            rounded-full bg-emerald-50 text-emerald-800
+                            border border-emerald-200
+                            transition-transform duration-200
+                            group-open:rotate-180
+                            shrink-0
+                          "
+                          aria-hidden="true"
+                        >
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            className="h-4 w-4"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <path d="M6 9l6 6 6-6" />
+                          </svg>
+                        </span>
+                      </div>
+                    </summary>
 
-    <span
-      className="
-        inline-flex h-8 w-8 items-center justify-center
-        rounded-full bg-emerald-50 text-emerald-800
-        border border-emerald-200
-        transition-transform duration-200
-        group-open:rotate-180
-        shrink-0
-      "
-      aria-hidden="true"
-    >
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        className="h-4 w-4"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
-        <path d="M6 9l6 6 6-6" />
-      </svg>
-    </span>
-  </div>
-</summary>
-
-
-            {/* ANSWER */}
-            <div className="px-8 pb-7 -mt-2">
-              <div className="h-px bg-emerald-100/80 mb-4" />
-              <p className="text-sm text-neutral-600 leading-relaxed">
-                {f.a}
-              </p>
+                    <div className="px-8 pb-7 -mt-2">
+                      <div className="h-px bg-emerald-100/80 mb-4" />
+                      <p className="text-sm text-neutral-600 leading-relaxed">{f.a}</p>
+                    </div>
+                  </details>
+                ))}
+              </div>
             </div>
-          </details>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
-
-
+          </div>
+        </section>
 
         {/* LIGHTBOX MODAL FOR RECENT WORK */}
         {lightboxIndex !== null && (
@@ -828,7 +670,6 @@ export default function HomeClient() {
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
             >
-              {/* IMAGE */}
               <img
                 src={galleryItems[lightboxIndex].src}
                 className="w-full max-h-[80vh] object-contain rounded-xl shadow-xl"
@@ -836,12 +677,10 @@ export default function HomeClient() {
                 loading="lazy"
               />
 
-              {/* CAPTION INSIDE LIGHTBOX */}
               <div className="mt-3 text-center text-sm text-white/90">
                 {galleryItems[lightboxIndex].label}
               </div>
 
-              {/* CLOSE BUTTON */}
               <button
                 onClick={closeLightbox}
                 className="absolute top-4 right-4 bg-white/80 hover:bg-white text-black px-3 py-1 rounded-full text-sm font-semibold"
@@ -849,7 +688,6 @@ export default function HomeClient() {
                 ✕ Close
               </button>
 
-              {/* LEFT ARROW */}
               <button
                 onClick={prevImage}
                 className="absolute top-1/2 left-2 -translate-y-1/2 bg-white/80 hover:bg-white text-black w-10 h-10 rounded-full flex items-center justify-center text-xl"
@@ -857,7 +695,6 @@ export default function HomeClient() {
                 ‹
               </button>
 
-              {/* RIGHT ARROW */}
               <button
                 onClick={nextImage}
                 className="absolute top-1/2 right-2 -translate-y-1/2 bg-white/80 hover:bg-white text-black w-10 h-10 rounded-full flex items-center justify-center text-xl"
@@ -900,10 +737,7 @@ export default function HomeClient() {
               <div className="font-semibold">Contact</div>
               <ul className="mt-2 text-sm space-y-1">
                 <li>
-                  <a
-                    href="mailto:sales@perthconcretecare.com.au"
-                    className="hover:underline"
-                  >
+                  <a href="mailto:sales@perthconcretecare.com.au" className="hover:underline">
                     sales@perthconcretecare.com.au
                   </a>
                 </li>
@@ -918,10 +752,7 @@ export default function HomeClient() {
           </div>
           <div className="border-t border-white/10">
             <div className="max-w-7xl mx-auto px-4 py-6 text-xs text-neutral-400 flex items-center justify-between">
-              <span>
-                © {new Date().getFullYear()} Perth Concrete Care. All rights
-                reserved.
-              </span>
+              <span>© {new Date().getFullYear()} Perth Concrete Care. All rights reserved.</span>
               <a className="hover:underline" href="#">
                 Privacy
               </a>
@@ -933,7 +764,6 @@ export default function HomeClient() {
   );
 }
 
-
 function BeforeAfter({ before, after }: { before: string; after: string }) {
   const [pos, setPos] = useState(50);
 
@@ -944,9 +774,7 @@ function BeforeAfter({ before, after }: { before: string; after: string }) {
           Before &amp; After: Paint Removal & Hone-and-Seal Finish
         </h2>
 
-        {/* FULL WIDTH / NO WHITE SPACES */}
         <div className="relative w-full aspect-[16/8] overflow-hidden rounded-2xl border bg-white shadow-sm">
-          {/* BEFORE IMAGE */}
           <Image
             src={before}
             alt="Garage concrete floor before grinding and hone & seal"
@@ -956,11 +784,7 @@ function BeforeAfter({ before, after }: { before: string; after: string }) {
             sizes="100vw"
           />
 
-          {/* AFTER IMAGE */}
-          <div
-            className="absolute inset-0"
-            style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
-          >
+          <div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
             <Image
               src={after}
               alt="Garage concrete floor after paint removal and hone & seal finish"
@@ -971,7 +795,6 @@ function BeforeAfter({ before, after }: { before: string; after: string }) {
             />
           </div>
 
-          {/* SLIDER */}
           <input
             type="range"
             min={0}
@@ -981,7 +804,6 @@ function BeforeAfter({ before, after }: { before: string; after: string }) {
             className="absolute bottom-3 left-1/2 -translate-x-1/2 w-1/2"
           />
 
-          {/* LABELS */}
           <div
             className="absolute top-3 left-3 bg-emerald-700/90 text-white text-xs px-2 py-1 rounded transition-opacity duration-200"
             style={{ opacity: (100 - pos) / 100 }}
@@ -996,7 +818,6 @@ function BeforeAfter({ before, after }: { before: string; after: string }) {
           </div>
         </div>
 
-        {/* Short explainer under slider */}
         <p className="mt-4 text-sm text-neutral-600 max-w-3xl">
           This pathway had old paint and uneven patches. We mechanically ground the slab, removed all coatings and sealed the finish for a cleaner, brighter, easier-to-maintain floor.
         </p>
@@ -1038,7 +859,6 @@ const galleryItems = [
   },
 ];
 
-// Data
 const services = [
   {
     title: "Exposed Concrete & Washed Aggregate",
@@ -1054,193 +874,102 @@ const services = [
     title: "Concrete Grinding & Sealing",
     icon: "🧱",
     desc: "Smooths and refines concrete, then seals with UV-stable coatings for a durable finish.",
-    bullets: [
-      "6–120 grit prep as required",
-      "Acrylic/PU/penetrating sealers",
-      "Indoor & outdoor applications",
-    ],
+    bullets: ["6–120 grit prep as required", "Acrylic/PU/penetrating sealers", "Indoor & outdoor applications"],
   },
   {
-    title: "Hone & Seal Concrete Floors",
+    title: "Honing & Seal Concrete Floors",
     icon: "🪨",
     desc: "Outdoor-friendly, slip-rated finish that exposes fine aggregate then seals for protection.",
-    bullets: [
-      "Pool surrounds & alfresco",
-      "Slip rating options (P3–P5)",
-      "UV-stable & stain-resistant sealers",
-    ],
+    bullets: ["Pool surrounds & alfresco", "Slip rating options (P3–P5)", "UV-stable & stain-resistant sealers"],
   },
   {
     title: "Polished Concrete",
     icon: "✨",
     desc: "Mechanical polish with densifier and guard for a premium indoor finish.",
-    bullets: [
-      "Full mechanical polish using 400–3000 grit resin pads",
-      "Lithium densifier & grout coat",
-      "Matte to high-gloss options",
-    ],
+    bullets: ["Full mechanical polish using 400–3000 grit resin pads", "Lithium densifier & grout coat", "Matte to high-gloss options"],
   },
   {
     title: "Epoxy Flake Floors",
     icon: "🎨",
     desc: "Hard-wearing resin floors with optional flakes and rapid-cure polyaspartic topcoats.",
-    bullets: [
-      "Great option for garages, alfrescos & workshops",
-      "Choice of light, medium or full flake system",
-      "Non-yellowing hard-wearing topcoats",
-    ],
+    bullets: ["Great option for garages, alfrescos & workshops", "Choice of light, medium or full flake system", "Non-yellowing hard-wearing topcoats"],
   },
   {
     title: "Metallic Epoxy Floors",
     icon: "💎",
     desc: "Luxurious, high-gloss resin floors that create unique marbled and 3D depth effects using metallic pigments and clear epoxy resins.",
-    bullets: [
-      "Garages, showrooms & living areas",
-      "Custom metallic pigment blends",
-      "High-gloss or matte polyurethane topcoat",
-    ],
+    bullets: ["Garages, showrooms & living areas", "Custom metallic pigment blends", "High-gloss or matte polyurethane topcoat"],
   },
   {
     title: "Removal of Old Coatings & Glues",
     icon: "🧹",
     desc: "Remove paint, epoxy, tile adhesive, carpet glue, and membranes safely and cleanly.",
-    bullets: [
-      "PCD/Carbide tooling",
-      "H-class HEPA extraction",
-      "Suitable tiling & resurfacing projects",
-    ],
+    bullets: ["PCD/Carbide tooling", "H-class HEPA extraction", "Suitable tiling & resurfacing projects"],
   },
   {
     title: "Levelling Uneven Floors",
     icon: "📐",
     desc: "Self-leveller or grind correction to achieve a flat, ready-to-finish surface.",
-    bullets: [
-      "Laser level checks",
-      "Self-levelling compounds",
-      "Prep for tiles, timber, vinyl, carpet or epoxy",
-    ],
+    bullets: ["Laser level checks", "Self-levelling compounds", "Prep for tiles, timber, vinyl, carpet or epoxy"],
   },
   {
     title: "Water Pressure Cleaning",
     icon: "💦",
     desc: "High-pressure wash to remove grime, mould, and tyre marks from driveways, paths, and alfresco areas.",
-    bullets: [
-      "Pre-treat oil stains",
-      "Whirl-away surface cleaner",
-      "Soft wash for sensitive areas",
-    ],
+    bullets: ["Pre-treat oil stains", "Whirl-away surface cleaner", "Soft wash for sensitive areas"],
   },
 ];
 
 const pricing = [
-    {
+  {
     name: "Epoxy Flake Floors",
     price: "$70–$100",
     unit: "/m²",
-    features: [
-      "Moisture-tolerant primer",
-      "Flake (full, partial or sparse) broadcast",
-      "Polyaspartic topcoat",
-    ],
+    features: ["Moisture-tolerant primer", "Flake (full, partial or sparse) broadcast", "Polyaspartic topcoat"],
   },
   {
     name: "Metallic Epoxy Floors",
     price: "$90–$180",
     unit: "/m²",
-    features: [
-      "100% solids metallic epoxy",
-      "Custom blends, highlights & 3D effects",
-      "UV-stable polyurethane topcoat",
-    ],
+    features: ["100% solids metallic epoxy", "Custom blends, highlights & 3D effects", "UV-stable polyurethane topcoat"],
   },
   {
     name: "Honed & Seal (Outdoor)",
     price: "$75–$95",
     unit: "/m²",
-    features: [
-      "Honed finish (P4–P5 slip-rated)",
-      "UV-stable sealer",
-      "Exterior-grade slip resistance",
-    ],
+    features: ["Honed finish (P4–P5 slip-rated)", "UV-stable sealer", "Exterior-grade slip resistance"],
   },
   {
     name: "Exposed / Washed Aggregate",
     price: "$110–$160",
     unit: "/m²",
-    features: [
-      "Premium washed or exposed stone finish",
-      "Slip-resistant and ideal for outdoor areas",
-    ],
+    features: ["Premium washed or exposed stone finish", "Slip-resistant and ideal for outdoor areas"],
   },
 ];
 
 const faqs = [
-  {
-    q: "How dusty is grinding?",
-    a: "We use H-class HEPA extractors and shrouds. Expect minimal dust; we mask and protect adjacent areas.",
-  },
-  {
-    q: "How soon can we park on epoxy flake garage?",
-    a: "Light foot traffic ~12–24h. Vehicles typically 72h depending on temperature and system.",
-  },
-  {
-    q: "Can you remove carpet glue and tile adhesive?",
-    a: "Yes. We use PCD/carbide tooling with dust extraction to remove adhesives and prep the slab for new finishes.",
-  },
-  {
-    q: "Do you service both indoor and outdoor areas?",
-    a: "Yes—garages, living rooms, shops, warehouses, alfresco, driveways, and pool surrounds.",
-  },
-  {
-    q: "Is polished concrete slippery?",
-    a: "Properly finished polished concrete with the right guard and maintenance can meet slip ratings. Outdoors we recommend hone & seal.",
-  },
-  {
-    q: "What affects price?",
-    a: "m², slab hardness, crack repairs, access, moisture issues, and the system you choose (grind & seal, flake, full metallic, or polished concrete). Full metallic floors with multi-colour blends, liquid highlights and premium polyurethane/polyaspartic topcoats use more resin and labour, so they sit at the top end of our price range.",
-  },
-  {
-    q: "What do P1–P5 slip ratings mean?",
-    a: "Slip ratings measure how safe a surface is when wet. P1 is very low slip resistance, P2–P3 are standard indoor ratings, and P4–P5 offer high to very high slip resistance for outdoor, commercial, or wet areas such as pool surrounds.",
-  },
-  {
-    q: "What is CSP and why does it matter?",
-    a: "CSP (Concrete Surface Profile) is the texture created by grinding. CSP-1/2 is a light profile for sealers, CSP-2/3 is ideal for epoxy flooring, and CSP-4/5 is used for high-build systems or heavy repair work. Correct CSP ensures strong adhesion and long-term durability.",
-  },
-  {
-    q: "Why do metallic floors cost more with highlights?",
-    a: "Metallic floors use more resin, multi-colour pigments, and require artistic blending. Adding highlights (liquid diamonds, veining, spray effects) increases labour and design time, so highlighted metallic floors sit at the premium end of epoxy pricing.",
-  },
-  {
-    q: "What is the difference between exposed concrete and washed aggregate?",
-    a: "Washed aggregate is done by spraying a retarder on fresh concrete and pressure-washing it the next day to expose the stones. Exposed (honed) concrete is poured normally, cured, then ground and honed a few days later for a smoother, more modern finish. Washed agg is more rustic and textured, while honed concrete is smoother and easier to clean.",
-  },
+  { q: "How dusty is grinding?", a: "We use H-class HEPA extractors and shrouds. Expect minimal dust; we mask and protect adjacent areas." },
+  { q: "How soon can we park on epoxy flake garage?", a: "Light foot traffic ~12–24h. Vehicles typically 72h depending on temperature and system." },
+  { q: "Can you remove carpet glue and tile adhesive?", a: "Yes. We use PCD/carbide tooling with dust extraction to remove adhesives and prep the slab for new finishes." },
+  { q: "Do you service both indoor and outdoor areas?", a: "Yes—garages, living rooms, shops, warehouses, alfresco, driveways, and pool surrounds." },
+  { q: "Is polished concrete slippery?", a: "Properly finished polished concrete with the right guard and maintenance can meet slip ratings. Outdoors we recommend hone & seal." },
+  { q: "What affects price?", a: "m², slab hardness, crack repairs, access, moisture issues, and the system you choose (grind & seal, flake, full metallic, or polished concrete). Full metallic floors with multi-colour blends, liquid highlights and premium polyurethane/polyaspartic topcoats use more resin and labour, so they sit at the top end of our price range." },
+  { q: "What do P1–P5 slip ratings mean?", a: "Slip ratings measure how safe a surface is when wet. P1 is very low slip resistance, P2–P3 are standard indoor ratings, and P4–P5 offer high to very high slip resistance for outdoor, commercial, or wet areas such as pool surrounds." },
+  { q: "What is CSP and why does it matter?", a: "CSP (Concrete Surface Profile) is the texture created by grinding. CSP-1/2 is a light profile for sealers, CSP-2/3 is ideal for epoxy flooring, and CSP-4/5 is used for high-build systems or heavy repair work. Correct CSP ensures strong adhesion and long-term durability." },
+  { q: "Why do metallic floors cost more with highlights?", a: "Metallic floors use more resin, multi-colour pigments, and require artistic blending. Adding highlights (liquid diamonds, veining, spray effects) increases labour and design time, so highlighted metallic floors sit at the premium end of epoxy pricing." },
+  { q: "What is the difference between exposed concrete and washed aggregate?", a: "Washed aggregate is done by spraying a retarder on fresh concrete and pressure-washing it the next day to expose the stones. Exposed (honed) concrete is poured normally, cured, then ground and honed a few days later for a smoother, more modern finish. Washed agg is more rustic and textured, while honed concrete is smoother and easier to clean." },
 ];
 
 // -----------------------------
 // Simple runtime self-tests
 // -----------------------------
 function runSelfTests() {
-  const tests: Array<{ name: string; pass: boolean; message?: string }> = [];
+  const tests: Array<{ name: string; pass: boolean }> = [];
 
-  tests.push({
-    name: "services has >= 8 items",
-    pass: Array.isArray(services) && services.length >= 8,
-  });
-  tests.push({
-    name: "pricing has >= 3 items",
-    pass: Array.isArray(pricing) && pricing.length >= 3,
-  });
-  tests.push({
-    name: "faqs has >= 6 items",
-    pass: Array.isArray(faqs) && faqs.length >= 6,
-  });
-  tests.push({
-    name: "each service has bullets[]",
-    pass: services.every(
-      (s) => Array.isArray(s.bullets) && s.bullets.length > 0
-    ),
-  });
+  tests.push({ name: "services has >= 8 items", pass: Array.isArray(services) && services.length >= 8 });
+  tests.push({ name: "pricing has >= 3 items", pass: Array.isArray(pricing) && pricing.length >= 3 });
+  tests.push({ name: "faqs has >= 6 items", pass: Array.isArray(faqs) && faqs.length >= 6 });
+  tests.push({ name: "each service has bullets[]", pass: services.every((s) => Array.isArray(s.bullets) && s.bullets.length > 0) });
 
   const email = "sales@perthconcretecare.com.au";
   const phone = "+61448483226";
@@ -1250,13 +979,6 @@ function runSelfTests() {
   tests.push({ name: "contact phone format", pass: phoneOk });
 
   const failed = tests.filter((t) => !t.pass);
-  if (failed.length) {
-    console.error("[PCC self-tests] Failed tests:", failed);
-  } else {
-    console.info(
-      "[PCC self-tests] All tests passed:",
-      tests.map((t) => t.name)
-    );
-  }
+  if (failed.length) console.error("[PCC self-tests] Failed tests:", failed);
+  else console.info("[PCC self-tests] All tests passed:", tests.map((t) => t.name));
 }
-// End of index.tsx
