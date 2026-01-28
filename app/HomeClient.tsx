@@ -857,6 +857,12 @@ const galleryItems = [
     label: "Epoxy Flake Floor – Wanneroo Garage",
     alt: "Black and white epoxy flake garage floor in Wanneroo, Perth",
   },
+  {
+  id: 6,
+  src: "/gallery/epoxy-flake-garage-banksia-grove.jpg",
+  label: "Epoxy Flake Garage – Banksia Grove",
+  alt: "Epoxy flake garage floor with added glitter installed in Banksia Grove, Perth",
+},
 ];
 
 const services = [
