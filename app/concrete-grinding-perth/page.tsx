@@ -5,13 +5,13 @@ import Link from "next/link";
 import FaqAccordion from "../components/FaqAccordion";
 export const metadata: Metadata = {
   title: "Concrete Grinding Perth | Perth Concrete Care",
-  description: "Concrete grinding and mechanical surface preparation across Perth (north of river). Remove coatings, level high spots, and prep to CSP2–CSP3 for epoxy and sealers.",
+  description: "Concrete grinding Perth with mechanical surface preparation. Remove coatings, level high spots and prep to CSP2–CSP3 for epoxy and sealers.",
   alternates: {
     canonical: "https://perthconcretecare.com.au/concrete-grinding-perth",
   },
   openGraph: {
     title: "Concrete Grinding Perth | Perth Concrete Care",
-    description: "Concrete grinding and mechanical surface preparation across Perth (north of river). Remove coatings, level high spots, and prep to CSP2–CSP3 for epoxy and sealers.",
+    description: "Concrete grinding Perth with mechanical surface preparation. Remove coatings, level high spots and prep to CSP2–CSP3 for epoxy and sealers.",
     url: "https://perthconcretecare.com.au/concrete-grinding-perth",
     siteName: "Perth Concrete Care",
     type: "website",

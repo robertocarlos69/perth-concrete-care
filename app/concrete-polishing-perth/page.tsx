@@ -5,13 +5,13 @@ import Link from "next/link";
 import FaqAccordion from "../components/FaqAccordion";
 export const metadata: Metadata = {
   title: "Concrete Polishing Perth | Perth Concrete Care",
-  description: "Concrete polishing in Perth (north of river). Mechanical grinding and polishing to matte, satin or gloss levels with densifiers and guards for a durable indoor finish.",
+  description: "Concrete polishing Perth with full mechanical grinding, densifier and guard. Matte to high-gloss finishes for residential and commercial interiors.",
   alternates: {
     canonical: "https://perthconcretecare.com.au/concrete-polishing-perth",
   },
   openGraph: {
     title: "Concrete Polishing Perth | Perth Concrete Care",
-    description: "Concrete polishing in Perth (north of river). Mechanical grinding and polishing to matte, satin or gloss levels with densifiers and guards for a durable indoor finish.",
+    description: "Concrete polishing Perth with full mechanical grinding, densifier and guard. Matte to high-gloss finishes for residential and commercial interiors.",
     url: "https://perthconcretecare.com.au/concrete-polishing-perth",
     siteName: "Perth Concrete Care",
     type: "website",

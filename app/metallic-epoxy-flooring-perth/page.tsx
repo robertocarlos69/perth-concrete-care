@@ -5,13 +5,13 @@ import Link from "next/link";
 import FaqAccordion from "../components/FaqAccordion";
 export const metadata: Metadata = {
   title: "Metallic Epoxy Flake Floors Perth | Perth Concrete Care",
-  description: "Metallic epoxy floors in Perth (north of river). High-gloss decorative resin floors with unique movement patterns — installed over mechanically prepared slabs.",
+  description: "Metallic epoxy flooring Perth for garages and commercial spaces. High-gloss decorative resin floors with custom movement patterns and durable topcoats.",
   alternates: {
     canonical: "https://perthconcretecare.com.au/metallic-epoxy-flooring-perth",
   },
   openGraph: {
     title: "Metallic Epoxy Flake Floors Perth | Perth Concrete Care",
-    description: "Metallic epoxy floors in Perth (north of river). High-gloss decorative resin floors with unique movement patterns — installed over mechanically prepared slabs.",
+    description: "Metallic epoxy flooring Perth for garages and commercial spaces. High-gloss decorative resin floors with custom movement patterns and durable topcoats.",
     url: "https://perthconcretecare.com.au/metallic-epoxy-flooring-perth",
     siteName: "Perth Concrete Care",
     type: "website",
