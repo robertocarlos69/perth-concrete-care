@@ -7,7 +7,18 @@ import SiteFooter from "./components/SiteFooter";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://perthconcretecare.com.au"),
-  title: {
+    icons: {
+  icon: [
+    { url: "/favicon.ico" },
+    { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+    { url: "/favicon-192.png", sizes: "192x192", type: "image/png" },
+    { url: "/favicon-512.png", sizes: "512x512", type: "image/png" },
+  ],
+  apple: [
+    { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+  ],
+},
+    title: {
     default: "Epoxy Flake Floors & Concrete Grinding Perth | Perth Concrete Care",
     template: "%s | Perth Concrete Care",
   },
