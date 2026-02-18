@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | Perth Concrete Care",
   },
   description:
-    "Perth Concrete Care delivers epoxy flooring, epoxy flake floors, metallic epoxy and concrete grinding across Perth’s north-of-river suburbs — Butler, Alkimos, Joondalup, Wanneroo, Wangara, Malaga, Osborne Park through to Perth CBD. Free quotes.",
+  "Perth Concrete Care delivers epoxy flooring, flake floors, metallic epoxy, concrete grinding and polished concrete across Perth. Residential and commercial finishes north of the river. Free quotes.",
   keywords: [
     "epoxy flooring Perth",
     "epoxy flake flooring Perth",
