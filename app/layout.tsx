@@ -7,22 +7,24 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://perthconcretecare.com.au"),
   title: {
-    default: "Perth Concrete Care | Concrete Grinding & Epoxy Flooring Perth",
+    default: "Epoxy Flake Floors & Concrete Grinding Perth | Perth Concrete Care",
     template: "%s | Perth Concrete Care",
   },
   description:
-    "Perth Concrete Care specialises in concrete grinding, epoxy flake floors, metallic epoxy, honed/exposed concrete and paint removal across Perth Metro.",
+    "Perth Concrete Care delivers epoxy flooring, epoxy flake floors, metallic epoxy and concrete grinding across Perth’s north-of-river suburbs — Butler, Alkimos, Joondalup, Wanneroo, Wangara, Malaga, Osborne Park through to Perth CBD. Free quotes.",
   keywords: [
-    "epoxy flake floors Perth",
+    "epoxy flooring Perth",
     "epoxy flake flooring Perth",
-    "epoxy garage floors Perth",
-    "flake flooring Perth",
+    "garage epoxy floors Perth",
     "concrete grinding Perth",
+    "metallic epoxy Perth",
+    "concrete polishing Perth",
     "concrete honing Perth",
-    "metallic epoxy floors Perth",
-    "washed aggregate Perth",
-    "garage floor coating Perth",
-    "concrete paint removal Perth",
+    "non slip epoxy Perth",
+    "epoxy flooring Joondalup",
+    "epoxy flooring Wanneroo",
+    "epoxy flooring Butler",
+    "concrete grinding Osborne Park",
   ],
   alternates: {
     canonical: "https://perthconcretecare.com.au/",
@@ -31,17 +33,49 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://perthconcretecare.com.au/",
     siteName: "Perth Concrete Care",
-    title: "Perth Concrete Care | Concrete Grinding & Epoxy Flooring Perth",
+    title: "Epoxy Flake Floors & Concrete Grinding Perth | Perth Concrete Care",
     description:
-      "Concrete grinding and epoxy flooring in Perth. Epoxy flake floors, metallic epoxy, honed/exposed concrete and paint removal.",
+      "Epoxy flake floors and concrete grinding specialists for Perth north-of-river: Butler to Perth CBD. Epoxy flake floors, metallic epoxy, polishing/honing. Free quotes.",
   },
   twitter: {
     card: "summary_large_image",
+    title: "Epoxy Flake Floors & Concrete Grinding Perth | Perth Concrete Care",
+    description:
+      "Epoxy flake floors and concrete grinding specialists for Perth north-of-river: Butler to Perth CBD. Free quotes.",
   },
   robots: {
     index: true,
     follow: true,
   },
+};
+
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "@id": "https://perthconcretecare.com.au/#business",
+  name: "Perth Concrete Care",
+  url: "https://perthconcretecare.com.au/",
+  telephone: "+61 448 483 226",
+  email: "sales@perthconcretecare.com.au",
+  areaServed: [
+    "Butler WA",
+    "Alkimos WA",
+    "Joondalup WA",
+    "Wanneroo WA",
+    "Wangara WA",
+    "Malaga WA",
+    "Osborne Park WA",
+    "North Perth WA",
+    "Perth CBD WA",
+    "Perth (North of the River) WA"
+  ],
+  makesOffer: [
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Epoxy flake floors" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Epoxy flake flooring" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Concrete grinding" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Metallic epoxy flooring" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Concrete polishing & honing" } }
+  ]
 };
 
 export default function RootLayout({
@@ -66,10 +100,20 @@ export default function RootLayout({
           `}
         </Script>
 
+        {/* LocalBusiness Schema */}
+        <Script
+          id="ld-localbusiness"
+          type="application/ld+json"
+          strategy="afterInteractive"
+        >
+          {JSON.stringify(localBusinessJsonLd)}
+        </Script>
+
         {/* TOP BAR */}
+
         <div className="w-full bg-slate-900 text-white text-sm">
           <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-4">
-            <span>Perth Metro — Two Rocks to Rockingham</span>
+            <span>Perth (North of the River) — Butler to Perth CBD</span>
             <div className="flex items-center gap-4">
               <a
                 href="mailto:sales@perthconcretecare.com.au"
@@ -120,15 +164,19 @@ export default function RootLayout({
                 </Link>
               </li>
               <li>
+                <Link
+                  href="/concrete-polishing-perth"
+                  className="text-neutral-800 hover:text-emerald-600 transition font-medium"
+                >
+                  Polished
+                </Link>
+              </li>
+              <li>
                 <a href="/#gallery" className="text-neutral-800 hover:text-emerald-600 transition">
                   Gallery
                 </a>
               </li>
-              <li>
-                <a href="/#process" className="text-neutral-800 hover:text-emerald-600 transition">
-                  Process
-                </a>
-              </li>
+              
               <li>
                 <a href="/#pricing" className="text-neutral-800 hover:text-emerald-600 transition">
                   Pricing

@@ -106,8 +106,8 @@ export default function EpoxyFlakeClient() {
 
       {/* HERO */}
       <header className="max-w-3xl">
-        <h1 className="text-3xl md:text-4xl font-bold text-neutral-900">
-          Epoxy Flake Floors in Perth
+        <h1 className="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-neutral-900">
+          Epoxy Flake Floors Perth
         </h1>
         <p className="mt-4 text-neutral-700">
           Durable, easy-to-clean epoxy flake flooring for garages, workshops and

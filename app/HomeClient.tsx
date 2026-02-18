@@ -180,7 +180,7 @@ export default function HomeClient() {
 
               <ul className="mt-2 text-sm text-neutral-700 space-y-1">
                 <li>- Exposed concrete &amp; washed aggregate driveways, paths &amp; alfrescos</li>
-                <li>- Concrete grinding, honed concrete &amp; slab levelling, paint &amp; glue removal</li>
+                <li>- Concrete grinding, honed / polished concrete &amp; slab levelling, paint &amp; glue removal</li>
                 <li>- Epoxy garage floors, flake systems &amp; metallic epoxy floors for residential &amp; workshops</li>
               </ul>
 
@@ -274,10 +274,10 @@ export default function HomeClient() {
                     ))}
                   </ul>
 
-                  {s.title === "Epoxy Flake Floors" && (
+                  {s.href && (
                     <div className="mt-5">
                       <Link
-                        href="/epoxy-flake-flooring-perth"
+                        href={s.href}
                         className="
                           inline-flex items-center justify-center gap-2
                           rounded-xl bg-emerald-600 px-4 py-2
@@ -285,7 +285,7 @@ export default function HomeClient() {
                           hover:bg-emerald-700 hover:shadow-md transition
                         "
                       >
-                        View Flake Colours Selection <span aria-hidden="true">→</span>
+                        View details <span aria-hidden="true">→</span>
                       </Link>
                     </div>
                   )}
@@ -333,82 +333,6 @@ export default function HomeClient() {
           </div>
         </section>
 
-        {/* Process */}
-        <section id="process" className="bg-white/60">
-          <div className="max-w-7xl mx-auto px-4 py-12">
-            <h3 className="text-2xl md:text-3xl font-bold">How We Work</h3>
-
-            <p className="mt-2 text-neutral-600 max-w-3xl">
-              Clear steps from first visit to final handover, so you always know
-              what&apos;s happening with your floor and when.
-            </p>
-
-            <div className="mt-8 flex gap-6 overflow-x-auto pb-4 md:overflow-visible">
-              {[
-                {
-                  t: "Free site visit & consultation",
-                  d: "We come out, look at the slab and talk through your goals.",
-                  bullets: [
-                    "Asses the concrete condition",
-                    "Select flakes/colours if epoxy",
-                    "Discuss finish options & slip rating",
-                  ],
-                },
-                {
-                  t: "Agree Price & Secure Deposit",
-                  d: "You receive a clear written quote with fixed inclusions.",
-                  bullets: ["Transparent pricing", "No hidden extras", "Deposit secures materials & booking"],
-                },
-                {
-                  t: "Surface prep",
-                  d: "We get the slab to the correct CSP profile for your system.",
-                  bullets: ["Dust-controlled grinding", "Crack repair & patching", "Glue/paint/membrane removal"],
-                },
-                {
-                  t: "Install system",
-                  d: "We install your chosen finish to spec & manufacturer standards.",
-                  bullets: [
-                    "Primer/moisture barrier if needed",
-                    "Base coats, flakes or metallics",
-                    "UV-stable or polyaspartic topcoat",
-                  ],
-                },
-                {
-                  t: "Handover & aftercare",
-                  d: "We hand the floor back with clear instructions.",
-                  bullets: ["Final clean & inspection", "Curing times & traffic rules", "Maintenance guide included"],
-                },
-              ].map((step, i) => (
-                <div
-                  key={step.t}
-                  className="
-                    min-w-[260px]
-                    rounded-2xl border border-emerald-500 bg-white p-6 shadow-sm
-                    transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-emerald-400
-                  "
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="h-10 w-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-semibold">
-                      {i + 1}
-                    </div>
-                    <div className="font-semibold text-emerald-700 text-sm uppercase tracking-wide">
-                      {step.t}
-                    </div>
-                  </div>
-
-                  <p className="mt-3 text-sm text-neutral-700 leading-relaxed">{step.d}</p>
-
-                  <ul className="mt-4 text-sm text-neutral-700 list-disc pl-5 space-y-1">
-                    {step.bullets.map((b) => (
-                      <li key={b}>{b}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Pricing / Packages */}
         <section id="pricing" className="relative w-full bg-white/60 pt-4 pb-16">
           <div className="max-w-7xl mx-auto px-4">
@@ -442,12 +366,21 @@ export default function HomeClient() {
                     ))}
                   </ul>
 
-                  <a
-                    href="#quote"
-                    className="mt-6 inline-flex items-center justify-center rounded-full bg-emerald-600 text-white px-4 py-2 text-sm font-medium hover:bg-emerald-700"
-                  >
-                    Free Quote
-                  </a>
+                  {p.href && (
+                    <div className="mt-6">
+                      <Link
+                        href={p.href}
+                        className="
+                          inline-flex items-center justify-center gap-2
+                          rounded-xl bg-emerald-600 px-4 py-2
+                          text-sm font-semibold text-white shadow-sm
+                          hover:bg-emerald-700 hover:shadow-md transition
+                        "
+                      >
+                        View details <span aria-hidden="true">→</span>
+                      </Link>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -471,7 +404,7 @@ export default function HomeClient() {
           <div className="max-w-7xl mx-auto px-4 py-8 grid md:grid-cols-2 gap-8 items-start">
             <div>
               <h3 className="text-2xl md:text-3xl font-bold">
-                Servicing all Perth Metro from Two Rocks to Rockingham
+                Servicing all Perth Metro from Butler to Perth CBD
               </h3>
               <p className="mt-3 text-neutral-600 text-sm md:text-base">
                 We install honed concrete, polished concrete, epoxy garage
@@ -879,30 +812,35 @@ const services = [
   {
     title: "Concrete Grinding & Sealing",
     icon: "🧱",
+    href: "/concrete-grinding-perth",
     desc: "Smooths and refines concrete, then seals with UV-stable coatings for a durable finish.",
     bullets: ["6–120 grit prep as required", "Acrylic/PU/penetrating sealers", "Indoor & outdoor applications"],
   },
   {
     title: "Honing & Seal Concrete Floors",
     icon: "🪨",
+    href: "/honed-concrete-perth",
     desc: "Outdoor-friendly, slip-rated finish that exposes fine aggregate then seals for protection.",
     bullets: ["Pool surrounds & alfresco", "Slip rating options (P3–P5)", "UV-stable & stain-resistant sealers"],
   },
   {
     title: "Polished Concrete",
     icon: "✨",
+    href: "/concrete-polishing-perth",
     desc: "Mechanical polish with densifier and guard for a premium indoor finish.",
     bullets: ["Full mechanical polish using 400–3000 grit resin pads", "Lithium densifier & grout coat", "Matte to high-gloss options"],
   },
   {
     title: "Epoxy Flake Floors",
     icon: "🎨",
+    href: "/epoxy-flake-flooring-perth",
     desc: "Hard-wearing resin floors with optional flakes and rapid-cure polyaspartic topcoats.",
-    bullets: ["Great option for garages, alfrescos & workshops", "Choice of light, medium or full flake system", "Non-yellowing hard-wearing topcoats"],
+    bullets: ["Great option for both interior and exterior", "Choice of light, medium or full flake system", "Non-yellowing UV resistant topcoats", "Visit our show-room in Canning Vale"],
   },
   {
     title: "Metallic Epoxy Floors",
     icon: "💎",
+    href: "/metallic-epoxy-flooring-perth",
     desc: "Luxurious, high-gloss resin floors that create unique marbled and 3D depth effects using metallic pigments and clear epoxy resins.",
     bullets: ["Garages, showrooms & living areas", "Custom metallic pigment blends", "High-gloss or matte polyurethane topcoat"],
   },
@@ -931,25 +869,35 @@ const pricing = [
     name: "Epoxy Flake Floors",
     price: "$70–$100",
     unit: "/m²",
-    features: ["Moisture-tolerant primer", "Flake (full, partial or sparse) broadcast", "Polyaspartic topcoat"],
+    href: "/epoxy-flake-flooring-perth",
+    features: ["Moisture-tolerant primer", "Flake (full, partial or sparse) broadcast", "UV / Oil / chemical resitant Polyaspartic topcoat"],
   },
   {
     name: "Metallic Epoxy Floors",
-    price: "$90–$180",
+    price: "$120–$180",
     unit: "/m²",
+    href: "/metallic-epoxy-flooring-perth",
     features: ["100% solids metallic epoxy", "Custom blends, highlights & 3D effects", "UV-stable polyurethane topcoat"],
   },
   {
-    name: "Honed & Seal (Outdoor)",
-    price: "$75–$95",
+    name: "Hone & Seal (Outdoor)",
+    price: "$100–$120",
     unit: "/m²",
-    features: ["Honed finish (P4–P5 slip-rated)", "UV-stable sealer", "Exterior-grade slip resistance"],
+    href: "/honed-concrete-perth",
+    features: ["Precision diamond-honed finish", "UV-stable protective sealer", "Durable Exterior-grade slip resistance"],
+  },
+  {
+    name: "Polished Concrete (Indoor)",
+    price: "$110–$150",
+    unit: "/m²",
+    href: "/concrete-polishing-perth",
+    features: ["Choice of Cream / Salt & Pepper / full exposed finish", "Various gloss options (satin, high or mirror)"],
   },
   {
     name: "Exposed / Washed Aggregate",
-    price: "$110–$160",
+    price: "$125–$180",
     unit: "/m²",
-    features: ["Premium washed or exposed stone finish", "Slip-resistant and ideal for outdoor areas"],
+    features: ["Premium washed or exposed honed finish", "Slip-resistant and ideal for outdoor areas"],
   },
 ];
 
