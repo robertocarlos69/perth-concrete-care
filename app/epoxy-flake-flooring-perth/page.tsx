@@ -2,18 +2,18 @@ import type { Metadata } from "next";
 import EpoxyFlakeClient from "./EpoxyFlakeClient";
 
 export const metadata: Metadata = {
-  title: "Epoxy Flake Floors Perth",
+  title: "Epoxy Flake Flooring Perth",
   description:
-    "Epoxy flake floors in Perth for garages, workshops and homes. Correct diamond grinding preparation, flake broadcast options, and durable topcoats. View popular flake choices and get a free quote.",
+    "Epoxy flake flooring in Perth for garages, workshops and homes. Proper diamond grinding prep with durable, UV-stable topcoats. View flake blends and request a free quote.",
   alternates: {
     canonical: "https://perthconcretecare.com.au/epoxy-flake-flooring-perth",
   },
   openGraph: {
     type: "website",
     url: "https://perthconcretecare.com.au/epoxy-flake-flooring-perth",
-    title: "Epoxy Flake Floors Perth",
+    title: "Epoxy Flake Flooring Perth",
     description:
-      "Durable epoxy flake flooring in Perth with correct surface preparation. Browse popular flake blends and request a free quote.",
+      "Epoxy flake flooring in Perth for garages, workshops and homes with proper surface prep and durable UV-stable topcoats.",
   },
 };
 
