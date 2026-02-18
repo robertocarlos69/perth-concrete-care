@@ -3,6 +3,7 @@ import Script from "next/script";
 import Image from "next/image";
 import Link from "next/link";
 import "./globals.css";
+import SiteFooter from "./components/SiteFooter";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://perthconcretecare.com.au"),
@@ -109,27 +110,36 @@ export default function RootLayout({
           {JSON.stringify(localBusinessJsonLd)}
         </Script>
 
-        {/* TOP BAR */}
+{/* TOP BAR */}
+<div className="w-full bg-slate-900 text-white text-sm">
+  <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-4">
 
-        <div className="w-full bg-slate-900 text-white text-sm">
-          <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-4">
-            <span>Perth (North of the River) — Butler to Perth CBD</span>
-            <div className="flex items-center gap-4">
-              <a
-                href="mailto:sales@perthconcretecare.com.au"
-                className="hover:underline"
-              >
-                sales@perthconcretecare.com.au
-              </a>
-              <a
-                href="tel:+61448483226"
-                className="inline-flex items-center bg-white text-neutral-900 px-3 py-1 rounded-md font-medium hover:opacity-90"
-              >
-                Call 0448 483 226
-              </a>
-            </div>
-          </div>
-        </div>
+    {/* Service area text */}
+    <span className="hidden md:inline">
+      Perth (North of the River) — Butler to Perth CBD
+    </span>
+    <span className="md:hidden">
+      Perth Metro
+    </span>
+
+    {/* Contact */}
+    <div className="flex items-center gap-3">
+      <a
+        href="mailto:sales@perthconcretecare.com.au"
+        className="hidden sm:inline hover:underline"
+      >
+        sales@perthconcretecare.com.au
+      </a>
+
+      <a
+        href="tel:+61448483226"
+        className="inline-flex items-center bg-white text-neutral-900 px-3 py-1 rounded-md font-medium hover:opacity-90 whitespace-nowrap"
+      >
+        Call 0448 483 226
+      </a>
+    </div>
+  </div>
+</div>
 
         {/* NAVBAR */}
         <header className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-emerald-100 text-neutral-900">
@@ -205,6 +215,8 @@ export default function RootLayout({
 
         {/* PAGE CONTENT */}
         <main>{children}</main>
+
+        <SiteFooter />
       </body>
     </html>
   );
