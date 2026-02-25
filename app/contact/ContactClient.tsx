@@ -11,7 +11,7 @@ export default function ContactClient() {
     setFormStatus("sending");
 
     const MAX_FILES = 5;
-    const MAX_SIZE = 2 * 1024 * 1024; // 2 MB
+    const MAX_SIZE = 8 * 1024 * 1024; // 8 MB
     const fileInput = form.elements.namedItem("photos") as HTMLInputElement | null;
     const files = fileInput?.files;
 
@@ -23,7 +23,7 @@ export default function ContactClient() {
       }
       for (const file of Array.from(files)) {
         if (file.size > MAX_SIZE) {
-          alert(`Each photo must be smaller than 2 MB.`);
+          alert(`Each photo must be smaller than 8 MB.`);
           setFormStatus("idle");
           return;
         }
@@ -76,7 +76,7 @@ export default function ContactClient() {
 
             <div className="md:col-span-2">
               <label className="block text-sm font-semibold text-neutral-800">Upload photos (optional)</label>
-              <input name="photos" type="file" accept="image/*" multiple className="mt-2 w-full rounded-xl border px-4 py-3 bg-white" />
+              <input name="photos" type="file" accept="image/jpeg,image/jpg,image/png,image/heic,image/heif,.heic,.heif" accept="image/*" multiple className="mt-2 w-full rounded-xl border px-4 py-3 bg-white" />
               <p className="mt-1 text-xs text-neutral-600">Up to 5 photos, 2MB each.</p>
             </div>
 
@@ -123,3 +123,7 @@ export default function ContactClient() {
     </section>
   );
 }
+
+                    
+// Success message helper
+const SUCCESS_MESSAGE = "Thank you. Your request has been sent successfully. We will respond within 24 hours.";

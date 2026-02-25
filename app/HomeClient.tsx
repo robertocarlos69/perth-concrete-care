@@ -51,7 +51,7 @@ export default function HomeClient() {
 
     // --- Optional client-side photo limits ---
     const MAX_FILES = 5;
-    const MAX_SIZE = 2 * 1024 * 1024; // 2 MB
+    const MAX_SIZE = 8 * 1024 * 1024; // 8 MB
 
     const fileInput = form.elements.namedItem("photos") as HTMLInputElement | null;
     const files = fileInput?.files;
@@ -65,7 +65,7 @@ export default function HomeClient() {
 
       for (const file of Array.from(files)) {
         if (file.size > MAX_SIZE) {
-          alert(`Each photo must be smaller than 2 MB.`);
+          alert(`Each photo must be smaller than 8 MB.`);
           setFormStatus("idle");
           return;
         }
@@ -475,13 +475,12 @@ export default function HomeClient() {
                   <label className="font-medium text-neutral-700">Photos (optional)</label>
                   <input
                     name="photos"
-                    type="file"
-                    accept="image/*"
-                    multiple
+                    type="file" accept="image/jpeg,image/jpg,image/png,image/heic,image/heif,.heic,.heif"
+multiple
                     className="w-full rounded-xl border px-4 py-2 text-sm"
                   />
                   <p className="text-xs text-neutral-500">
-                    You can attach up to 5 photos, max 2&nbsp;MB each (garage,
+                    You can attach up to 5 photos, max 8&nbsp;MB each (garage,
                     alfresco, close-ups of cracks, etc.).
                   </p>
                 </div>
@@ -882,3 +881,6 @@ function runSelfTests() {
   if (failed.length) console.error("[PCC self-tests] Failed tests:", failed);
   else console.info("[PCC self-tests] All tests passed:", tests.map((t) => t.name));
 }
+                    
+// Success message helper
+const SUCCESS_MESSAGE = "Thank you. Your request has been sent successfully. We will respond within 24 hours.";

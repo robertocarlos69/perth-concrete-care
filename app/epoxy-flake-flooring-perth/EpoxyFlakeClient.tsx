@@ -8,49 +8,64 @@ const flakeChoices = [
   { name: "Blue Storm", file: "/flake-choices/blue-storm-epoxy-flake.webp" },
   { name: "Bullseye", file: "/flake-choices/bullseye-epoxy-flake.webp" },
   { name: "Camo", file: "/flake-choices/camo-epoxy-flake.webp" },
-  {
-    name: "Cookies & Cream",
-    file: "/flake-choices/cookies-and-cream-epoxy-flake.webp",
-  },
-  {
-    name: "Cookies & Cream (Small)",
-    file: "/flake-choices/cookies-and-cream-small-epoxy-flake.webp",
-  },
+  { name: "Cookies & Cream", file: "/flake-choices/cookies-and-cream-epoxy-flake.webp",},
+  { name: "Cookies & Cream (Small)", file: "/flake-choices/cookies-and-cream-small-epoxy-flake.webp",},
   { name: "Eggshell", file: "/flake-choices/eggshell-epoxy-flake.webp" },
   { name: "Foil", file: "/flake-choices/foil-epoxy-flake.webp" },
   { name: "Graphite", file: "/flake-choices/graphite-epoxy-flake.webp" },
-  {
-    name: "Graphite (Light)",
-    file: "/flake-choices/graphite-light-epoxy-flake.webp",
-  },
+  { name: "Graphite (Light)", file: "/flake-choices/graphite-light-epoxy-flake.webp",},
   { name: "Heritage", file: "/flake-choices/heritage-epoxy-flake.webp" },
   { name: "Night Sky", file: "/flake-choices/night-sky-epoxy-flake.webp" },
   { name: "Suede", file: "/flake-choices/suede-epoxy-flake.webp" },
+  { name: "Red Earth", file: "/flake-choices/red-earth-epoxy-flake.webp" },
+  { name: "Biscuit", file: "/flake-choices/biscuit-epoxy-flake.webp" },
+  { name: "Carbon", file: "/flake-choices/carbon-black-epoxy-flake.webp" },
+  { name: "Ice", file: "/flake-choices/ice-epoxy-flake.webp" },
+];
+
+const hyperFlakeChoices = [
+  { name: "Basalt", file: "/flake-choices/basalt-epoxy-flake.webp" },
+  { name: "Coral", file: "/flake-choices/coral-epoxy-flake.webp" },
+  { name: "Quarry", file: "/flake-choices/quarry-epoxy-flake.webp" },
+  { name: "River Stone", file: "/flake-choices/river-stone-epoxy-flake.webp" },
+  { name: "Sand Stone", file: "/flake-choices/sand-stone-epoxy-flake.webp" },
+  { name: "Silver Stone", file: "/flake-choices/silver-stone-epoxy-flake.webp" },
 ];
 
 export default function EpoxyFlakeClient() {
-  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  type FlakeRange = "ultra" | "hyper";
+  const [lightbox, setLightbox] = useState<{ range: FlakeRange; index: number } | null>(null);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const [touchEndX, setTouchEndX] = useState<number | null>(null);
 
-  const openLightbox = (index: number) => setLightboxIndex(index);
-  const closeLightbox = () => setLightboxIndex(null);
+  const getChoices = (range: FlakeRange) =>
+    range === "hyper" ? hyperFlakeChoices : flakeChoices;
+
+  const openLightbox = (range: FlakeRange, index: number) =>
+    setLightbox({ range, index });
+  const closeLightbox = () => setLightbox(null);
 
   const nextImage = () => {
-    if (lightboxIndex === null) return;
-    setLightboxIndex((lightboxIndex + 1) % flakeChoices.length);
+    if (!lightbox) return;
+    const choices = getChoices(lightbox.range);
+    setLightbox({
+      range: lightbox.range,
+      index: (lightbox.index + 1) % choices.length,
+    });
   };
 
   const prevImage = () => {
-    if (lightboxIndex === null) return;
-    setLightboxIndex(
-      (lightboxIndex - 1 + flakeChoices.length) % flakeChoices.length
-    );
+    if (!lightbox) return;
+    const choices = getChoices(lightbox.range);
+    setLightbox({
+      range: lightbox.range,
+      index: (lightbox.index - 1 + choices.length) % choices.length,
+    });
   };
 
   // Keyboard navigation
   useEffect(() => {
-    if (lightboxIndex === null) return;
+    if (!lightbox) return;
 
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") closeLightbox();
@@ -60,7 +75,7 @@ export default function EpoxyFlakeClient() {
 
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [lightboxIndex]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [lightbox]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Swipe gestures (lightbox)
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -135,7 +150,7 @@ export default function EpoxyFlakeClient() {
       {/* FLAKE COLOURS */}
       <section className="mt-14">
         <h2 className="text-2xl font-semibold text-neutral-900 mb-1">
-          Popular epoxy flake colours
+          Popular epoxy flake colours in the Ultra Flake range
         </h2>
         <p className="mt-2 text-neutral-700 max-w-3xl">
           Below are popular flake blends commonly chosen for Perth garages,
@@ -156,7 +171,7 @@ export default function EpoxyFlakeClient() {
             >
               <button
                 type="button"
-                onClick={() => openLightbox(idx)}
+                onClick={() => openLightbox("ultra", idx)}
                 className="block w-full text-left"
                 aria-label={`Open ${f.name} flake colour preview`}
               >
@@ -168,6 +183,54 @@ export default function EpoxyFlakeClient() {
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                     className="object-cover"
                     priority={idx === 0}
+                  />
+                </div>
+                <figcaption className="px-3 py-2 text-sm font-semibold text-neutral-800">
+                  {f.name}
+                </figcaption>
+              </button>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+
+      {/* HYPER FLAKE RANGE */}
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold text-neutral-900">
+          Hyper Flake Range (Premium Blend)
+        </h2>
+        <p className="mt-2 text-neutral-700">
+          Our Hyper Flake blends offer a denser mix and stronger contrast for
+          extra depth and a more premium finish — ideal for feature garages,
+          workshops and commercial spaces. Colours may vary slightly on screens —
+          we help confirm your choice during the site visit.
+        </p>
+
+        <div className="mt-8 mb-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          {hyperFlakeChoices.map((f, idx) => (
+            <figure
+              key={f.file}
+              className="
+                rounded-2xl overflow-hidden
+                border border-emerald-500
+                bg-white shadow-sm
+                transition hover:shadow-md
+              "
+            >
+              <button
+                type="button"
+                onClick={() => openLightbox("hyper", idx)}
+                className="block w-full text-left"
+                aria-label={`Open ${f.name} Hyper Flake colour preview`}
+              >
+                <div className="relative aspect-square">
+                  <Image
+                    src={f.file}
+                    alt={`${f.name} hyper epoxy flake flooring colour`}
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    className="object-cover"
                   />
                 </div>
                 <figcaption className="px-3 py-2 text-sm font-semibold text-neutral-800">
@@ -199,7 +262,7 @@ export default function EpoxyFlakeClient() {
       </section>
 
       {/* LIGHTBOX */}
-      {lightboxIndex !== null && (
+      {lightbox && (
         <div
           className="fixed inset-0 z-[999] bg-black/80 backdrop-blur-sm flex items-center justify-center"
           onClick={closeLightbox}
@@ -226,8 +289,8 @@ export default function EpoxyFlakeClient() {
             >
               {/* IMAGE FLUSH TO BORDER */}
               <Image
-                src={flakeChoices[lightboxIndex].file}
-                alt={flakeChoices[lightboxIndex].name}
+                src={getChoices(lightbox.range)[lightbox.index].file}
+                alt={getChoices(lightbox.range)[lightbox.index].name}
                 fill
                 sizes="90vw"
                 className="object-cover"
@@ -291,7 +354,7 @@ export default function EpoxyFlakeClient() {
 
             {/* CAPTION */}
             <div className="mt-3 text-center text-sm text-white/90">
-              {flakeChoices[lightboxIndex].name}
+              {getChoices(lightbox.range)[lightbox.index].name}
             </div>
           </div>
         </div>

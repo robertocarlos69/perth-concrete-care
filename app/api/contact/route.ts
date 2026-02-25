@@ -60,7 +60,7 @@ export async function POST(req: Request) {
       details = get('details')
 
       const MAX_FILES = 5
-      const MAX_SIZE = 2 * 1024 * 1024 // 2 MB
+      const MAX_SIZE = 8 * 1024 * 1024 // 8 MB
 
       const allPhotos = formData.getAll('photos')
       const files = allPhotos.filter((v): v is File => v instanceof File)
