@@ -739,8 +739,38 @@ const galleryItems = [
   id: 6,
   src: "/gallery/epoxy-flake-garage-banksia-grove.jpg",
   label: "Epoxy Flake Garage – Banksia Grove",
-  alt: "Epoxy flake garage floor with added glitter installed in Banksia Grove, Perth",
-},
+  alt: "Epoxy flake garage floor with added glitter installed in Banksia Grove, W.A",
+  },
+  {
+  id: 7,
+  src: "/gallery/epoxy-flake-garage-floor-bullseye-kallaroo-perth.jpg",
+  label: "Epoxy flake garage - Kallaroo, Perth",
+  alt: "Epoxy flake garage floor in Bullseye colour installed in Kallaroo, W.A",
+  },
+  {
+  id: 8,
+  src: "/gallery/epoxy-flake-floor-granny-flat-mindarie-perth.jpg",
+  label: "Granny-Flat renovation – Mindarie",
+  alt: "Granny Flat with old carpet removed and Epoxy flake floor installed in Mindarie, W.A",
+  },
+  {
+  id: 9,
+  src: "/gallery/epoxy-flake-pool-area-sandstone-mindarie-perth.jpg",
+  label: "Epoxy Flake Pool Area – Mindarie",
+  alt: "Epoxy flake pool area with sandstone aggregate installed in Mindarie, W.A",
+  },
+  {
+  id: 10,
+  src: "/gallery/epoxy-flake-garage-floor-cookies-and-cream-Banksia-Grove.jpg",
+  label: "Epoxy Flake Garage – Banksia Grove",
+  alt: "Epoxy flake garage floor with cookies and cream flakes installed in Banksia Grove, W.A",
+  },
+  {
+  id: 11,
+  src: "/gallery/honed-concrete-floor-finish-perth.jpg",
+  label: "Honed Concrete Floor with Salt and Pepper Exposure and Low Sheen water based sealer in Bicton, W.A",
+  alt: "Honed concrete floor finish with Salt and Pepper Exposure and Low Sheen water based sealer in Bicton",
+  },
 ];
 
 const services = [
