@@ -193,6 +193,14 @@ export default function RootLayout({
                 </Link>
               </li>
               <li>
+                <Link
+                  href="/epoxy-floor-visualiser-perth"
+                  className="text-neutral-800 hover:text-emerald-600 transition font-medium"
+                >
+                  Visualiser
+                </Link>
+              </li>
+              <li>
                 <a href="/#gallery" className="text-neutral-800 hover:text-emerald-600 transition">
                   Gallery
                 </a>

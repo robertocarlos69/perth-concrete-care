@@ -8,12 +8,12 @@ const flakeChoices = [
   { name: "Blue Storm", file: "/flake-choices/blue-storm-epoxy-flake.webp" },
   { name: "Bullseye", file: "/flake-choices/bullseye-epoxy-flake.webp" },
   { name: "Camo", file: "/flake-choices/camo-epoxy-flake.webp" },
-  { name: "Cookies & Cream", file: "/flake-choices/cookies-and-cream-epoxy-flake.webp",},
-  { name: "Cookies & Cream (Small)", file: "/flake-choices/cookies-and-cream-small-epoxy-flake.webp",},
+  { name: "Cookies & Cream", file: "/flake-choices/cookies-and-cream-epoxy-flake.webp" },
+  { name: "Cookies & Cream (Small)", file: "/flake-choices/cookies-and-cream-small-epoxy-flake.webp" },
   { name: "Eggshell", file: "/flake-choices/eggshell-epoxy-flake.webp" },
   { name: "Foil", file: "/flake-choices/foil-epoxy-flake.webp" },
   { name: "Graphite", file: "/flake-choices/graphite-epoxy-flake.webp" },
-  { name: "Graphite (Light)", file: "/flake-choices/graphite-light-epoxy-flake.webp",},
+  { name: "Graphite (Light)", file: "/flake-choices/graphite-light-epoxy-flake.webp" },
   { name: "Heritage", file: "/flake-choices/heritage-epoxy-flake.webp" },
   { name: "Night Sky", file: "/flake-choices/night-sky-epoxy-flake.webp" },
   { name: "Suede", file: "/flake-choices/suede-epoxy-flake.webp" },
@@ -63,7 +63,6 @@ export default function EpoxyFlakeClient() {
     });
   };
 
-  // Keyboard navigation
   useEffect(() => {
     if (!lightbox) return;
 
@@ -75,9 +74,8 @@ export default function EpoxyFlakeClient() {
 
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [lightbox]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [lightbox]);
 
-  // Swipe gestures (lightbox)
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStartX(e.touches[0].clientX);
     setTouchEndX(null);
@@ -102,7 +100,6 @@ export default function EpoxyFlakeClient() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
-      {/* BREADCRUMBS (UX + internal linking) */}
       <nav aria-label="Breadcrumb" className="mb-6">
         <ol className="flex flex-wrap items-center gap-2 text-sm text-neutral-600">
           <li>
@@ -119,7 +116,6 @@ export default function EpoxyFlakeClient() {
         </ol>
       </nav>
 
-      {/* HERO */}
       <header className="max-w-3xl">
         <h1 className="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-neutral-900">
           Epoxy Flake Floors Perth
@@ -128,15 +124,21 @@ export default function EpoxyFlakeClient() {
           Durable, easy-to-clean epoxy flake flooring for garages, workshops and
           homes across Perth. Proper surface preparation is critical — we
           mechanically grind, repair and prepare the slab before applying your
-          chosen flake system and protective topcoat.
+          chosen flake system and then add a UV  & stain resistant protective topcoat.
         </p>
 
-        <div className="mt-6 mb-6 flex flex-wrap gap-2">
+        <div className="mt-6 mb-5 flex flex-wrap gap-2">
           <Link
             href="/#quote"
             className="rounded-xl bg-emerald-600 text-white px-5 py-3 font-semibold hover:bg-emerald-700"
           >
             Get a Free Quote
+          </Link>
+          <Link
+            href="/epoxy-floor-visualiser-perth"
+            className="rounded-xl border border-emerald-600 text-emerald-700 px-5 py-3 font-semibold hover:bg-emerald-50"
+          >
+            Try Colour Visualiser
           </Link>
           <Link
             href="/#gallery"
@@ -147,7 +149,6 @@ export default function EpoxyFlakeClient() {
         </div>
       </header>
 
-      {/* FLAKE COLOURS */}
       <section className="mt-14">
         <h2 className="text-2xl font-semibold text-neutral-900 mb-1">
           Popular epoxy flake colours in the Ultra Flake range
@@ -162,12 +163,7 @@ export default function EpoxyFlakeClient() {
           {flakeChoices.map((f, idx) => (
             <figure
               key={f.file}
-              className="
-                rounded-2xl overflow-hidden
-                border border-emerald-500
-                bg-white shadow-sm
-                transition hover:shadow-md
-              "
+              className="rounded-2xl overflow-hidden border border-emerald-500 bg-white shadow-sm transition hover:shadow-md"
             >
               <button
                 type="button"
@@ -194,8 +190,6 @@ export default function EpoxyFlakeClient() {
         </div>
       </section>
 
-
-      {/* HYPER FLAKE RANGE */}
       <section className="mt-12">
         <h2 className="text-2xl font-bold text-neutral-900">
           Hyper Flake Range (Premium Blend)
@@ -211,12 +205,7 @@ export default function EpoxyFlakeClient() {
           {hyperFlakeChoices.map((f, idx) => (
             <figure
               key={f.file}
-              className="
-                rounded-2xl overflow-hidden
-                border border-emerald-500
-                bg-white shadow-sm
-                transition hover:shadow-md
-              "
+              className="rounded-2xl overflow-hidden border border-emerald-500 bg-white shadow-sm transition hover:shadow-md"
             >
               <button
                 type="button"
@@ -242,26 +231,25 @@ export default function EpoxyFlakeClient() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="mt-14 max-w-3xl rounded-2xl border border-emerald-500 bg-white p-6 shadow-sm">
         <h2 className="text-xl font-semibold text-neutral-900">
-          Need help choosing the right flake?
+          Not sure which flake colour to choose?
         </h2>
         <p className="mt-2 text-neutral-700">
-          Book a free site visit and we’ll show popular options on-site and
-          recommend the best system based on your space, usage and budget.
+          Use our epoxy floor colour visualiser to preview popular flake blends
+          before booking. It is a simple way to compare looks for garages,
+          patios, workshops and other residential or commercial floors in Perth.
         </p>
         <div className="mt-4">
           <Link
-            href="/#quote"
+            href="/epoxy-floor-visualiser-perth"
             className="inline-block rounded-xl bg-emerald-600 text-white px-5 py-3 font-semibold hover:bg-emerald-700"
           >
-            Book Free Site Visit
+            Launch Visualiser
           </Link>
         </div>
       </section>
 
-      {/* LIGHTBOX */}
       {lightbox && (
         <div
           className="fixed inset-0 z-[999] bg-black/80 backdrop-blur-sm flex items-center justify-center"
@@ -274,20 +262,7 @@ export default function EpoxyFlakeClient() {
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
           >
-            {/* FRAME (NO GAP) */}
-            <div
-              className="
-                relative
-                aspect-square
-                w-full
-                max-h-[85vh]
-                rounded-2xl
-                border-2 border-emerald-500
-                overflow-hidden
-                bg-black
-              "
-            >
-              {/* IMAGE FLUSH TO BORDER */}
+            <div className="relative aspect-square w-full max-h-[85vh] rounded-2xl border-2 border-emerald-500 overflow-hidden bg-black">
               <Image
                 src={getChoices(lightbox.range)[lightbox.index].file}
                 alt={getChoices(lightbox.range)[lightbox.index].name}
@@ -297,62 +272,31 @@ export default function EpoxyFlakeClient() {
                 priority
               />
 
-              {/* CLOSE BUTTON (BIGGER + EMERALD) */}
               <button
                 onClick={closeLightbox}
-                className="
-                  absolute top-4 right-4 z-30
-                  inline-flex items-center gap-2
-                  rounded-full bg-emerald-600 hover:bg-emerald-700
-                  text-white
-                  px-5 py-3
-                  text-base font-semibold
-                  shadow-lg
-                  transition
-                "
+                className="absolute top-4 right-4 z-30 inline-flex items-center gap-2 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-3 text-base font-semibold shadow-lg transition"
                 aria-label="Close gallery"
               >
                 ✕ Close
               </button>
 
-              {/* LEFT ARROW (VISIBLE) */}
               <button
                 onClick={prevImage}
-                className="
-                  absolute left-4 top-1/2 -translate-y-1/2 z-30
-                  h-11 w-11
-                  rounded-full
-                  bg-white/95 hover:bg-white
-                  text-black
-                  flex items-center justify-center
-                  text-3xl font-bold
-                  shadow-lg
-                "
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-30 h-11 w-11 rounded-full bg-white/95 hover:bg-white text-black flex items-center justify-center text-3xl font-bold shadow-lg"
                 aria-label="Previous image"
               >
                 ‹
               </button>
 
-              {/* RIGHT ARROW (VISIBLE) */}
               <button
                 onClick={nextImage}
-                className="
-                  absolute right-4 top-1/2 -translate-y-1/2 z-30
-                  h-11 w-11
-                  rounded-full
-                  bg-white/95 hover:bg-white
-                  text-black
-                  flex items-center justify-center
-                  text-3xl font-bold
-                  shadow-lg
-                "
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-30 h-11 w-11 rounded-full bg-white/95 hover:bg-white text-black flex items-center justify-center text-3xl font-bold shadow-lg"
                 aria-label="Next image"
               >
                 ›
               </button>
             </div>
 
-            {/* CAPTION */}
             <div className="mt-3 text-center text-sm text-white/90">
               {getChoices(lightbox.range)[lightbox.index].name}
             </div>

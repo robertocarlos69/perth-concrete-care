@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
   "/",
   "/epoxy-flake-flooring-perth",
+  "/epoxy-floor-visualiser-perth",
   "/concrete-grinding-perth",
   "/metallic-epoxy-flooring-perth",
   "/concrete-polishing-perth",

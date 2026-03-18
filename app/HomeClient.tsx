@@ -387,16 +387,7 @@ export default function HomeClient() {
             </div>
 
             <p className="mt-4 text-sm text-neutral-600 leading-relaxed">
-              *Pricing varies with slab hardness, m², access, repairs, and
-              moisture. All prices incl. GST estimates.
-            </p>
-
-            <p className="mt-4 text-sm text-neutral-600 leading-relaxed">
-              Achieving a long-lasting epoxy floor begins with correct surface
-              preparation. All our floors are mechanically diamond-ground to a
-              verified CSP2–CSP3 profile to ensure proper adhesion and prevent
-              peeling or delamination.
-            </p>
+              *Pricing is influenced by total floor area, slab hardness, site access, existing coatings or contaminants, crack and surface repairs, moisture conditions, edge/detail work. In general, larger projects achieve a lower per m² rate, while smaller, heavily detailed jobs are priced higher per m². Final pricing is confirmed after site inspection.</p>
           </div>
         </section>
 
@@ -842,35 +833,35 @@ const services = [
 const pricing = [
   {
     name: "Epoxy Flake Floors",
-    price: "$70–$100",
+    price: "$85–$100",
     unit: "/m²",
     href: "/epoxy-flake-flooring-perth",
     features: ["Moisture-tolerant primer", "Flake (full, partial or sparse) broadcast", "UV / Oil / chemical resitant Polyaspartic topcoat"],
   },
   {
     name: "Metallic Epoxy Floors",
-    price: "$120–$180",
+    price: "$160–$180",
     unit: "/m²",
     href: "/metallic-epoxy-flooring-perth",
     features: ["100% solids metallic epoxy", "Custom blends, highlights & 3D effects", "UV-stable polyurethane topcoat"],
   },
   {
     name: "Hone & Seal (Outdoor)",
-    price: "$100–$120",
+    price: "$75–$100",
     unit: "/m²",
     href: "/honed-concrete-perth",
     features: ["Precision diamond-honed finish", "UV-stable protective sealer", "Durable Exterior-grade slip resistance"],
   },
   {
     name: "Polished Concrete (Indoor)",
-    price: "$110–$150",
+    price: "$140–$220",
     unit: "/m²",
     href: "/concrete-polishing-perth",
     features: ["Choice of Cream / Salt & Pepper / full exposed finish", "Various gloss options (satin, high or mirror)"],
   },
   {
     name: "Exposed / Washed Aggregate",
-    price: "$125–$180",
+    price: "$140–$180",
     unit: "/m²",
     features: ["Premium washed or exposed honed finish", "Slip-resistant and ideal for outdoor areas"],
   },
