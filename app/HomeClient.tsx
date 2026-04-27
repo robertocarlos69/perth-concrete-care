@@ -172,17 +172,26 @@ export default function HomeClient() {
           <div className="relative max-w-7xl mx-auto px-4 pt-10 pb-20 md:pt-16 md:pb-28">
             <div className="max-w-5xl md:-ml-12">
               <h1 className="text-4xl md:text-5xl font-extrabold leading-tight drop-shadow-sm">
-                Perth Concrete Grinding, Honed,{" "}
-                <span className="text-emerald-600">Epoxy Flake</span> &amp;{" "}
-                <span className="text-blue-600">Metallic</span> Floors
-              </h1>
+  Concrete <span className="text-emerald-600">Polishing</span>, Grinding &{" "}
+  <span className="text-emerald-600">Epoxy Flooring</span> Perth
+</h1>
 
-              <p className="mt-5 text-lg text-neutral-700">Perth specialists in:</p>
+              <p className="mt-5 text-lg text-neutral-700">
+                Perth specialists in concrete polishing, epoxy flooring and grind and seal systems across Perth and surrounding suburbs.
+              </p>
 
               <ul className="mt-2 text-sm text-neutral-700 space-y-1">
-                <li>- Exposed concrete &amp; washed aggregate driveways, paths &amp; alfrescos</li>
-                <li>- Concrete grinding, honed / polished concrete &amp; slab levelling, paint &amp; glue removal</li>
-                <li>- Epoxy garage floors, flake systems &amp; metallic epoxy floors for residential &amp; workshops</li>
+                <li>
+- Concrete polishing, grinding, honing & slab levelling, paint & glue removal
+</li>
+
+<li>
+- Epoxy garage floors, flake systems & metallic epoxy floors for residential & workshops
+</li>
+
+<li>
+- Exposed concrete & washed aggregate driveways, paths & alfrescos
+</li>
               </ul>
 
               {/* Buttons */}
@@ -201,7 +210,9 @@ export default function HomeClient() {
                   Browse Services
                 </a>
               </div>
-
+<p className="mt-3 text-sm text-neutral-700">
+  Explore our concrete polishing, epoxy flooring and grind & seal options below.
+</p>
               {/* Trust badges */}
               <div className="mt-5 flex flex-wrap items-center gap-2 text-xs text-neutral-600">
                 {["Fully insured", "H-class dust control", "WA owned & operated", "Police cleared"].map((t) => (
@@ -240,7 +251,9 @@ export default function HomeClient() {
 
           {/* Foreground content kept to max-w-7xl */}
           <div className="relative max-w-7xl mx-auto px-4 -mt-10 md:-mt-16">
-            <h2 className="text-3xl md:text-4xl font-bold">Services</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">
+             Concrete Flooring Services in Perth
+            </h2>
 
             <p className="mt-2 text-neutral-700">
               Perth Concrete Care provides end-to-end concrete preparation and finishes – from concrete grinding and honing
@@ -264,9 +277,9 @@ export default function HomeClient() {
                         {s.icon}
                       </span>
                     )}
-                    <div className="text-lg font-semibold text-emerald-700 flex items-center gap-2">
-                      {s.title}
-                    </div>
+                    <h3 className="text-lg font-semibold text-emerald-700 flex items-center gap-2">
+                    {s.title}
+                    </h3>
                   </div>
                   <p className="mt-2 text-sm text-neutral-600">{s.desc}</p>
                   <ul className="mt-4 text-sm list-disc pl-5 space-y-1 text-neutral-700">
@@ -303,7 +316,9 @@ export default function HomeClient() {
         <section id="gallery" className="max-w-7xl mx-auto px-4 py-8">
           <div className="flex items-end justify-between">
             <div>
-              <h3 className="text-2xl md:text-3xl font-bold">Recent Work</h3>
+              <h2 className="text-2xl md:text-3xl font-bold">
+              Recent Concrete Flooring Projects in Perth
+              </h2>
             </div>
             <a href="#contact" className="text-sm underline ">
               Want your project featured? Get in touch
@@ -337,7 +352,9 @@ export default function HomeClient() {
         {/* Pricing / Packages */}
         <section id="pricing" className="relative w-full bg-white/60 pt-4 pb-16">
           <div className="max-w-7xl mx-auto px-4">
-            <h3 className="text-2xl md:text-3xl font-bold">Typical Packages</h3>
+            <h2 className="text-2xl md:text-3xl font-bold">
+              Flooring Costs in Perth
+            </h2>
             <p className="mt-2 text-neutral-600">
               Every project is different; these ballparks help planning. Get a free
               on-site quote.
@@ -395,9 +412,9 @@ export default function HomeClient() {
         <section className="bg-white/60">
           <div className="max-w-7xl mx-auto px-4 py-8 grid md:grid-cols-2 gap-8 items-start">
             <div>
-              <h3 className="text-2xl md:text-3xl font-bold">
-                Servicing all Perth Metro from Butler to Perth CBD
-              </h3>
+              <h2 className="text-2xl md:text-3xl font-bold">
+                Flooring Services Across Perth
+              </h2>
               <p className="mt-3 text-neutral-600 text-sm md:text-base">
                 We install honed concrete, polished concrete, epoxy garage
                 floors, epoxy flake systems and washed aggregate across Perth
@@ -434,7 +451,9 @@ export default function HomeClient() {
         <section id="quote" className="bg-white/60">
           <div className="max-w-7xl mx-auto px-4 py-8">
             <div className="rounded-2xl border border-emerald-500 bg-white p-8 shadow-sm transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-emerald-400">
-              <h3 className="text-2xl md:text-3xl font-bold">Get a Free Quote</h3>
+              <h2 className="text-2xl md:text-3xl font-bold">
+                Get a Quote for Your Concrete Floor
+              </h2>
               <p className="mt-2 text-neutral-600">
                 Send plans/photos and rough m². We&apos;ll confirm on-site.
               </p>
@@ -525,7 +544,9 @@ multiple
           />
           <div className="bg-white/75 relative">
             <div className="max-w-7xl mx-auto px-4 py-12">
-              <h3 className="text-2xl md:text-3xl font-bold">FAQ</h3>
+              <h2 className="text-2xl md:text-3xl font-bold">
+                Concrete Flooring FAQ Perth
+              </h2>
               <p className="mt-2 text-sm text-neutral-600">Click a question to expand.</p>
 
               <div className="mt-8 w-full">

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   ],
 },
     title: {
-    default: "Epoxy Flake Floors & Concrete Grinding Perth | Perth Concrete Care",
+    default: "Concrete Polishing, Grinding & Epoxy Flooring Perth | Perth Concrete Care",
     template: "%s | Perth Concrete Care",
   },
   description:
@@ -36,6 +36,7 @@ export const metadata: Metadata = {
     "epoxy flooring Joondalup",
     "epoxy flooring Wanneroo",
     "epoxy flooring Butler",
+    "epoxy flooring Subiaco",
     "concrete grinding Osborne Park",
   ],
   alternates: {
@@ -45,15 +46,15 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://perthconcretecare.com.au/",
     siteName: "Perth Concrete Care",
-    title: "Epoxy Flake Floors & Concrete Grinding Perth | Perth Concrete Care",
+    title: "Concrete Polishing, Grinding & Epoxy Flooring Perth | Perth Concrete Care",
     description:
-      "Epoxy flake floors and concrete grinding specialists for Perth north-of-river: Butler to Perth CBD. Epoxy flake floors, metallic epoxy, polishing/honing. Free quotes.",
+      "Concrete polishing, concrete grinding, epoxy flake floors and metallic epoxy specialists for Perth north-of-river: Butler to Perth CBD. Free quotes.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Epoxy Flake Floors & Concrete Grinding Perth | Perth Concrete Care",
+    title: "Concrete Polishing, Grinding & Epoxy Flooring Perth | Perth Concrete Care",
     description:
-      "Epoxy flake floors and concrete grinding specialists for Perth north-of-river: Butler to Perth CBD. Free quotes.",
+      "Concrete polishing, grinding and epoxy flooring specialists for Perth north-of-river: Butler to Perth CBD. Free quotes.",
   },
   robots: {
     index: true,

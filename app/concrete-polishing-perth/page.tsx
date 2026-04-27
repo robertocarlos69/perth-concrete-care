@@ -285,9 +285,9 @@ export default function ConcretePolishingPerthPage() {
                   <div className="text-sm font-semibold text-emerald-700">
                     {item.step}
                   </div>
-                  <div className="mt-1 font-semibold text-slate-900">
+                  <h3 className="mt-1 font-semibold text-slate-900">
                     {item.title}
-                  </div>
+                  </h3>
                   <p className="mt-2 text-slate-700">{item.text}</p>
                 </div>
               ))}
@@ -311,9 +311,9 @@ export default function ConcretePolishingPerthPage() {
             </p>
 
             <div className="mt-6 rounded-2xl bg-slate-50 p-5">
-              <div className="text-sm font-semibold text-slate-800">
+              <h3 className="text-sm font-semibold text-slate-800">
                 Typical polishing jobs
-              </div>
+              </h3>
               <ul className="mt-3 list-disc space-y-1 pl-6 text-slate-700">
                 <li>Homes and residential interiors</li>
                 <li>Warehouses and showrooms</li>
@@ -323,7 +323,7 @@ export default function ConcretePolishingPerthPage() {
             </div>
 
             <div className="mt-6 rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
-              <div className="font-semibold text-emerald-900">Fast quotes</div>
+              <h3 className="font-semibold text-emerald-900">Fast quotes</h3>
               <p className="mt-2 text-emerald-900/80">
                 Send dimensions, photos, suburb and whether the slab is new or existing.
               </p>

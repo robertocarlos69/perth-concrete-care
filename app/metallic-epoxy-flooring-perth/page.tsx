@@ -78,32 +78,32 @@ export default function Page() {
             <ol className="mt-4 grid gap-4 md:grid-cols-2">
             <li className="rounded-2xl border border-emerald-200 bg-white p-5">
               <div className="text-sm font-semibold text-emerald-700">Step 1</div>
-              <div className="mt-1 font-semibold text-neutral-900">Design & sample</div>
+              <h3 className="mt-1 font-semibold text-neutral-900">Design & sample</h3>
               <p className="mt-2 text-neutral-700">Confirm colour direction and movement style (subtle to dramatic).</p>
             </li>
             <li className="rounded-2xl border border-emerald-200 bg-white p-5">
               <div className="text-sm font-semibold text-emerald-700">Step 2</div>
-              <div className="mt-1 font-semibold text-neutral-900">Prep the slab</div>
+              <h3 className="mt-1 font-semibold text-neutral-900">Prep the slab</h3>
               <p className="mt-2 text-neutral-700">Diamond grind and repair so the metallic finish lays clean.</p>
             </li>
             <li className="rounded-2xl border border-emerald-200 bg-white p-5">
               <div className="text-sm font-semibold text-emerald-700">Step 3</div>
-              <div className="mt-1 font-semibold text-neutral-900">Base + metallic layer</div>
+              <h3 className="mt-1 font-semibold text-neutral-900">Base + metallic layer</h3>
               <p className="mt-2 text-neutral-700">Apply base coat then metallic layer with controlled effects.</p>
             </li>
             <li className="rounded-2xl border border-emerald-200 bg-white p-5">
               <div className="text-sm font-semibold text-emerald-700">Step 4</div>
-              <div className="mt-1 font-semibold text-neutral-900">Detail and de-nib</div>
+              <h3 className="mt-1 font-semibold text-neutral-900">Detail and de-nib</h3>
               <p className="mt-2 text-neutral-700">Address edges, pinholes and minor texture before topcoat.</p>
             </li>
             <li className="rounded-2xl border border-emerald-200 bg-white p-5">
               <div className="text-sm font-semibold text-emerald-700">Step 5</div>
-              <div className="mt-1 font-semibold text-neutral-900">Topcoat</div>
+              <h3 className="mt-1 font-semibold text-neutral-900">Topcoat</h3>
               <p className="mt-2 text-neutral-700">Apply a protective clear coat suitable for your use case.</p>
             </li>
             <li className="rounded-2xl border border-emerald-200 bg-white p-5">
               <div className="text-sm font-semibold text-emerald-700">Step 6</div>
-              <div className="mt-1 font-semibold text-neutral-900">Cure & care</div>
+              <h3 className="mt-1 font-semibold text-neutral-900">Cure & care</h3>
               <p className="mt-2 text-neutral-700">Cure guidance and cleaning/maintenance advice.</p>
             </li>
             </ol>
@@ -125,7 +125,7 @@ export default function Page() {
             </p>
 
             <div className="mt-6 rounded-2xl bg-neutral-50 p-5">
-              <div className="text-sm font-semibold text-neutral-800">Typical jobs</div>
+              <h3 className="text-sm font-semibold text-neutral-800">Typical jobs</h3>
               <ul className="mt-3 list-disc pl-6 text-neutral-700 space-y-1">
                 <li>Garages & workshops</li>
                 <li>Alfresco & outdoor areas</li>
@@ -151,7 +151,7 @@ export default function Page() {
             </div>
 
             <div className="mt-8 rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
-              <div className="font-semibold text-emerald-900">Free quotes</div>
+              <h3 className="font-semibold text-emerald-900">Free quotes</h3>
               <p className="mt-2 text-emerald-900/80">
                 Send dimensions + photos and we’ll give you a clear scope and price.
               </p>

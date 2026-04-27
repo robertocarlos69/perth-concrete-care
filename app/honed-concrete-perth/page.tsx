@@ -78,32 +78,32 @@ export default function Page() {
             <ol className="mt-4 grid gap-4 md:grid-cols-2">
             <li className="rounded-2xl border border-emerald-200 bg-white p-5">
               <div className="text-sm font-semibold text-emerald-700">Step 1</div>
-              <div className="mt-1 font-semibold text-neutral-900">Inspect & plan</div>
+              <h3 className="mt-1 font-semibold text-neutral-900">Inspect & plan</h3>
               <p className="mt-2 text-neutral-700">Confirm desired cut level, slip needs and sealer type.</p>
             </li>
             <li className="rounded-2xl border border-emerald-200 bg-white p-5">
               <div className="text-sm font-semibold text-emerald-700">Step 2</div>
-              <div className="mt-1 font-semibold text-neutral-900">Grind/hone</div>
+              <h3 className="mt-1 font-semibold text-neutral-900">Grind/hone</h3>
               <p className="mt-2 text-neutral-700">Mechanical grinding through the required grits for the finish.</p>
             </li>
             <li className="rounded-2xl border border-emerald-200 bg-white p-5">
               <div className="text-sm font-semibold text-emerald-700">Step 3</div>
-              <div className="mt-1 font-semibold text-neutral-900">Clean & dry</div>
+              <h3 className="mt-1 font-semibold text-neutral-900">Clean & dry</h3>
               <p className="mt-2 text-neutral-700">Prepare the surface for sealer adhesion and uniformity.</p>
             </li>
             <li className="rounded-2xl border border-emerald-200 bg-white p-5">
               <div className="text-sm font-semibold text-emerald-700">Step 4</div>
-              <div className="mt-1 font-semibold text-neutral-900">Seal</div>
+              <h3 className="mt-1 font-semibold text-neutral-900">Seal</h3>
               <p className="mt-2 text-neutral-700">Apply penetrating or film-forming sealer as specified.</p>
             </li>
             <li className="rounded-2xl border border-emerald-200 bg-white p-5">
               <div className="text-sm font-semibold text-emerald-700">Step 5</div>
-              <div className="mt-1 font-semibold text-neutral-900">Optional anti-slip</div>
+              <h3 className="mt-1 font-semibold text-neutral-900">Optional anti-slip</h3>
               <p className="mt-2 text-neutral-700">Add traction where required (wet zones).</p>
             </li>
             <li className="rounded-2xl border border-emerald-200 bg-white p-5">
               <div className="text-sm font-semibold text-emerald-700">Step 6</div>
-              <div className="mt-1 font-semibold text-neutral-900">Cure & aftercare</div>
+              <h3 className="mt-1 font-semibold text-neutral-900">Cure & aftercare</h3>
               <p className="mt-2 text-neutral-700">Cure times, cleaning advice and reseal intervals.</p>
             </li>
             </ol>
@@ -125,7 +125,7 @@ export default function Page() {
             </p>
 
             <div className="mt-6 rounded-2xl bg-neutral-50 p-5">
-              <div className="text-sm font-semibold text-neutral-800">Typical jobs</div>
+              <h3 className="text-sm font-semibold text-neutral-800">Typical jobs</h3>
               <ul className="mt-3 list-disc pl-6 text-neutral-700 space-y-1">
                 <li>Garages & workshops</li>
                 <li>Alfresco & outdoor areas</li>
@@ -151,7 +151,7 @@ export default function Page() {
             </div>
 
             <div className="mt-8 rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
-              <div className="font-semibold text-emerald-900">Free quotes</div>
+              <h3 className="font-semibold text-emerald-900">Free quotes</h3>
               <p className="mt-2 text-emerald-900/80">
                 Send dimensions + photos and we’ll give you a clear scope and price.
               </p>
