@@ -159,10 +159,10 @@ export default function RootLayout({
             <Link href="/" className="flex items-center gap-3">
               <div className="h-12 w-12 rounded-xl bg-white shadow-sm ring-1 ring-neutral-200 flex items-center justify-center">
                 <Image
-                  src="/logo.png"
-                  alt="Perth Concrete Care"
-                  width={44}
-                  height={44}
+                  src="/perth-concrete-care-logo.png"
+                  alt="Perth Concrete Care logo"
+                  width={60}
+                  height={60}
                   className="object-contain"
                   priority
                 />
