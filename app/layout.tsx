@@ -53,7 +53,13 @@ export const metadata: Metadata = {
     canonical: "https://perthconcretecare.com.au/",
   },
   openGraph: {
-    type: "website",
+    images: [
+      {
+        url: "/gallery/honed-concrete-perth.webp",
+        alt: "Honed and sealed concrete floor by Perth Concrete Care",
+      },
+    ],
+        type: "website",
     url: "https://perthconcretecare.com.au/",
     siteName: "Perth Concrete Care",
     title:

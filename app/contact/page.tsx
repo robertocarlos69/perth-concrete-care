@@ -3,12 +3,18 @@ import Link from "next/link";
 import ContactClient from "./ContactClient";
 
 export const metadata: Metadata = {
-  title: "Contact | Perth Concrete Care",
+  title: "Contact",
   description:
     "Request a free quote for epoxy flooring, concrete grinding, honed concrete, polishing or metallic epoxy across Perth north of the river. Call 0448 483 226.",
   alternates: { canonical: "https://perthconcretecare.com.au/contact" },
   openGraph: {
-    title: "Contact | Perth Concrete Care",
+    images: [
+      {
+        url: "/gallery/honed-concrete-perth.webp",
+        alt: "Honed and sealed concrete floor by Perth Concrete Care",
+      },
+    ],
+        title: "Contact | Perth Concrete Care",
     description:
       "Request a free quote for epoxy flooring, concrete grinding, honed concrete, polishing or metallic epoxy across Perth north of the river.",
     url: "https://perthconcretecare.com.au/contact",

@@ -7,14 +7,20 @@ import { servicePageJsonLd } from "../lib/schema";
 import { siteUrl } from "../lib/site";
 
 export const metadata: Metadata = {
-  title: "Concrete Polishing Perth | Perth Concrete Care",
+  title: "Concrete Polishing Perth",
   description:
     "Concrete polishing Perth for homes, warehouses, showrooms and commercial interiors. Full mechanical grind, densify and polish process for a durable, refined finish.",
   alternates: {
     canonical: "https://perthconcretecare.com.au/concrete-polishing-perth",
   },
   openGraph: {
-    type: "website",
+    images: [
+      {
+        url: "/gallery/honed-concrete-perth.webp",
+        alt: "Honed and sealed concrete floor by Perth Concrete Care",
+      },
+    ],
+        type: "website",
     url: "https://perthconcretecare.com.au/concrete-polishing-perth",
     title: "Concrete Polishing Perth | Perth Concrete Care",
     description:

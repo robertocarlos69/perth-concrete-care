@@ -6,13 +6,19 @@ import FaqAccordion from "../components/FaqAccordion";
 import { servicePageJsonLd } from "../lib/schema";
 import { siteUrl } from "../lib/site";
 export const metadata: Metadata = {
-  title: "Metallic Epoxy Flake Floors Perth | Perth Concrete Care",
+  title: "Metallic Epoxy Flake Floors Perth",
   description: "Metallic epoxy flooring Perth for garages and commercial spaces. High-gloss decorative resin floors with custom movement patterns and durable topcoats.",
   alternates: {
     canonical: "https://perthconcretecare.com.au/metallic-epoxy-flooring-perth",
   },
   openGraph: {
-    title: "Metallic Epoxy Flake Floors Perth | Perth Concrete Care",
+    images: [
+      {
+        url: "/gallery/honed-concrete-perth.webp",
+        alt: "Honed and sealed concrete floor by Perth Concrete Care",
+      },
+    ],
+        title: "Metallic Epoxy Flake Floors Perth | Perth Concrete Care",
     description: "Metallic epoxy flooring Perth for garages and commercial spaces. High-gloss decorative resin floors with custom movement patterns and durable topcoats.",
     url: "https://perthconcretecare.com.au/metallic-epoxy-flooring-perth",
     siteName: "Perth Concrete Care",

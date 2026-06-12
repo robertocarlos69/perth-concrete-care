@@ -80,7 +80,7 @@ export default function GoogleReviewsCarousel() {
 
       {/* Slide */}
       <div
-        className="mt-4 min-h-[180px]"
+        className="mt-4 min-h-[300px] sm:min-h-[240px]"
         role="group"
         aria-roledescription="carousel slide"
         aria-label={`Review ${index + 1} of ${count}`}

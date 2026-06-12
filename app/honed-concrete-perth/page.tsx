@@ -7,13 +7,19 @@ import FaqAccordion from "../components/FaqAccordion";
 import { servicePageJsonLd } from "../lib/schema";
 import { siteUrl } from "../lib/site";
 export const metadata: Metadata = {
-  title: "Honed Concrete Perth | Perth Concrete Care",
+  title: "Honed Concrete Perth",
   description: "Honed concrete (grind & seal) across Perth’s north of the river. A refined, slip-manageable finish for alfresco and outdoor areas with stain resistance",
   alternates: {
     canonical: "https://perthconcretecare.com.au/honed-concrete-perth",
   },
   openGraph: {
-    title: "Honed Concrete Perth | Perth Concrete Care",
+    images: [
+      {
+        url: "/gallery/honed-concrete-perth.webp",
+        alt: "Honed and sealed concrete floor by Perth Concrete Care",
+      },
+    ],
+        title: "Honed Concrete Perth | Perth Concrete Care",
     description: "Honed concrete (grind & seal) across Perth’s north of the river. A refined, slip-manageable finish for alfresco and outdoor areas with stain resistance",
     url: "https://perthconcretecare.com.au/honed-concrete-perth",
     siteName: "Perth Concrete Care",

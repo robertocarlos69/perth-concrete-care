@@ -11,7 +11,13 @@ export const metadata: Metadata = {
     canonical: "https://perthconcretecare.com.au/epoxy-flake-flooring-perth",
   },
   openGraph: {
-    type: "website",
+    images: [
+      {
+        url: "/gallery/honed-concrete-perth.webp",
+        alt: "Honed and sealed concrete floor by Perth Concrete Care",
+      },
+    ],
+        type: "website",
     url: "https://perthconcretecare.com.au/epoxy-flake-flooring-perth",
     title: "Epoxy Flake Flooring Perth",
     description:

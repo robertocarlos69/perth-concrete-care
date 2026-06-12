@@ -16,7 +16,13 @@ export const metadata: Metadata = {
     canonical: "https://perthconcretecare.com.au/epoxy-floor-visualiser-perth",
   },
   openGraph: {
-    type: "website",
+    images: [
+      {
+        url: "/gallery/honed-concrete-perth.webp",
+        alt: "Honed and sealed concrete floor by Perth Concrete Care",
+      },
+    ],
+        type: "website",
     url: "https://perthconcretecare.com.au/epoxy-floor-visualiser-perth",
     title: "Epoxy Floor Colour Visualiser Perth",
     description:

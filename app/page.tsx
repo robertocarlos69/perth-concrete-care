@@ -11,7 +11,13 @@ export const metadata: Metadata = {
     canonical: "https://perthconcretecare.com.au/",
   },
   openGraph: {
-    title: "Concrete Polishing, Grinding & Epoxy Flooring Perth",
+    images: [
+      {
+        url: "/gallery/honed-concrete-perth.webp",
+        alt: "Honed and sealed concrete floor by Perth Concrete Care",
+      },
+    ],
+        title: "Concrete Polishing, Grinding & Epoxy Flooring Perth",
     description:
       "Concrete polishing, grinding, honed concrete, epoxy flake flooring and metallic epoxy floors across Perth north of the river by Perth Concrete Care.",
     url: "https://perthconcretecare.com.au/",
@@ -27,7 +33,9 @@ const homeFaqs = [
   { q: "Do you service both indoor and outdoor areas?", a: "Yes. We work on garages, living rooms, shops, warehouses, alfresco areas, driveways and pool surrounds." },
   { q: "Is polished concrete slippery?", a: "Properly finished polished concrete with the right guard and maintenance can meet slip-rating requirements. Outdoors, we usually recommend hone-and-seal systems." },
   { q: "What affects price?", a: "Price is affected by square metres, slab hardness, crack repairs, access, moisture issues, edge/detail work and the flooring system selected." },
+  { q: "What do P1–P5 slip ratings mean?", a: "Slip ratings measure how safe a surface is when wet. P1 is very low slip resistance, P2–P3 are standard indoor ratings, and P4–P5 offer high to very high slip resistance for outdoor, commercial or wet areas such as pool surrounds." },
   { q: "What is CSP and why does it matter?", a: "CSP means Concrete Surface Profile. It describes the texture created by mechanical preparation and helps coatings, primers and sealers bond correctly." },
+  { q: "Why do metallic floors cost more with highlights?", a: "Metallic floors use more resin, multi-colour pigments and artistic blending. Adding highlights such as liquid diamonds, veining or spray effects increases labour and design time, so highlighted metallic floors sit at the premium end of epoxy pricing." },
   { q: "What is the difference between exposed concrete and washed aggregate?", a: "Washed aggregate is exposed while the concrete is fresh using retarder and washing. Exposed or honed concrete is ground after curing for a smoother and more refined finish." },
 ];
 
