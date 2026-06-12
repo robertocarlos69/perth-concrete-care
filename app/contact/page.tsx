@@ -28,7 +28,7 @@ export default function Page() {
   };
 
   return (
-    <main className="min-h-screen bg-neutral-50">
+    <main className="min-h-screen bg-stone-100">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <section className="mx-auto max-w-6xl px-4 pt-14 pb-8">
         <div className="flex flex-wrap items-center gap-2 text-sm text-neutral-600">
@@ -41,10 +41,10 @@ export default function Page() {
         </h1>
         <p className="mt-4 max-w-3xl text-lg text-neutral-700">
           Get a clear scope and written quote for epoxy flooring, concrete grinding, honing, polishing or metallic epoxy.
-          We service Perth <strong>north of the river</strong> — Butler corridor to Perth CBD.
+          We service Perth <strong>north of the river</strong> — Butler corridor, Joondalup, Wanneroo, Osborne Park, North Perth and Perth CBD.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
-          <a href="tel:+61448483226" className="rounded-xl bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700">
+          <a href="tel:+61448483226" className="rounded-xl bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700 shadow-sm transition-colors">
             Call 0448 483 226
           </a>
           <a href="mailto:sales@perthconcretecare.com.au" className="rounded-xl border border-emerald-300 bg-white px-5 py-3 font-semibold hover:bg-neutral-50">

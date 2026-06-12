@@ -15,16 +15,16 @@ export default function FaqAccordion({
         <details
           key={i}
           className="
-            group mb-4 md:mb-5
-            rounded-2xl border border-emerald-500
-            bg-white/90 shadow-sm
+            group mb-3 md:mb-4
+            rounded-2xl border border-stone-200
+            bg-white shadow-sm
             transition-all duration-300
-            hover:shadow-lg hover:border-emerald-400
+            hover:shadow-md hover:border-emerald-300
           "
         >
           <summary className="cursor-pointer list-none select-none">
             <div className="flex items-center justify-between gap-4 px-6 md:px-8 py-3 md:py-4">
-              <span className="text-sm md:text-[15px] leading-snug font-semibold text-neutral-900">
+              <span className="text-sm md:text-[15px] leading-snug font-bold text-stone-900">
                 {f.q}
               </span>
 
@@ -53,8 +53,8 @@ export default function FaqAccordion({
           </summary>
 
           <div className="px-6 md:px-8 pb-7 -mt-2">
-            <div className="h-px bg-emerald-100/80 mb-4" />
-            <p className="text-sm text-neutral-600 leading-relaxed">{f.a}</p>
+            <div className="h-px bg-stone-200/80 mb-4" />
+            <p className="text-sm text-stone-600 leading-relaxed">{f.a}</p>
           </div>
         </details>
       ))}

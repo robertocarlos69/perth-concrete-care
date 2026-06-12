@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 
 import FaqAccordion from "../components/FaqAccordion";
+import { servicePageJsonLd } from "../lib/schema";
+import { siteUrl } from "../lib/site";
 export const metadata: Metadata = {
   title: "Honed Concrete Perth | Perth Concrete Care",
-  description: "Honed concrete (grind & seal) across Perth’s north of river. A refined, slip-manageable finish for alfresco and outdoor areas with stain resistance",
+  description: "Honed concrete (grind & seal) across Perth’s north of the river. A refined, slip-manageable finish for alfresco and outdoor areas with stain resistance",
   alternates: {
     canonical: "https://perthconcretecare.com.au/honed-concrete-perth",
   },
   openGraph: {
     title: "Honed Concrete Perth | Perth Concrete Care",
-    description: "Honed concrete (grind & seal) across Perth’s north of river. A refined, slip-manageable finish for alfresco and outdoor areas with stain resistance",
+    description: "Honed concrete (grind & seal) across Perth’s north of the river. A refined, slip-manageable finish for alfresco and outdoor areas with stain resistance",
     url: "https://perthconcretecare.com.au/honed-concrete-perth",
     siteName: "Perth Concrete Care",
     type: "website",
@@ -26,15 +29,21 @@ export default function Page() {
     { q: "Can this be done on older slabs?", a: "Yes — as long as the concrete is sound. We’ll assess coatings, contamination and repairs first." }
   ];
 
+
+
+  const jsonLd = servicePageJsonLd({
+    name: "Honed Concrete Perth",
+    serviceType: "Honed concrete and grind-and-seal flooring",
+    description: "Honed concrete and grind-and-seal flooring across Perth north of the river for alfresco areas, pool surrounds, driveways and outdoor concrete areas.",
+    url: `${siteUrl}/honed-concrete-perth`,
+    breadcrumbName: "Honed Concrete Perth",
+    faqs,
+  });
   return (
-    <main className="min-h-screen bg-neutral-50">
+    <main className="min-h-screen bg-stone-100">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"Service\", \"name\": \"Honed Concrete Perth\", \"description\": \"Honed concrete (grind & seal) across Perth (north of river). A refined, slip-manageable finish for alfresco and outdoor areas, sealed for stain and weather resistance.\", \"provider\": {\"@type\": \"HomeAndConstructionBusiness\", \"name\": \"Perth Concrete Care\", \"url\": \"https://perthconcretecare.com.au\", \"telephone\": \"+61448483226\", \"areaServed\": [{\"@type\": \"Place\", \"name\": \"Perth (North of the River), WA\"}, {\"@type\": \"Place\", \"name\": \"Butler, WA\"}, {\"@type\": \"Place\", \"name\": \"Joondalup, WA\"}, {\"@type\": \"Place\", \"name\": \"Wanneroo, WA\"}, {\"@type\": \"Place\", \"name\": \"Osborne Park, WA\"}, {\"@type\": \"Place\", \"name\": \"Malaga, WA\"}]}, \"areaServed\": [{\"@type\": \"Place\", \"name\": \"Perth (North of the River), WA\"}], \"serviceType\": \"Honed Concrete Perth\", \"url\": \"https://perthconcretecare.com.au/honed-concrete-perth\"}" }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://perthconcretecare.com.au/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Honed Concrete Perth\", \"item\": \"https://perthconcretecare.com.au/honed-concrete-perth\"}]}" }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       <section className="mx-auto max-w-6xl px-4 pt-14 pb-10">
@@ -44,20 +53,41 @@ export default function Page() {
           <span className="text-neutral-900">Honed Concrete Perth</span>
         </div>
 
-        <h1 className="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-neutral-900">
-          Honed Concrete Perth
-        </h1>
-        <p className="mt-4 max-w-3xl text-lg text-neutral-700">
-          Honed concrete is a practical upgrade for outdoor slabs — a controlled grind to expose fine aggregate, then a sealer suited to Perth conditions.
-        </p>
+        <div className="mt-4 grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-neutral-900">
+              Honed Concrete Perth
+            </h1>
+            <p className="mt-4 max-w-3xl text-lg text-neutral-700">
+              Honed concrete is a practical upgrade for outdoor slabs — a controlled grind to expose fine aggregate, then a sealer suited to Perth conditions.
+            </p>
 
-        <div className="mt-6 flex flex-wrap gap-3">
-          <a href="tel:+61448483226" className="rounded-xl bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700">
-            Call 0448 483 226
-          </a>
-          <Link href="/#quote" className="rounded-xl border border-emerald-300 bg-white px-5 py-3 font-semibold hover:bg-neutral-50">
-            Get a free quote
-          </Link>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a href="tel:+61448483226" className="rounded-xl bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700 shadow-sm transition-colors">
+                Call 0448 483 226
+              </a>
+              <Link href="/#quote" className="rounded-xl border border-emerald-300 bg-white px-5 py-3 font-semibold hover:bg-neutral-50">
+                Get a free quote
+              </Link>
+            </div>
+          </div>
+
+          {/* Recent project photo */}
+          <figure>
+            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-stone-200 shadow-lg">
+              <Image
+                src="/gallery/honed-concrete-patio-Willetton-perth.webp"
+                alt="Honed concrete patio with sealed finish in Willetton, Perth"
+                fill
+                priority
+                className="object-cover"
+                sizes="(min-width: 1024px) 45vw, 100vw"
+              />
+            </div>
+            <figcaption className="mt-3 text-sm text-stone-600">
+              Honed concrete patio — Willetton, Perth
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -121,7 +151,7 @@ export default function Page() {
           <aside className="rounded-3xl border border-emerald-200 bg-white p-7 h-fit">
             <h2 className="text-xl font-bold text-neutral-900">Service area</h2>
             <p className="mt-3 text-neutral-700">
-              North of the river — Butler corridor, Joondalup/Wanneroo, Osborne Park and through to Perth CBD.
+              Perth north of the river — Butler corridor, Joondalup/Wanneroo, Osborne Park, North Perth and Perth CBD.
             </p>
 
             <div className="mt-6 rounded-2xl bg-neutral-50 p-5">

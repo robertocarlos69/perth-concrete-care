@@ -128,7 +128,7 @@ export default function VisualiserPage() {
           </a>
           <Link
             href="/#quote"
-            className="inline-flex items-center rounded-xl border border-emerald-600 text-emerald-700 px-5 py-3 font-semibold hover:bg-emerald-50"
+            className="inline-flex items-center rounded-xl border border-emerald-300 bg-white text-emerald-800 px-5 py-3 font-semibold hover:bg-emerald-50 transition-colors"
           >
             Request a Free Quote
           </Link>
@@ -183,20 +183,20 @@ export default function VisualiserPage() {
         </p>
       </section>
 
-      <section className="mt-12 rounded-2xl border border-emerald-500 bg-white p-6 shadow-sm">
+      <section className="mt-12 rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
         <h2 className="text-2xl font-bold text-neutral-900 mb-3">
           Related epoxy flooring pages
         </h2>
         <div className="flex flex-wrap gap-3">
           <Link
             href="/epoxy-flake-flooring-perth"
-            className="rounded-xl border border-emerald-600 px-5 py-3 font-semibold text-emerald-700 hover:bg-emerald-50"
+            className="rounded-xl border border-emerald-300 bg-white px-5 py-3 font-semibold text-emerald-800 hover:bg-emerald-50 transition-colors"
           >
             Epoxy Flake Flooring Perth
           </Link>
           <Link
             href="/#contact"
-            className="rounded-xl border border-emerald-600 px-5 py-3 font-semibold text-emerald-700 hover:bg-emerald-50"
+            className="rounded-xl border border-emerald-300 bg-white px-5 py-3 font-semibold text-emerald-800 hover:bg-emerald-50 transition-colors"
           >
             Contact Perth Concrete Care
           </Link>

@@ -1,79 +1,113 @@
 import Link from "next/link";
+import { business, services, trustSignals } from "../lib/site";
 
 export default function SiteFooter() {
   return (
-    <footer id="contact" className="bg-slate-900 text-neutral-200">
-      <div className="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-4 gap-8">
-        <div className="md:col-span-2">
+    <footer id="contact" className="bg-stone-950 text-stone-300">
+      <div className="max-w-7xl mx-auto px-4 py-12 grid gap-10 lg:grid-cols-12">
+        <div className="lg:col-span-5">
           <div className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-xl bg-white text-neutral-900 flex items-center justify-center font-bold">
+            <div className="h-10 w-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-extrabold tracking-tight">
               PCC
             </div>
-            <div className="font-semibold">Perth Concrete Care</div>
+            <div>
+              <div className="font-bold text-white">{business.name}</div>
+              <div className="text-xs text-stone-400">ABN: {business.abn}</div>
+            </div>
           </div>
 
-          <p className="mt-3 text-sm text-neutral-400">
-            Concrete grinding, honing, polishing, epoxy floors, and surface prep across Perth Metro. Indoor &amp; outdoor.
+          <p className="mt-4 max-w-xl text-sm leading-6 text-stone-400">
+            Concrete grinding, honing, polishing, epoxy floors and surface preparation across Perth north of the river. Service area only, no showroom.
           </p>
 
-          <div className="mt-3 text-sm">ABN: 63 775 263 307</div>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {trustSignals.map((signal) => (
+              <span
+                key={signal}
+                className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-stone-300"
+              >
+                {signal}
+              </span>
+            ))}
+          </div>
         </div>
 
-        <div>
-          <div className="font-semibold">Services</div>
-          <ul className="mt-2 text-sm space-y-1">
-            <li>
-              <Link href="/concrete-grinding-perth" className="hover:underline">
-                Concrete Grinding &amp; Sealing
-              </Link>
-            </li>
-            <li>
-              <Link href="/honed-concrete-perth" className="hover:underline">
-                Honing &amp; Seal Concrete Floors
-              </Link>
-            </li>
-            <li>
-              <Link href="/concrete-polishing-perth" className="hover:underline">
-                Polished Concrete
-              </Link>
-            </li>
-            <li>
-              <Link href="/epoxy-flake-flooring-perth" className="hover:underline">
-                Epoxy Flake Floors
-              </Link>
-            </li>
-            <li>
-              <Link href="/metallic-epoxy-flooring-perth" className="hover:underline">
-                Metallic Epoxy Floors
-              </Link>
-            </li>
+        <div className="lg:col-span-3">
+          <div className="font-bold text-white">Services</div>
+          <ul className="mt-3 text-sm space-y-2 text-stone-300">
+            {services.map((service) => (
+              <li key={`${service.url}-${service.serviceType}`}>
+                <Link href={new URL(service.url).pathname} className="hover:text-emerald-300 transition-colors">
+                  {service.serviceType}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
-        <div>
-          <div className="font-semibold">Contact</div>
-          <ul className="mt-2 text-sm space-y-1">
+        <div className="lg:col-span-2">
+          <div className="font-bold text-white">Service area</div>
+          <p className="mt-3 text-sm leading-6 text-stone-400">
+            {business.serviceAreaLong}
+          </p>
+        </div>
+
+        <div className="lg:col-span-2">
+          <div className="font-bold text-white">Contact</div>
+          <ul className="mt-3 text-sm space-y-2 text-stone-300">
             <li>
-              <a href="mailto:sales@perthconcretecare.com.au" className="hover:underline">
-                sales@perthconcretecare.com.au
+              <a href={`tel:${business.phoneHref}`} className="hover:text-emerald-300 transition-colors">
+                {business.phoneDisplay}
               </a>
             </li>
             <li>
-              <a href="tel:+61448483226" className="hover:underline">
-                0448 483 226
+              <a href={`mailto:${business.email}`} className="hover:text-emerald-300 transition-colors break-all">
+                {business.email}
               </a>
             </li>
-            <li>Mon–Sat 7:00–18:00</li>
+            <li>{business.hoursDisplay}</li>
           </ul>
+
+          <div className="mt-5 flex flex-wrap gap-3 text-sm">
+            <a
+              href={business.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-white/10 px-3 py-1 text-stone-300 hover:border-emerald-400/50 hover:text-emerald-300 transition-colors"
+            >
+              Instagram
+            </a>
+            <a
+              href={business.pinterestUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-white/10 px-3 py-1 text-stone-300 hover:border-emerald-400/50 hover:text-emerald-300 transition-colors"
+            >
+              Pinterest
+            </a>
+            <a
+              href={business.googleBusinessUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-white/10 px-3 py-1 text-stone-300 hover:border-emerald-400/50 hover:text-emerald-300 transition-colors"
+            >
+              Google Profile
+            </a>
+          </div>
         </div>
       </div>
 
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 py-6 text-xs text-neutral-400 flex items-center justify-between">
-          <span>© {new Date().getFullYear()} Perth Concrete Care. All rights reserved.</span>
-          <a className="hover:underline" href="#">
-            Privacy
-          </a>
+        <div className="max-w-7xl mx-auto px-4 py-6 text-xs text-stone-400 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <span>© {new Date().getFullYear()} {business.name}. All rights reserved.</span>
+          <div className="flex flex-wrap gap-4">
+            <a className="hover:text-emerald-300 transition-colors" href={business.googleReviewsUrl} target="_blank" rel="noopener noreferrer">
+              Leave a Google review
+            </a>
+            <a className="hover:text-emerald-300 transition-colors" href="#">
+              Privacy
+            </a>
+          </div>
         </div>
       </div>
     </footer>

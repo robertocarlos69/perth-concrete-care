@@ -136,13 +136,13 @@ export default function EpoxyFlakeClient() {
           </Link>
           <Link
             href="/epoxy-floor-visualiser-perth"
-            className="rounded-xl border border-emerald-600 text-emerald-700 px-5 py-3 font-semibold hover:bg-emerald-50"
+            className="rounded-xl border border-emerald-300 bg-white text-emerald-800 px-5 py-3 font-semibold hover:bg-emerald-50 transition-colors"
           >
             Try Colour Visualiser
           </Link>
           <Link
             href="/#gallery"
-            className="rounded-xl border border-emerald-600 text-emerald-700 px-5 py-3 font-semibold hover:bg-emerald-50"
+            className="rounded-xl border border-emerald-300 bg-white text-emerald-800 px-5 py-3 font-semibold hover:bg-emerald-50 transition-colors"
           >
             See Recent Work
           </Link>
@@ -163,7 +163,7 @@ export default function EpoxyFlakeClient() {
           {flakeChoices.map((f, idx) => (
             <figure
               key={f.file}
-              className="rounded-2xl overflow-hidden border border-emerald-500 bg-white shadow-sm transition hover:shadow-md"
+              className="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-sm transition hover:shadow-md"
             >
               <button
                 type="button"
@@ -205,7 +205,7 @@ export default function EpoxyFlakeClient() {
           {hyperFlakeChoices.map((f, idx) => (
             <figure
               key={f.file}
-              className="rounded-2xl overflow-hidden border border-emerald-500 bg-white shadow-sm transition hover:shadow-md"
+              className="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-sm transition hover:shadow-md"
             >
               <button
                 type="button"
@@ -231,7 +231,7 @@ export default function EpoxyFlakeClient() {
         </div>
       </section>
 
-      <section className="mt-14 max-w-3xl rounded-2xl border border-emerald-500 bg-white p-6 shadow-sm">
+      <section className="mt-14 max-w-3xl rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
         <h2 className="text-xl font-semibold text-neutral-900">
           Not sure which flake colour to choose?
         </h2>
@@ -262,7 +262,7 @@ export default function EpoxyFlakeClient() {
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
           >
-            <div className="relative aspect-square w-full max-h-[85vh] rounded-2xl border-2 border-emerald-500 overflow-hidden bg-black">
+            <div className="relative aspect-square w-full max-h-[85vh] rounded-2xl border border-stone-200 overflow-hidden bg-black">
               <Image
                 src={getChoices(lightbox.range)[lightbox.index].file}
                 alt={getChoices(lightbox.range)[lightbox.index].name}

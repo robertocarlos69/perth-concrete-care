@@ -1,29 +1,39 @@
 import type { Metadata } from "next";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
-import Image from "next/image";
-import Link from "next/link";
 import "./globals.css";
+import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
+import { business } from "./lib/site";
+import { localBusinessSchema } from "./lib/schema";
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-jakarta",
+  weight: ["400", "500", "600", "700", "800"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://perthconcretecare.com.au"),
-    icons: {
-  icon: [
-    { url: "/favicon.ico" },
-    { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
-    { url: "/favicon-192.png", sizes: "192x192", type: "image/png" },
-    { url: "/favicon-512.png", sizes: "512x512", type: "image/png" },
-  ],
-  apple: [
-    { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-  ],
-},
-    title: {
-    default: "Concrete Polishing, Grinding & Epoxy Flooring Perth | Perth Concrete Care",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  title: {
+    default:
+      "Concrete Polishing, Grinding & Epoxy Flooring Perth | Perth Concrete Care",
     template: "%s | Perth Concrete Care",
   },
   description:
-  "Perth Concrete Care delivers epoxy flooring, flake floors, metallic epoxy, concrete grinding and polished concrete across Perth. Residential and commercial finishes north of the river. Free quotes.",
+    "Perth Concrete Care delivers epoxy flooring, flake floors, metallic epoxy, concrete grinding and polished concrete across Perth. Residential and commercial finishes north of the river. Free quotes.",
   keywords: [
     "epoxy flooring Perth",
     "epoxy flake flooring Perth",
@@ -46,15 +56,17 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://perthconcretecare.com.au/",
     siteName: "Perth Concrete Care",
-    title: "Concrete Polishing, Grinding & Epoxy Flooring Perth | Perth Concrete Care",
+    title:
+      "Concrete Polishing, Grinding & Epoxy Flooring Perth | Perth Concrete Care",
     description:
-      "Concrete polishing, concrete grinding, epoxy flake floors and metallic epoxy specialists for Perth north-of-river: Butler to Perth CBD. Free quotes.",
+      "Concrete polishing, concrete grinding, epoxy flake floors and metallic epoxy specialists for Perth north of the river: Butler to Perth CBD. Free quotes.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Concrete Polishing, Grinding & Epoxy Flooring Perth | Perth Concrete Care",
+    title:
+      "Concrete Polishing, Grinding & Epoxy Flooring Perth | Perth Concrete Care",
     description:
-      "Concrete polishing, grinding and epoxy flooring specialists for Perth north-of-river: Butler to Perth CBD. Free quotes.",
+      "Concrete polishing, grinding and epoxy flooring specialists for Perth north of the river: Butler to Perth CBD. Free quotes.",
   },
   robots: {
     index: true,
@@ -62,34 +74,7 @@ export const metadata: Metadata = {
   },
 };
 
-const localBusinessJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
-  "@id": "https://perthconcretecare.com.au/#business",
-  name: "Perth Concrete Care",
-  url: "https://perthconcretecare.com.au/",
-  telephone: "+61 448 483 226",
-  email: "sales@perthconcretecare.com.au",
-  areaServed: [
-    "Butler WA",
-    "Alkimos WA",
-    "Joondalup WA",
-    "Wanneroo WA",
-    "Wangara WA",
-    "Malaga WA",
-    "Osborne Park WA",
-    "North Perth WA",
-    "Perth CBD WA",
-    "Perth (North of the River) WA"
-  ],
-  makesOffer: [
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Epoxy flake floors" } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Epoxy flake flooring" } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Concrete grinding" } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Metallic epoxy flooring" } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Concrete polishing & honing" } }
-  ]
-};
+const localBusinessJsonLd = localBusinessSchema();
 
 export default function RootLayout({
   children,
@@ -97,8 +82,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="bg-slate-50 text-slate-800">
+    <html lang="en" className={jakarta.variable}>
+      <body className="bg-stone-100 text-stone-800 font-sans antialiased pb-20 md:pb-0">
         {/* Google Analytics 4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-H6TMS5HZK3"
@@ -114,127 +99,34 @@ export default function RootLayout({
         </Script>
 
         {/* LocalBusiness Schema */}
-        <Script
+        <script
           id="ld-localbusiness"
           type="application/ld+json"
-          strategy="afterInteractive"
-        >
-          {JSON.stringify(localBusinessJsonLd)}
-        </Script>
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
 
-{/* TOP BAR */}
-<div className="w-full bg-slate-900 text-white text-sm">
-  <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-4">
-
-    {/* Service area text */}
-    <span className="hidden md:inline">
-      Perth (North of the River) — Butler to Perth CBD
-    </span>
-    <span className="md:hidden">
-      Perth Metro
-    </span>
-
-    {/* Contact */}
-    <div className="flex items-center gap-3">
-      <a
-        href="mailto:sales@perthconcretecare.com.au"
-        className="hidden sm:inline hover:underline"
-      >
-        sales@perthconcretecare.com.au
-      </a>
-
-      <a
-        href="tel:+61448483226"
-        className="inline-flex items-center bg-white text-neutral-900 px-3 py-1 rounded-md font-medium hover:opacity-90 whitespace-nowrap"
-      >
-        Call 0448 483 226
-      </a>
-    </div>
-  </div>
-</div>
-
-        {/* NAVBAR */}
-        <header className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-emerald-100 text-neutral-900">
-          <nav className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="h-12 w-12 rounded-xl bg-white shadow-sm ring-1 ring-neutral-200 flex items-center justify-center">
-                <Image
-                  src="/perth-concrete-care-logo.png"
-                  alt="Perth Concrete Care logo"
-                  width={60}
-                  height={60}
-                  className="object-contain"
-                  priority
-                />
-              </div>
-              <span className="font-semibold">Perth Concrete Care</span>
-            </Link>
-
-            <ul className="hidden md:flex items-center gap-6 text-sm whitespace-nowrap">
-              <li>
-                <a href="/#services" className="text-neutral-800 hover:text-emerald-600 transition"
->
-                  Services
-                </a>
-              </li>
-              <li>
-                <Link
-                  href="/epoxy-flake-flooring-perth"
-                  className="text-neutral-800 hover:text-emerald-600 transition font-medium"
-                >
-                  Epoxy Flakes
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/concrete-polishing-perth"
-                  className="text-neutral-800 hover:text-emerald-600 transition font-medium"
-                >
-                  Polished
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/epoxy-floor-visualiser-perth"
-                  className="text-neutral-800 hover:text-emerald-600 transition font-medium"
-                >
-                  Visualiser
-                </Link>
-              </li>
-              <li>
-                <a href="/#gallery" className="text-neutral-800 hover:text-emerald-600 transition">
-                  Gallery
-                </a>
-              </li>
-              
-              <li>
-                <a href="/#pricing" className="text-neutral-800 hover:text-emerald-600 transition">
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a href="/#faq" className="text-neutral-800 hover:text-emerald-600 transition">
-                  FAQ
-                </a>
-              </li>
-              <li>
-                <a href="/#contact" className="text-neutral-800 hover:text-emerald-600 transition">
-                  Contact
-                </a>
-              </li>
-            </ul>
-
-            <a
-              href="/#quote"
-              className="ml-4 inline-flex items-center rounded-xl bg-emerald-600 text-white px-6 py-3 text-sm md:text-base font-semibold hover:bg-emerald-700 shadow-md"
-            >
-              Get a Quote
-            </a>
-          </nav>
-        </header>
+        <SiteHeader />
 
         {/* PAGE CONTENT */}
         <main>{children}</main>
+
+        {/* Mobile sticky click-to-call CTA */}
+        <div className="fixed inset-x-0 bottom-0 z-50 border-t border-stone-200 bg-white/95 px-4 py-3 shadow-[0_-8px_20px_rgba(28,25,23,0.10)] backdrop-blur md:hidden">
+          <div className="mx-auto flex max-w-7xl gap-3">
+            <a
+              href={`tel:${business.phoneHref}`}
+              className="flex-1 rounded-xl bg-emerald-600 px-4 py-3 text-center text-sm font-bold text-white shadow-sm"
+            >
+              Call Rob
+            </a>
+            <a
+              href="/#quote"
+              className="flex-1 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-center text-sm font-bold text-emerald-900"
+            >
+              Free Quote
+            </a>
+          </div>
+        </div>
 
         <SiteFooter />
       </body>

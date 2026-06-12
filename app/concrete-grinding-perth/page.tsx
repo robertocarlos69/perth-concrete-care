@@ -3,6 +3,8 @@ import Link from "next/link";
 
 
 import FaqAccordion from "../components/FaqAccordion";
+import { servicePageJsonLd } from "../lib/schema";
+import { siteUrl } from "../lib/site";
 export const metadata: Metadata = {
   title: "Concrete Grinding Perth | Perth Concrete Care",
   description: "Concrete grinding Perth with mechanical surface preparation. Remove coatings, level high spots and prep to CSP2–CSP3 for epoxy and sealers.",
@@ -26,15 +28,21 @@ export default function Page() {
     { q: "Do you use acid etch?", a: "No. For professional coatings, mechanical grinding is the reliable method for adhesion." }
   ];
 
+
+
+  const jsonLd = servicePageJsonLd({
+    name: "Concrete Grinding Perth",
+    serviceType: "Concrete grinding and mechanical surface preparation",
+    description: "Concrete grinding and mechanical surface preparation across Perth north of the river. Remove coatings, level high spots and prepare CSP profiles for epoxy, polyaspartic and sealers.",
+    url: `${siteUrl}/concrete-grinding-perth`,
+    breadcrumbName: "Concrete Grinding Perth",
+    faqs,
+  });
   return (
-    <main className="min-h-screen bg-neutral-50">
+    <main className="min-h-screen bg-stone-100">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"Service\", \"name\": \"Concrete Grinding Perth\", \"description\": \"Concrete grinding and mechanical surface preparation across Perth (north of river). Remove coatings, level high spots, and prep to CSP2\u2013CSP3 for epoxy and sealers.\", \"provider\": {\"@type\": \"HomeAndConstructionBusiness\", \"name\": \"Perth Concrete Care\", \"url\": \"https://perthconcretecare.com.au\", \"telephone\": \"+61448483226\", \"areaServed\": [{\"@type\": \"Place\", \"name\": \"Perth (North of the River), WA\"}, {\"@type\": \"Place\", \"name\": \"Butler, WA\"}, {\"@type\": \"Place\", \"name\": \"Joondalup, WA\"}, {\"@type\": \"Place\", \"name\": \"Wanneroo, WA\"}, {\"@type\": \"Place\", \"name\": \"Osborne Park, WA\"}, {\"@type\": \"Place\", \"name\": \"Malaga, WA\"}]}, \"areaServed\": [{\"@type\": \"Place\", \"name\": \"Perth (North of the River), WA\"}], \"serviceType\": \"Concrete Grinding Perth\", \"url\": \"https://perthconcretecare.com.au/concrete-grinding-perth\"}" }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://perthconcretecare.com.au/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Concrete Grinding Perth\", \"item\": \"https://perthconcretecare.com.au/concrete-grinding-perth\"}]}" }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       <section className="mx-auto max-w-6xl px-4 pt-14 pb-10">
@@ -52,7 +60,7 @@ export default function Page() {
         </p>
 
         <div className="mt-6 flex flex-wrap gap-3">
-          <a href="tel:+61448483226" className="rounded-xl bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700">
+          <a href="tel:+61448483226" className="rounded-xl bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700 shadow-sm transition-colors">
             Call 0448 483 226
           </a>
           <Link href="/#quote" className="rounded-xl border border-emerald-300 bg-white px-5 py-3 font-semibold hover:bg-neutral-50">
@@ -121,7 +129,7 @@ export default function Page() {
           <aside className="rounded-3xl border border-emerald-200 bg-white p-7 h-fit">
             <h2 className="text-xl font-bold text-neutral-900">Service area</h2>
             <p className="mt-3 text-neutral-700">
-              North of the river — Butler corridor, Joondalup/Wanneroo, Osborne Park and through to Perth CBD.
+              Perth north of the river — Butler corridor, Joondalup/Wanneroo, Osborne Park, North Perth and Perth CBD.
             </p>
 
             <div className="mt-6 rounded-2xl bg-neutral-50 p-5">

@@ -3,6 +3,8 @@ import Link from "next/link";
 
 import FaqAccordion from "../components/FaqAccordion";
 import PolishingGallery from "./PolishingGallery";
+import { servicePageJsonLd } from "../lib/schema";
+import { siteUrl } from "../lib/site";
 
 export const metadata: Metadata = {
   title: "Concrete Polishing Perth | Perth Concrete Care",
@@ -44,74 +46,18 @@ const faqs = [
 ];
 
 export default function ConcretePolishingPerthPage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://perthconcretecare.com.au/#business",
-        name: "Perth Concrete Care",
-        url: "https://perthconcretecare.com.au/",
-        telephone: "+61 448 483 226",
-        email: "sales@perthconcretecare.com.au",
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Perth",
-          addressRegion: "WA",
-          addressCountry: "AU",
-        },
-        areaServed: [
-          "Perth WA",
-          "Joondalup WA",
-          "Wanneroo WA",
-          "Wangara WA",
-          "Malaga WA",
-          "Osborne Park WA",
-        ],
-      },
-      {
-        "@type": "Service",
-        "@id": "https://perthconcretecare.com.au/concrete-polishing-perth#service",
-        serviceType: "Concrete polishing",
-        provider: { "@id": "https://perthconcretecare.com.au/#business" },
-        areaServed: "Perth, WA",
-        url: "https://perthconcretecare.com.au/concrete-polishing-perth",
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://perthconcretecare.com.au/concrete-polishing-perth#breadcrumb",
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Home",
-            item: "https://perthconcretecare.com.au/",
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "Concrete Polishing Perth",
-            item: "https://perthconcretecare.com.au/concrete-polishing-perth",
-          },
-        ],
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://perthconcretecare.com.au/concrete-polishing-perth#faq",
-        mainEntity: faqs.map((faq) => ({
-          "@type": "Question",
-          name: faq.q,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: faq.a,
-          },
-        })),
-      },
-    ],
-  };
+  const jsonLd = servicePageJsonLd({
+    name: "Concrete Polishing Perth",
+    serviceType: "Concrete polishing",
+    description:
+      "Mechanical polished concrete for homes, warehouses, showrooms and commercial interiors across Perth north of the river.",
+    url: `${siteUrl}/concrete-polishing-perth`,
+    breadcrumbName: "Concrete Polishing Perth",
+    faqs,
+  });
 
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-800">
+    <main className="min-h-screen bg-stone-100 text-slate-800">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

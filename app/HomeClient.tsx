@@ -3,7 +3,8 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import SiteFooter from "./components/SiteFooter";
+import { business, trustSignals } from "./lib/site";
+import GoogleReviewsCarousel from "./components/GoogleReviewsCarousel";
 
 // index.tsx — Single-file React page for Perth Concrete Care
 // Pure TSX. Drop into Next.js (e.g. app/page.tsx) or Vite entry.
@@ -63,7 +64,7 @@ export default function HomeClient() {
         return;
       }
 
-      for (const file of Array.from(files)) {
+      for (const file of Array.from(files) as File[]) {
         if (file.size > MAX_SIZE) {
           alert(`Each photo must be smaller than 8 MB.`);
           setFormStatus("idle");
@@ -152,106 +153,171 @@ export default function HomeClient() {
     <>
       <div className="min-h-screen bg-slate-50 text-slate-800 selection:bg-emerald-700 selection:text-white">
         {/* Hero */}
-        <section className="relative w-full bg-white">
-          {/* Background Image Wrapper — MUST have height */}
-          <div className="absolute inset-0 h-[680px] sm:h-[620px] md:h-[620px]">
+        <section className="relative w-full overflow-hidden bg-stone-950 text-white">
+          {/* Background image */}
+          <div className="absolute inset-0">
             <Image
               src="/header-bg1.png"
               alt="Swirled concrete texture background"
               fill
               priority
-              className="object-cover opacity-60"
+              className="object-cover opacity-30"
               sizes="100vw"
             />
-
-            {/* Soft fade for readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/60 to-stone-100" />
+            {/* Glossy "polished floor" sheen + readability gradient */}
+            <div className="absolute inset-0 bg-gradient-to-br from-stone-950/95 via-stone-950/80 to-emerald-950/70" />
+            {/* Settle to solid stone-950 at the bottom so the wedge in the
+                next section continues the colour seamlessly */}
+            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-stone-950 to-transparent" />
           </div>
 
           {/* Foreground content */}
-          <div className="relative max-w-7xl mx-auto px-4 pt-10 pb-8 md:pt-16 md:pb-28">
-            <div className="max-w-5xl md:-ml-12">
-              <h1 className="text-4xl md:text-5xl font-extrabold leading-tight drop-shadow-sm">
-  Concrete <span className="text-emerald-600">Polishing</span>, Grinding &{" "}
-  <span className="text-emerald-600">Epoxy Flooring</span> Perth
-</h1>
+          <div className="relative max-w-7xl mx-auto px-4 pt-14 pb-16 md:pt-20 md:pb-20 grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="max-w-3xl">
+              {/* Google rating strip */}
+              <a
+                href={business.googleBusinessUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-semibold backdrop-blur-sm hover:bg-white/15 transition-colors"
+              >
+                <span className="flex text-amber-400" aria-hidden="true">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="h-3.5 w-3.5 fill-current" viewBox="0 0 20 20">
+                      <path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" />
+                    </svg>
+                  ))}
+                </span>
+                5-star rated on Google
+                <span className="text-white/60">— read our reviews</span>
+              </a>
 
-              <p className="mt-5 text-lg text-neutral-700">
-                Perth specialists in concrete polishing, epoxy flooring and grind and seal systems across Perth and surrounding suburbs.
+              <h1 className="mt-5 text-4xl md:text-6xl font-extrabold leading-[1.05] tracking-tight">
+                Concrete <span className="text-emerald-300">Polishing</span>,
+                Grinding &{" "}
+                <span className="text-emerald-300">Epoxy Flooring</span> Perth
+              </h1>
+
+              <p className="mt-5 text-lg md:text-xl text-stone-300 leading-relaxed max-w-2xl">
+                Perth specialists in concrete polishing, epoxy flooring and
+                grind-and-seal systems across Perth north of the river.
               </p>
 
-              <ul className="mt-2 text-sm text-neutral-700 space-y-1">
-                <li>
-- Concrete polishing, grinding, honing & slab levelling, paint & glue removal
-</li>
-
-<li>
-- Epoxy garage floors, flake systems & metallic epoxy floors for residential & workshops
-</li>
-
-<li>
-- Exposed concrete & washed aggregate driveways, paths & alfrescos
-</li>
+              <ul className="mt-5 space-y-2.5 text-[15px] text-stone-200">
+                {[
+                  "Concrete polishing, grinding, honing & slab levelling, paint & glue removal",
+                  "Epoxy garage floors, flake systems & metallic epoxy floors for residential & workshops",
+                  "Exposed concrete & washed aggregate driveways, paths & alfrescos",
+                ].map((line) => (
+                  <li key={line} className="flex items-start gap-2.5">
+                    <svg
+                      className="mt-1 h-4 w-4 shrink-0 text-emerald-400"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>
+                    {line}
+                  </li>
+                ))}
               </ul>
 
               {/* Buttons */}
-              <div className="mt-5 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href="#quote"
-                  className="rounded-xl bg-emerald-600 text-white px-6 py-3 text-base font-semibold hover:bg-emerald-700 shadow-md transition-all duration-300 hover:scale-105"
+                  className="rounded-xl bg-emerald-500 text-stone-950 px-7 py-3.5 text-base font-bold hover:bg-emerald-400 shadow-lg shadow-emerald-950/40 transition-colors"
                 >
                   Request Free Quote
                 </a>
 
                 <a
-                  href="#services"
-                  className="rounded-xl border border-emerald-600 text-emerald-700 px-5 py-3 font-medium hover:bg-emerald-50 transition-all duration-300 hover:scale-105"
+                  href={`tel:${business.phoneHref}`}
+                  className="rounded-xl border border-white/25 bg-white/5 text-white px-6 py-3.5 text-base font-semibold hover:bg-white/10 backdrop-blur-sm transition-colors"
                 >
-                  Browse Services
+                  Call {business.phoneDisplay}
                 </a>
               </div>
-<p className="mt-3 text-sm text-neutral-700">
-  Explore our concrete polishing, epoxy flooring and grind & seal options below.
-</p>
+
               {/* Trust badges */}
-              <div className="mt-5 flex flex-wrap items-center gap-2 text-xs text-neutral-600">
-                {["Fully insured", "H-class dust control", "WA owned & operated", "Police cleared"].map((t) => (
+              <div className="mt-7 flex flex-wrap items-center gap-2 text-xs text-stone-300">
+                {trustSignals.slice(0, 4).map((t) => (
                   <span
                     key={t}
-                    className="px-3 py-1 rounded-full border bg-white/90 backdrop-blur-sm shadow-sm"
+                    className="px-3 py-1.5 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm font-medium"
                   >
                     {t}
                   </span>
                 ))}
               </div>
             </div>
+
+            {/* Project photo — desktop only, keeps mobile fast */}
+            <div className="relative hidden lg:block">
+              <div className="relative aspect-[4/5] max-h-[560px] rounded-3xl overflow-hidden ring-1 ring-white/15 shadow-2xl shadow-black/50">
+                <Image
+                  src="/gallery/honed-concrete-perth.webp"
+                  alt="Honed and sealed concrete floor finished by Perth Concrete Care"
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 42vw, 100vw"
+                />
+                {/* Caption */}
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent p-5 pt-14">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-emerald-300">
+                    Recent project
+                  </p>
+                  <p className="mt-1 text-sm font-semibold text-white">
+                    Honed concrete — Perth
+                  </p>
+                </div>
+              </div>
+              {/* Subtle reflection glow under the card */}
+              <div
+                className="absolute -bottom-8 left-1/2 h-10 w-3/4 -translate-x-1/2 rounded-full bg-emerald-400/15 blur-2xl"
+                aria-hidden="true"
+              />
+            </div>
           </div>
         </section>
+
 
         {/* Services – FULL-WIDTH BACKGROUND */}
         <section
           id="services"
-          className="relative w-full py-24 overflow-hidden -mt-16 md:-mt-24"
+          className="relative w-full bg-stone-100 pt-20 md:pt-28 pb-20 overflow-hidden"
         >
-          {/* Background image goes edge-to-edge */}
+          {/* Concrete texture, kept subtle */}
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-center opacity-25"
             style={{ backgroundImage: "url('/services.png')" }}
           />
-          {/* Light mist overlay */}
-          <div className="absolute inset-0 bg-white/10 backdrop-blur-[0.8px]" />
-          {/* Fade at the very top to blend into hero */}
-          <div
-            className="absolute -top-10 left-0 right-0 h-35
-               bg-gradient-to-b from-slate-50 via-slate-30/45 to-transparent
-               pointer-events-none"
-          />
-          {/* Bottom fade */}
-          <div className="absolute bottom-0 left-0 right-0 h-30 bg-gradient-to-t from-white via-white/70 to-transparent pointer-events-none" />
+          {/* Settle the texture into the page */}
+          <div className="absolute inset-0 bg-gradient-to-b from-stone-100/70 via-transparent to-white" />
+
+          {/* Dark wedge continuing the hero — texture runs right up to the
+              diagonal edge, so there's no colour seam */}
+          <svg
+            className="absolute top-0 left-0 w-full h-10 md:h-16 text-stone-950"
+            viewBox="0 0 1440 64"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <polygon points="0,0 1440,0 1440,8 0,64" fill="currentColor" />
+          </svg>
 
           {/* Foreground content kept to max-w-7xl */}
-          <div className="relative max-w-7xl mx-auto px-4 -mt-10 md:-mt-16">
-            <h2 className="text-3xl md:text-4xl font-bold">
+          <div className="relative max-w-7xl mx-auto px-4">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-700">
+              What we do
+            </p>
+            <h2 className="mt-2 text-3xl md:text-4xl font-extrabold text-stone-900">
              Concrete Flooring Services in Perth
             </h2>
 
@@ -263,28 +329,34 @@ export default function HomeClient() {
             </p>
 
             <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((s) => (
+              {primaryServices.map((s) => (
                 <div
                   key={s.title}
                   className="
-                    rounded-2xl border border-emerald-500 bg-white p-6 shadow-sm
-                    transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-emerald-400
+                    group rounded-2xl border border-stone-200 bg-white p-6 shadow-sm
+                    transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-emerald-300
                   "
                 >
-                  <div className="flex items-center gap-2">
-                    {s.icon && (
-                      <span className="text-xl" aria-hidden="true">
-                        {s.icon}
-                      </span>
-                    )}
-                    <h3 className="text-lg font-semibold text-emerald-700 flex items-center gap-2">
+                  <div className="flex items-center gap-3">
+                    <span
+                      className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700 ring-1 ring-emerald-100"
+                      aria-hidden="true"
+                    >
+                      <ServiceIcon name={s.icon} className="h-5 w-5" />
+                    </span>
+                    <h3 className="text-lg font-bold text-stone-900 leading-snug">
                     {s.title}
                     </h3>
                   </div>
-                  <p className="mt-2 text-sm text-neutral-600">{s.desc}</p>
-                  <ul className="mt-4 text-sm list-disc pl-5 space-y-1 text-neutral-700">
+                  <p className="mt-3 text-sm text-stone-600 leading-relaxed">{s.desc}</p>
+                  <ul className="mt-4 text-sm space-y-2 text-stone-700">
                     {s.bullets.map((b, i) => (
-                      <li key={i}>{b}</li>
+                      <li key={i} className="flex items-start gap-2">
+                        <svg className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                          <path d="M20 6 9 17l-5-5" />
+                        </svg>
+                        {b}
+                      </li>
                     ))}
                   </ul>
 
@@ -306,6 +378,46 @@ export default function HomeClient() {
                 </div>
               ))}
             </div>
+
+            <div className="mt-8 rounded-2xl border border-stone-200 bg-white/95 p-6 shadow-sm backdrop-blur-sm">
+              <div className="max-w-3xl">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-700">
+                  Also available
+                </p>
+                <h3 className="mt-1 text-xl font-bold text-neutral-900">
+                  Other Surface Preparation Services
+                </h3>
+                <p className="mt-2 text-sm text-neutral-700">
+                  These support services are usually quoted as part of a larger grinding, honing, epoxy or polishing job.
+                  Keeping them here helps customers understand the full prep capability without making the main service grid too busy.
+                </p>
+              </div>
+
+              <div className="mt-5 grid md:grid-cols-3 gap-4">
+                {supportServices.map((s) => (
+                  <div
+                    key={s.title}
+                    className="rounded-xl border border-stone-200 bg-stone-50 p-4"
+                  >
+                    <div className="flex items-center gap-2.5">
+                      <span
+                        className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white text-emerald-700 ring-1 ring-stone-200"
+                        aria-hidden="true"
+                      >
+                        <ServiceIcon name={s.icon} className="h-4 w-4" />
+                      </span>
+                      <h4 className="font-bold text-stone-900">{s.title}</h4>
+                    </div>
+                    <p className="mt-2 text-sm text-stone-600">{s.desc}</p>
+                    <ul className="mt-3 text-sm list-disc pl-5 space-y-1 text-stone-700">
+                      {s.bullets.slice(0, 2).map((b, i) => (
+                        <li key={i}>{b}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
@@ -316,7 +428,7 @@ export default function HomeClient() {
         <section id="gallery" className="max-w-7xl mx-auto px-4 py-8">
           <div className="flex items-end justify-between">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-stone-900">
               Recent Concrete Flooring Projects in Perth
               </h2>
             </div>
@@ -328,7 +440,7 @@ export default function HomeClient() {
             {galleryItems.map((item, index) => (
               <figure
                 key={item.id}
-                className="aspect-video rounded-xl overflow-hidden border bg-white shadow-sm"
+                className="group aspect-video rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-sm"
               >
                 <div className="relative w-full h-full">
                   <Image
@@ -336,12 +448,12 @@ export default function HomeClient() {
                     alt={item.alt}
                     fill
                     loading="lazy"
-                    className="object-cover cursor-pointer hover:opacity-90 transition"
+                    className="object-cover cursor-pointer transition-transform duration-500 group-hover:scale-105"
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     onClick={() => openLightbox(index)}
                   />
                 </div>
-                <figcaption className="px-3 py-2 text-xs text-neutral-600 bg-white/90">
+                <figcaption className="px-3 py-2 text-xs font-medium text-stone-600 bg-white">
                   {item.label}
                 </figcaption>
               </figure>
@@ -352,7 +464,7 @@ export default function HomeClient() {
         {/* Pricing / Packages */}
         <section id="pricing" className="relative w-full bg-white/60 pt-4 pb-16">
           <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-stone-900">
               Flooring Costs in Perth
             </h2>
             <p className="mt-2 text-neutral-600">
@@ -365,16 +477,16 @@ export default function HomeClient() {
                 <div
                   key={p.name}
                   className="
-                    min-w-[260px] rounded-2xl border border-emerald-500 bg-white p-6 shadow-sm
-                    transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-emerald-400
+                    min-w-[260px] rounded-2xl border border-stone-200 bg-white p-6 shadow-sm
+                    transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-emerald-300
                   "
                 >
-                  <div className="text-sm uppercase tracking-wide text-emerald-700 font-semibold">
+                  <div className="text-xs uppercase tracking-[0.14em] text-emerald-700 font-bold">
                     {p.name}
                   </div>
 
                   <div className="mt-3 flex items-baseline gap-1">
-                    <span className="text-3xl font-extrabold">{p.price}</span>
+                    <span className="text-3xl font-extrabold text-stone-900">{p.price}</span>
                     <span className="text-sm font-medium text-neutral-500">{p.unit}</span>
                   </div>
 
@@ -412,14 +524,14 @@ export default function HomeClient() {
         <section className="bg-white/60">
           <div className="max-w-7xl mx-auto px-4 py-8 grid md:grid-cols-2 gap-8 items-start">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-stone-900">
                 Flooring Services Across Perth
               </h2>
               <p className="mt-3 text-neutral-600 text-sm md:text-base">
                 We install honed concrete, polished concrete, epoxy garage
                 floors, epoxy flake systems and washed aggregate across Perth
-                suburbs including Joondalup, Wanneroo, Alkimos, Butler, Yanchep,
-                Ellenbrook, Wangara, Malaga, Rockingham and nearby areas.
+                north of the river, including Joondalup, Wanneroo, Alkimos, Butler, Yanchep,
+                Ellenbrook, Wangara, Malaga, Osborne Park, North Perth and Perth CBD.
               </p>
 
               <div className="mt-4 flex flex-wrap gap-2 text-sm">
@@ -450,8 +562,8 @@ export default function HomeClient() {
         {/* Quote Form */}
         <section id="quote" className="bg-white/60">
           <div className="max-w-7xl mx-auto px-4 py-8">
-            <div className="rounded-2xl border border-emerald-500 bg-white p-8 shadow-sm transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-emerald-400">
-              <h2 className="text-2xl md:text-3xl font-bold">
+            <div className="rounded-2xl border border-stone-200 bg-white p-6 md:p-10 shadow-md">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-stone-900">
                 Get a Quote for Your Concrete Floor
               </h2>
               <p className="mt-2 text-neutral-600">
@@ -469,17 +581,17 @@ export default function HomeClient() {
                 onSubmit={handleQuoteSubmit}
                 encType="multipart/form-data"
               >
-                <input name="name" className="w-full rounded-xl border px-4 py-3" placeholder="Full name" required />
-                <input name="email" className="w-full rounded-xl border px-4 py-3" placeholder="Email" type="email" required />
-                <input name="phone" className="w-full rounded-xl border px-4 py-3" placeholder="Phone" />
-                <input name="suburb" className="w-full rounded-xl border px-4 py-3" placeholder="Suburb (e.g. Joondalup)" />
-                <select name="service" className="w-full rounded-xl border px-4 py-3">
+                <input name="name" className="w-full rounded-xl border border-stone-300 bg-white px-4 py-3 placeholder:text-stone-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none transition" placeholder="Full name" required />
+                <input name="email" className="w-full rounded-xl border border-stone-300 bg-white px-4 py-3 placeholder:text-stone-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none transition" placeholder="Email" type="email" required />
+                <input name="phone" className="w-full rounded-xl border border-stone-300 bg-white px-4 py-3 placeholder:text-stone-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none transition" placeholder="Phone" />
+                <input name="suburb" className="w-full rounded-xl border border-stone-300 bg-white px-4 py-3 placeholder:text-stone-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none transition" placeholder="Suburb (e.g. Joondalup)" />
+                <select name="service" className="w-full rounded-xl border border-stone-300 bg-white px-4 py-3 placeholder:text-stone-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none transition">
                   <option value="">Service needed</option>
                   {services.map((s) => (
                     <option key={s.title}>{s.title}</option>
                   ))}
                 </select>
-                <input name="area" className="w-full rounded-xl border px-4 py-3" placeholder="Approx. area (m²)" />
+                <input name="area" className="w-full rounded-xl border border-stone-300 bg-white px-4 py-3 placeholder:text-stone-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none transition" placeholder="Approx. area (m²)" />
 
                 <div className="md:col-span-2 flex flex-col gap-1 text-sm">
                   <label className="font-medium text-neutral-700">Photos (optional)</label>
@@ -487,7 +599,7 @@ export default function HomeClient() {
                     name="photos"
                     type="file" accept="image/jpeg,image/jpg,image/png,image/heic,image/heif,.heic,.heif"
 multiple
-                    className="w-full rounded-xl border px-4 py-2 text-sm"
+                    className="w-full rounded-xl border border-stone-300 bg-white px-4 py-2 text-sm file:mr-3 file:rounded-lg file:border-0 file:bg-emerald-50 file:px-3 file:py-1.5 file:text-sm file:font-semibold file:text-emerald-800"
                   />
                   <p className="text-xs text-neutral-500">
                     You can attach up to 5 photos, max 8&nbsp;MB each (garage,
@@ -497,7 +609,7 @@ multiple
 
                 <textarea
                   name="details"
-                  className="md:col-span-2 rounded-xl border px-4 py-3 min-h-[120px]"
+                  className="md:col-span-2 rounded-xl border border-stone-300 bg-white px-4 py-3 min-h-[120px] placeholder:text-stone-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none transition"
                   placeholder="Project details (indoor/outdoor, new/old slab, deadlines, etc.)"
                 />
 
@@ -513,7 +625,7 @@ multiple
                   <button
                     type="submit"
                     disabled={formStatus === "sending"}
-                    className="rounded-xl bg-emerald-600 text-white px-6 py-3 font-medium hover:bg-emerald-700 disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="rounded-xl bg-emerald-600 text-white px-8 py-3.5 font-bold hover:bg-emerald-700 shadow-sm disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
                   >
                     {formStatus === "sending"
                       ? "Sending..."
@@ -533,32 +645,71 @@ multiple
           </div>
         </section>
 
-        {/* FAQ */}
-        <section
-          id="faq"
-          className="relative bg-[url('/faq-metallic.png')] bg-cover bg-center"
-        >
-          <div
-            className="pointer-events-none absolute -top-32 left-0 right-0 h-32
-            bg-gradient-to-b from-transparent via-white/40 to-transparent"
-          />
-          <div className="bg-white/75 relative">
-            <div className="max-w-7xl mx-auto px-4 py-12">
-              <h2 className="text-2xl md:text-3xl font-bold">
-                Concrete Flooring FAQ Perth
-              </h2>
-              <p className="mt-2 text-sm text-neutral-600">Click a question to expand.</p>
+        {/* Google Reviews / Social Proof */}
+        <section id="reviews" className="relative bg-white py-12">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="rounded-3xl border border-emerald-200 bg-gradient-to-br from-emerald-50 via-white to-white p-6 md:p-8 shadow-sm">
+              <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+                <div>
+                  <div className="inline-flex rounded-full border border-emerald-200 bg-white px-3 py-1 text-xs font-bold uppercase tracking-wide text-emerald-800">
+                    Google reviews
+                  </div>
+                  <h2 className="mt-4 text-2xl md:text-3xl font-bold text-neutral-900">
+                    Check Perth Concrete Care on Google before you book
+                  </h2>
+                  <p className="mt-3 max-w-2xl text-sm md:text-base leading-7 text-neutral-700">
+                    For concrete polishing, honing, grinding and epoxy flooring, trust matters. Use the Google links below to view the Business Profile or leave Perth Concrete Care a review directly on Google.
+                  </p>
 
-              <div className="mt-8 w-full">
+                  <div className="mt-5 flex flex-wrap gap-3">
+                    <a
+                      href={business.googleBusinessUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-xl bg-emerald-600 px-5 py-3 text-sm font-bold text-white shadow-sm hover:bg-emerald-700"
+                    >
+                      View Google Profile
+                    </a>
+                    <a
+                      href={business.googleReviewsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-xl border border-emerald-300 bg-white px-5 py-3 text-sm font-bold text-emerald-900 hover:bg-emerald-50"
+                    >
+                      Leave a Google Review
+                    </a>
+                  </div>
+                </div>
+
+                <GoogleReviewsCarousel />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section id="faq" className="relative bg-stone-100">
+          {/* Faint brand tint so the section doesn't feel sterile */}
+          <div
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_60%_at_50%_0%,rgba(14,111,85,0.07),transparent)]"
+            aria-hidden="true"
+          />
+          <div className="relative max-w-7xl mx-auto px-4 py-16">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-stone-900">
+              Concrete Flooring FAQ Perth
+            </h2>
+            <p className="mt-2 text-sm text-stone-600">Click a question to expand.</p>
+
+            <div className="mt-8 w-full">
                 {faqs.map((f, i) => (
                   <details
                     key={i}
                     className="
-                      group mb-4 md:mb-5
-                      rounded-2xl border border-emerald-500
-                      bg-white/90 shadow-sm
+                      group mb-3 md:mb-4
+                      rounded-2xl border border-stone-200
+                      bg-white shadow-sm
                       transition-all duration-300
-                      hover:shadow-lg hover:border-emerald-400
+                      hover:shadow-md hover:border-emerald-300
                     "
                   >
                     <summary className="cursor-pointer list-none select-none">
@@ -597,10 +748,36 @@ multiple
                     </div>
                   </details>
                 ))}
-              </div>
             </div>
           </div>
         </section>
+
+        {/* CLOSING CTA STRIP */}
+        <section className="bg-stone-950">
+          <div className="max-w-7xl mx-auto px-4 py-10 md:py-12 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+            <p className="text-lg md:text-xl font-bold text-white">
+              Still have questions?{" "}
+              <span className="text-emerald-300">Call Rob</span> — he&apos;s happy to talk through your slab.
+            </p>
+            <div className="flex flex-wrap gap-3 shrink-0">
+              <a
+                href={`tel:${business.phoneHref}`}
+                className="rounded-xl bg-emerald-500 px-6 py-3 font-bold text-stone-950 hover:bg-emerald-400 transition-colors"
+              >
+                Call {business.phoneDisplay}
+              </a>
+              <a
+                href="#quote"
+                className="rounded-xl border border-white/25 bg-white/5 px-6 py-3 font-semibold text-white hover:bg-white/10 transition-colors"
+              >
+                Get a free quote
+              </a>
+            </div>
+          </div>
+        </section>
+
+
+
 
         {/* LIGHTBOX MODAL FOR RECENT WORK */}
         {lightboxIndex !== null && (
@@ -654,13 +831,104 @@ multiple
   );
 }
 
+/* Line-icon set for service cards (replaces the old emoji) */
+function ServiceIcon({ name, className }: { name?: string; className?: string }) {
+  const common = {
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.8,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    className,
+    "aria-hidden": true,
+  };
+
+  switch (name) {
+    case "driveway": // car / driveway
+      return (
+        <svg {...common}>
+          <path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11" />
+          <path d="M4 11h16a1 1 0 0 1 1 1v4h-2.5M3 16V12a1 1 0 0 1 1-1" />
+          <path d="M3 16h18" />
+          <circle cx="7.5" cy="16.5" r="1.8" />
+          <circle cx="16.5" cy="16.5" r="1.8" />
+        </svg>
+      );
+    case "grinder": // grinding disc
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="12" r="8" />
+          <circle cx="12" cy="12" r="2.5" />
+          <path d="M12 4v3M12 17v3M4 12h3M17 12h3M6.3 6.3l2.1 2.1M15.6 15.6l2.1 2.1M17.7 6.3l-2.1 2.1M8.4 15.6l-2.1 2.1" />
+        </svg>
+      );
+    case "stone": // layered slab
+      return (
+        <svg {...common}>
+          <path d="M3 9.5 12 5l9 4.5-9 4.5-9-4.5Z" />
+          <path d="M3 14.5 12 19l9-4.5" />
+        </svg>
+      );
+    case "sparkle": // polished shine
+      return (
+        <svg {...common}>
+          <path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z" />
+          <path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8L19 16Z" />
+        </svg>
+      );
+    case "flake": // flake scatter
+      return (
+        <svg {...common}>
+          <rect x="3.5" y="3.5" width="17" height="17" rx="3" />
+          <path d="M8 8.5h.01M12.5 7h.01M16 9.5h.01M7.5 13h.01M11.5 12h.01M15.5 13.5h.01M9 16.5h.01M13.5 16h.01M17 17h.01" strokeWidth="2.6" />
+        </svg>
+      );
+    case "diamond":
+      return (
+        <svg {...common}>
+          <path d="M7 4h10l4 5-9 11L3 9l4-5Z" />
+          <path d="M3 9h18M9.5 4 12 9l2.5-5M12 9l0 11" />
+        </svg>
+      );
+    case "broom": // coating removal
+      return (
+        <svg {...common}>
+          <path d="M19 3 11.5 10.5" />
+          <path d="M10 9.5 4.5 15c-1 1-1 3 0 4.5s3.5 1.5 4.5.5L14.5 14 10 9.5Z" />
+          <path d="M7 13.5 10.5 17" />
+        </svg>
+      );
+    case "level": // spirit level / ruler
+      return (
+        <svg {...common}>
+          <rect x="2.5" y="9" width="19" height="6" rx="1.5" />
+          <path d="M7 9v3M11 9v3M15 9v3M19 9v3" />
+        </svg>
+      );
+    case "water": // pressure cleaning
+      return (
+        <svg {...common}>
+          <path d="M12 3.5S6.5 9.8 6.5 13.5a5.5 5.5 0 0 0 11 0C17.5 9.8 12 3.5 12 3.5Z" />
+          <path d="M9.5 14a2.5 2.5 0 0 0 2.5 2.5" />
+        </svg>
+      );
+    default:
+      return (
+        <svg {...common}>
+          <path d="M20 6 9 17l-5-5" />
+        </svg>
+      );
+  }
+}
+
 function BeforeAfter({ before, after }: { before: string; after: string }) {
   const [pos, setPos] = useState(50);
 
   return (
     <section className="bg-white/60">
       <div className="max-w-7xl mx-auto px-4 pt-4 pb-4">
-        <h2 className="text-2xl md:text-3xl font-bold mb-4">
+        <h2 className="text-2xl md:text-3xl font-extrabold text-stone-900 mb-4">
           Before &amp; After: Paint Removal & Hone-and-Seal Finish
         </h2>
 
@@ -791,71 +1059,77 @@ const galleryItems = [
   },
 ];
 
-const services = [
+const primaryServices = [
   {
-    title: "Exposed Concrete & Washed Aggregate",
-    icon: "🚗",
-    desc: "Durable, decorative outdoor concrete finishes with uniform stone exposure, ideal for driveways, alfresco areas and pathways.",
+    title: "Exposed Aggregate Honing & Sealing",
+    icon: "driveway",
+    href: "/honed-concrete-perth",
+    desc: "Smooths rough exposed or washed aggregate, removes sharp stones, and seals the surface for a cleaner outdoor finish.",
     bullets: [
-      "Premium exposed or washed aggregate options",
-      "Slip-resistant, hard-wearing outdoor surface",
       "Ideal for driveways, paths, patios & pool surrounds",
+      "Helps make rough aggregate easier on bare feet",
+      "Topical or penetrating sealer options",
     ],
   },
   {
     title: "Concrete Grinding & Sealing",
-    icon: "🧱",
+    icon: "grinder",
     href: "/concrete-grinding-perth",
     desc: "Smooths and refines concrete, then seals with UV-stable coatings for a durable finish.",
     bullets: ["6–120 grit prep as required", "Acrylic/PU/penetrating sealers", "Indoor & outdoor applications"],
   },
   {
     title: "Honing & Seal Concrete Floors",
-    icon: "🪨",
+    icon: "stone",
     href: "/honed-concrete-perth",
     desc: "Outdoor-friendly, slip-rated finish that exposes fine aggregate then seals for protection.",
     bullets: ["Pool surrounds & alfresco", "Slip rating options (P3–P5)", "UV-stable & stain-resistant sealers"],
   },
   {
     title: "Polished Concrete",
-    icon: "✨",
+    icon: "sparkle",
     href: "/concrete-polishing-perth",
     desc: "Mechanical polish with densifier and guard for a premium indoor finish.",
     bullets: ["Full mechanical polish using 400–3000 grit resin pads", "Lithium densifier & grout coat", "Matte to high-gloss options"],
   },
   {
     title: "Epoxy Flake Floors",
-    icon: "🎨",
+    icon: "flake",
     href: "/epoxy-flake-flooring-perth",
     desc: "Hard-wearing resin floors with optional flakes and rapid-cure polyaspartic topcoats.",
-    bullets: ["Great option for both interior and exterior", "Choice of light, medium or full flake system", "Non-yellowing UV resistant topcoats", "Visit our show-room in Canning Vale"],
+    bullets: ["Great option for both interior and exterior", "Choice of light, medium or full flake system", "Non-yellowing UV resistant topcoats", "Service area only — no showroom visit required"],
   },
   {
     title: "Metallic Epoxy Floors",
-    icon: "💎",
+    icon: "diamond",
     href: "/metallic-epoxy-flooring-perth",
     desc: "Luxurious, high-gloss resin floors that create unique marbled and 3D depth effects using metallic pigments and clear epoxy resins.",
     bullets: ["Garages, showrooms & living areas", "Custom metallic pigment blends", "High-gloss or matte polyurethane topcoat"],
   },
+];
+
+const supportServices = [
   {
-    title: "Removal of Old Coatings & Glues",
-    icon: "🧹",
-    desc: "Remove paint, epoxy, tile adhesive, carpet glue, and membranes safely and cleanly.",
-    bullets: ["PCD/Carbide tooling", "H-class HEPA extraction", "Suitable tiling & resurfacing projects"],
+    title: "Coating & Glue Removal",
+    icon: "broom",
+    desc: "Removal of paint, epoxy, tile adhesive, carpet glue and membranes before a new floor system is installed.",
+    bullets: ["PCD/carbide tooling", "H-class HEPA extraction", "Suitable for tiling & resurfacing projects"],
   },
   {
-    title: "Levelling Uneven Floors",
-    icon: "📐",
-    desc: "Self-leveller or grind correction to achieve a flat, ready-to-finish surface.",
+    title: "Floor Levelling Prep",
+    icon: "level",
+    desc: "Self-leveller or grind correction to achieve a flatter, ready-to-finish substrate.",
     bullets: ["Laser level checks", "Self-levelling compounds", "Prep for tiles, timber, vinyl, carpet or epoxy"],
   },
   {
     title: "Water Pressure Cleaning",
-    icon: "💦",
-    desc: "High-pressure wash to remove grime, mould, and tyre marks from driveways, paths, and alfresco areas.",
+    icon: "water",
+    desc: "High-pressure cleaning for driveways, paths and alfresco areas where washing is the right method.",
     bullets: ["Pre-treat oil stains", "Whirl-away surface cleaner", "Soft wash for sensitive areas"],
   },
 ];
+
+const services = [...primaryServices, ...supportServices];
 
 const pricing = [
   {
@@ -874,7 +1148,7 @@ const pricing = [
   },
   {
     name: "Hone & Seal (Outdoor)",
-    price: "$75–$100",
+    price: "$60–$80",
     unit: "/m²",
     href: "/honed-concrete-perth",
     features: ["Precision diamond-honed finish", "UV-stable protective sealer", "Durable Exterior-grade slip resistance"],
@@ -885,12 +1159,6 @@ const pricing = [
     unit: "/m²",
     href: "/concrete-polishing-perth",
     features: ["Choice of Cream / Salt & Pepper / full exposed finish", "Various gloss options (satin, high or mirror)"],
-  },
-  {
-    name: "Exposed / Washed Aggregate",
-    price: "$140–$180",
-    unit: "/m²",
-    features: ["Premium washed or exposed honed finish", "Slip-resistant and ideal for outdoor areas"],
   },
 ];
 
@@ -913,7 +1181,8 @@ const faqs = [
 function runSelfTests() {
   const tests: Array<{ name: string; pass: boolean }> = [];
 
-  tests.push({ name: "services has >= 8 items", pass: Array.isArray(services) && services.length >= 8 });
+  tests.push({ name: "primaryServices has 6 items", pass: Array.isArray(primaryServices) && primaryServices.length === 6 });
+  tests.push({ name: "supportServices has 3 items", pass: Array.isArray(supportServices) && supportServices.length === 3 });
   tests.push({ name: "pricing has >= 3 items", pass: Array.isArray(pricing) && pricing.length >= 3 });
   tests.push({ name: "faqs has >= 6 items", pass: Array.isArray(faqs) && faqs.length >= 6 });
   tests.push({ name: "each service has bullets[]", pass: services.every((s) => Array.isArray(s.bullets) && s.bullets.length > 0) });
