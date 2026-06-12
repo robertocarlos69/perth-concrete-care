@@ -517,6 +517,76 @@ export default function HomeClient() {
 
             <p className="mt-4 text-sm text-neutral-600 leading-relaxed">
               *Pricing is influenced by total floor area, slab hardness, site access, existing coatings or contaminants, crack and surface repairs, moisture conditions, edge/detail work. In general, larger projects achieve a lower per m² rate, while smaller, heavily detailed jobs are priced higher per m². Final pricing is confirmed after site inspection.</p>
+
+            {/* Finish comparison — extractable table for humans and AI answer engines */}
+            <div className="mt-12">
+              <h3 className="text-xl md:text-2xl font-extrabold text-stone-900">
+                Which concrete finish is right for you?
+              </h3>
+              <p className="mt-2 max-w-3xl text-sm md:text-base text-stone-600 leading-relaxed">
+                For garages and workshops, epoxy flake is the most cost-effective
+                durable finish. For outdoor areas and pool surrounds, hone-and-seal
+                gives a slip-rated surface at the lowest price per m². For indoor
+                living areas, polished concrete is the premium option, while
+                metallic epoxy suits showpiece floors.
+              </p>
+              <div className="mt-5 overflow-x-auto rounded-2xl border border-stone-200 bg-white shadow-sm">
+                <table className="w-full min-w-[680px] text-sm border-collapse">
+                  <thead>
+                    <tr className="border-b border-stone-200 bg-stone-50 text-left">
+                      <th className="px-4 py-3 font-bold text-stone-900">Finish</th>
+                      <th className="px-4 py-3 font-bold text-stone-900">Best for</th>
+                      <th className="px-4 py-3 font-bold text-stone-900">Cost guide</th>
+                      <th className="px-4 py-3 font-bold text-stone-900">Feel &amp; finish</th>
+                      <th className="px-4 py-3 font-bold text-stone-900">Indoor / outdoor</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-stone-700">
+                    <tr className="border-b border-stone-100">
+                      <td className="px-4 py-3 font-semibold text-stone-900">
+                        <Link href="/epoxy-flake-flooring-perth" className="text-emerald-700 hover:underline">Epoxy flake</Link>
+                      </td>
+                      <td className="px-4 py-3">Garages, workshops, patios</td>
+                      <td className="px-4 py-3 whitespace-nowrap">$85–$100/m²</td>
+                      <td className="px-4 py-3">Textured, hard-wearing, hides dirt</td>
+                      <td className="px-4 py-3">Both</td>
+                    </tr>
+                    <tr className="border-b border-stone-100">
+                      <td className="px-4 py-3 font-semibold text-stone-900">
+                        <Link href="/metallic-epoxy-flooring-perth" className="text-emerald-700 hover:underline">Metallic epoxy</Link>
+                      </td>
+                      <td className="px-4 py-3">Showrooms, living areas, statement garages</td>
+                      <td className="px-4 py-3 whitespace-nowrap">$160–$180/m²</td>
+                      <td className="px-4 py-3">High-gloss marbled, 3D depth</td>
+                      <td className="px-4 py-3">Indoor (mainly)</td>
+                    </tr>
+                    <tr className="border-b border-stone-100">
+                      <td className="px-4 py-3 font-semibold text-stone-900">
+                        <Link href="/honed-concrete-perth" className="text-emerald-700 hover:underline">Hone &amp; seal</Link>
+                      </td>
+                      <td className="px-4 py-3">Alfresco, pool surrounds, driveways, rough exposed aggregate</td>
+                      <td className="px-4 py-3 whitespace-nowrap">$60–$80/m²</td>
+                      <td className="px-4 py-3">Smooth but slip-rated (P3–P5)</td>
+                      <td className="px-4 py-3">Outdoor</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-semibold text-stone-900">
+                        <Link href="/concrete-polishing-perth" className="text-emerald-700 hover:underline">Polished concrete</Link>
+                      </td>
+                      <td className="px-4 py-3">Indoor living areas, commercial interiors</td>
+                      <td className="px-4 py-3 whitespace-nowrap">$140–$220/m²</td>
+                      <td className="px-4 py-3">Very smooth, satin to mirror gloss</td>
+                      <td className="px-4 py-3">Indoor</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="mt-3 text-sm text-stone-600">
+                Not sure? Send a photo of your slab with the quote form and
+                we&apos;ll recommend the right system — including telling you if a
+                cheaper option will do the job.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -678,6 +748,23 @@ multiple
                     >
                       Leave a Google Review
                     </a>
+                  </div>
+
+                  {/* Owner-operator trust block */}
+                  <div className="mt-7 rounded-2xl border border-stone-200 bg-white p-5">
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-700">
+                      Owner-operated
+                    </p>
+                    <h3 className="mt-1 text-lg font-bold text-stone-900">
+                      You deal with Rob from quote to handover
+                    </h3>
+                    <p className="mt-2 text-sm text-stone-600 leading-relaxed">
+                      Perth Concrete Care is run by Rob — the same person who
+                      answers the phone, quotes your job and does the work. Every
+                      floor is prepared to Australian Standards (AS 1884, AS 3730,
+                      AS 3610) with H-class HEPA dust control, fully insured and
+                      police cleared.
+                    </p>
                   </div>
                 </div>
 
