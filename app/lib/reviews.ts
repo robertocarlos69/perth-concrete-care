@@ -22,38 +22,38 @@ export type Review = {
 
 export const googleReviews: Review[] = [
   {
-    name: "PLACEHOLDER — Reviewer 1",
+    name: "James Sutton",
     rating: 5,
     text:
-      "Paste the exact text of a real 5-star review from your Google Business Profile here.",
-    jobLabel: "Job type — Suburb",
+      "Rob did an amazing job. Very happy with the result! Also easy to deal with, friendly and responsive. 5 stars!",
+    jobLabel: "Honed and Epoxy Garage — Wembley Downs",
   },
   {
-    name: "PLACEHOLDER — Reviewer 2",
+    name: "Danielle Rose",
     rating: 5,
     text:
-      "Paste the exact text of a real 5-star review from your Google Business Profile here.",
-    jobLabel: "Job type — Suburb",
+      "Absolutely blown away with our garage transformation. The epoxy flooring has completely elevated the space and the finish is amazing — clean, modern and incredibly professional.",
+    jobLabel: "Epoxy Garage — Banksia Grove",
   },
   {
-    name: "PLACEHOLDER — Reviewer 3",
+    name: "Rachael Day",
     rating: 5,
     text:
-      "Paste the exact text of a real 5-star review from your Google Business Profile here.",
-    jobLabel: "Job type — Suburb",
+      "Absolutely thrilled with our new garage floor! The finish is flawless and the transformation is incredible. The team were professional, punctual and clearly take pride in their work!! They explained the process, kept everything tidy and delivered what they promised. Highly recommended them to anyone wanting to improve their garage floor. Everything was left spotless ",
+    jobLabel: "Epoxy Garage — Tapping",
   },
   {
-    name: "PLACEHOLDER — Reviewer 4",
+    name: "Renee Babac",
     rating: 5,
     text:
-      "Paste the exact text of a real 5-star review from your Google Business Profile here.",
-    jobLabel: "Job type — Suburb",
+      "Rob and his team did an amazing job resurfacing our garage floor. We chose the colour bullseye and it looks fantastic. The whole job took not even two days. Exceptional service, really impressed.",
+    jobLabel: "Epoxy Garage — Kallaroo",
   },
   {
-    name: "PLACEHOLDER — Reviewer 5",
+    name: "John McKean",
     rating: 5,
     text:
-      "Paste the exact text of a real 5-star review from your Google Business Profile here.",
-    jobLabel: "Job type — Suburb",
+      "Highly recommend Perth Concrete Care. Rob did an excellent job resurfacing our outdoor patio area, and it’s completely transformed the space. He was friendly, professional, and left everything clean and tidy. We’ve had plenty of compliments on how fresh and modern it looks. Great customer service, reasonably priced. Very happy.",
+    jobLabel: "Honed Backyard Patio — Scarborough",
   },
 ];
