@@ -547,7 +547,7 @@ export default function HomeClient() {
                         <Link href="/epoxy-flake-flooring-perth" className="text-emerald-700 hover:underline">Epoxy flake</Link>
                       </td>
                       <td className="px-4 py-3">Garages, workshops, patios</td>
-                      <td className="px-4 py-3 whitespace-nowrap">$85–$100/m²</td>
+                      <td className="px-4 py-3 whitespace-nowrap">$80–$100/m²</td>
                       <td className="px-4 py-3">Textured, hard-wearing, hides dirt</td>
                       <td className="px-4 py-3">Both</td>
                     </tr>
@@ -1221,7 +1221,7 @@ const services = [...primaryServices, ...supportServices];
 const pricing = [
   {
     name: "Epoxy Flake Floors",
-    price: "$85–$100",
+    price: "$80–$100",
     unit: "/m²",
     href: "/epoxy-flake-flooring-perth",
     features: ["Moisture-tolerant primer", "Flake (full, partial or sparse) broadcast", "UV / Oil / chemical resitant Polyaspartic topcoat"],
