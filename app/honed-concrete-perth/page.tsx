@@ -248,7 +248,7 @@ export default function Page() {
             {benefits.map((b) => (
               <div
                 key={b.title}
-                className="rounded-2xl border border-stone-200 bg-white p-6 md:p-7 shadow-sm"
+                className="rounded-2xl border border-stone-200 bg-white p-6 md:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-emerald-300"
               >
                 <h3 className="text-lg font-bold text-stone-900">{b.title}</h3>
                 <p className="mt-3 text-sm text-stone-600 leading-relaxed">
@@ -274,7 +274,7 @@ export default function Page() {
           {finishLevels.map((f, i) => (
             <div
               key={f.name}
-              className="rounded-2xl border border-stone-200 bg-white p-6 md:p-7 shadow-sm"
+              className="rounded-2xl border border-stone-200 bg-white p-6 md:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-emerald-300"
             >
               <div className="text-xs font-bold uppercase tracking-[0.16em] text-emerald-700">
                 Level {i + 1}
@@ -292,7 +292,7 @@ export default function Page() {
           {sealerOptions.map((s) => (
             <div
               key={s.name}
-              className="rounded-2xl border border-stone-200 bg-white p-6 md:p-7 shadow-sm"
+              className="rounded-2xl border border-stone-200 bg-white p-6 md:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-emerald-300"
             >
               <h3 className="text-lg font-bold text-stone-900">{s.name}</h3>
               <p className="mt-3 text-sm text-stone-600 leading-relaxed">{s.desc}</p>
@@ -393,7 +393,7 @@ export default function Page() {
         </h2>
         <ol className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {processSteps.map(([title, desc], i) => (
-            <li key={title} className="rounded-2xl border border-stone-200 bg-white p-6 md:p-7 shadow-sm">
+            <li key={title} className="rounded-2xl border border-stone-200 bg-white p-6 md:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-emerald-300">
               <div className="text-sm font-bold text-emerald-700">Step {i + 1}</div>
               <h3 className="mt-2 text-lg font-bold text-stone-900">{title}</h3>
               <p className="mt-3 text-sm text-stone-700 leading-relaxed">{desc}</p>
@@ -517,16 +517,16 @@ export default function Page() {
           <div className="rounded-3xl border border-stone-200 bg-white p-7 md:p-8 shadow-sm">
             <h2 className="text-xl font-bold text-stone-900">Related services</h2>
             <div className="mt-4 grid gap-3 text-sm">
-              <Link href="/concrete-polishing-perth" className="rounded-xl border border-stone-200 bg-white px-4 py-3 hover:bg-stone-50 hover:border-emerald-300 transition-colors">
+              <Link href="/concrete-polishing-perth" className="rounded-xl border border-stone-200 bg-white px-4 py-3 hover:bg-stone-50 hover:border-emerald-300 hover:translate-x-1 transition-all duration-200">
                 Concrete polishing →
               </Link>
-              <Link href="/concrete-grinding-perth" className="rounded-xl border border-stone-200 bg-white px-4 py-3 hover:bg-stone-50 hover:border-emerald-300 transition-colors">
+              <Link href="/concrete-grinding-perth" className="rounded-xl border border-stone-200 bg-white px-4 py-3 hover:bg-stone-50 hover:border-emerald-300 hover:translate-x-1 transition-all duration-200">
                 Concrete grinding →
               </Link>
-              <Link href="/epoxy-flake-flooring-perth" className="rounded-xl border border-stone-200 bg-white px-4 py-3 hover:bg-stone-50 hover:border-emerald-300 transition-colors">
+              <Link href="/epoxy-flake-flooring-perth" className="rounded-xl border border-stone-200 bg-white px-4 py-3 hover:bg-stone-50 hover:border-emerald-300 hover:translate-x-1 transition-all duration-200">
                 Epoxy flake floors →
               </Link>
-              <Link href="/contact" className="rounded-xl border border-stone-200 bg-white px-4 py-3 hover:bg-stone-50 hover:border-emerald-300 transition-colors">
+              <Link href="/contact" className="rounded-xl border border-stone-200 bg-white px-4 py-3 hover:bg-stone-50 hover:border-emerald-300 hover:translate-x-1 transition-all duration-200">
                 Contact →
               </Link>
             </div>
