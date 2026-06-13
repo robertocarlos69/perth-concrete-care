@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { business, services, trustSignals } from "../lib/site";
 
@@ -7,9 +8,13 @@ export default function SiteFooter() {
       <div className="max-w-7xl mx-auto px-4 py-12 grid gap-10 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-extrabold tracking-tight">
-              PCC
-            </div>
+            <Image
+              src="/transparent-logo.png"
+              alt="Perth Concrete Care logo"
+              width={56}
+              height={56}
+              className="h-14 w-14 object-contain"
+            />
             <div>
               <div className="font-bold text-white">{business.name}</div>
               <div className="text-xs text-stone-400">ABN: {business.abn}</div>
