@@ -412,8 +412,8 @@ export default function Page() {
             <figure className="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-sm">
               <div className="relative aspect-video">
                 <Image
-                  src="/gallery/honed-concrete-floor-finish-perth.webp"
-                  alt="Honed concrete floor finish with Salt and Pepper Exposure and Low Sheen water based sealer in Bicton"
+                  src="/gallery/grind-and-seal-concrete-noranda.webp"
+                  alt="Grind and seal concrete floor in Noranda, Perth"
                   fill
                   loading="lazy"
                   className="object-cover"
@@ -421,14 +421,14 @@ export default function Page() {
                 />
               </div>
               <figcaption className="px-4 py-3 text-sm text-stone-600">
-                Salt &amp; pepper hone, low-sheen sealer — Bicton
+                Grind &amp; seal concrete — Noranda
               </figcaption>
             </figure>
             <figure className="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-sm">
               <div className="relative aspect-video">
                 <Image
-                  src="/gallery/exposed-concrete-pathway-burns-beach-perth.webp"
-                  alt="Exposed concrete pathway with decorative aggregate"
+                  src="/gallery/hone-and-seal-exposed-aggregate-balcatta.webp"
+                  alt="Hone and Seal - Balcatta"
                   fill
                   loading="lazy"
                   className="object-cover"
@@ -436,7 +436,7 @@ export default function Page() {
                 />
               </div>
               <figcaption className="px-4 py-3 text-sm text-stone-600">
-                Exposed concrete pathway — Burns Beach
+                Hone &amp; seal exposed aggregate — Balcatta
               </figcaption>
             </figure>
             <figure className="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-sm sm:max-lg:hidden lg:block">

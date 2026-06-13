@@ -1086,9 +1086,9 @@ const galleryItems = [
   },
   {
     id: 3,
-    src: "/gallery/exposed-concrete-pathway-burns-beach-perth.webp",
-    label: "Exposed Concrete Pathway - Burns Beach",
-    alt: "Exposed concrete pathway with decorative aggregate",
+    src: "/gallery/hone-and-seal-exposed-aggregate-balcatta.webp",
+    label: "Hone and Seal - Balcatta",
+    alt: "Hone and Seal - Balcatta",
   },
   {
     id: 4,
@@ -1134,9 +1134,9 @@ const galleryItems = [
   },
   {
   id: 11,
-  src: "/gallery/honed-concrete-floor-finish-perth.webp",
-  label: "Honed Concrete Floor with Salt and Pepper Exposure and Low Sheen water based sealer in Bicton, W.A",
-  alt: "Honed concrete floor finish with Salt and Pepper Exposure and Low Sheen water based sealer in Bicton",
+  src: "/gallery/grind-and-seal-concrete-noranda.webp",
+  label: "Grind and Seal - Noranda",
+  alt: "Grind and seal concrete floor in Noranda, Perth",
   },
   {
   id: 12,
