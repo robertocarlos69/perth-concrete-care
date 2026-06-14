@@ -62,13 +62,15 @@ export default function ContactClient() {
 
             <select name="service" className="w-full rounded-xl border px-4 py-3 md:col-span-1" required defaultValue="">
               <option value="" disabled>Select service</option>
-              <option>Epoxy flake floors</option>
               <option>Epoxy flake flooring</option>
-              <option>Garage floor coatings</option>
-              <option>Concrete grinding</option>
+              <option>Metallic epoxy flooring</option>
+              <option>Honed concrete</option>
+              <option>Grind &amp; seal</option>
               <option>Concrete polishing</option>
-              <option>Honed concrete (grind & seal)</option>
-              <option>Metallic epoxy</option>
+              <option>Concrete grinding &amp; prep</option>
+              <option>Exposed / washed aggregate</option>
+              <option>Glue / adhesive removal</option>
+              <option>Other / not sure</option>
             </select>
 
             <input name="area" className="w-full rounded-xl border px-4 py-3" placeholder="Approx area (m²)" />
