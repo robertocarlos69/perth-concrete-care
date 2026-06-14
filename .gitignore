@@ -38,6 +38,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local SEO backup snapshots (not for deployment)
+/_seo-backup-*
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

@@ -359,6 +359,34 @@ export default function EpoxyFlakeClient({ faqs }: { faqs: Faq[] }) {
         </div>
       </section>
 
+      {/* AREAS WE SERVE */}
+      <section className="mt-16">
+        <h2 className="text-2xl md:text-3xl font-extrabold text-stone-900">
+          Epoxy flake floors across Perth&apos;s northern suburbs
+        </h2>
+        <p className="mt-2 text-sm text-stone-600">
+          We install epoxy flake garage and workshop floors right across Perth
+          north of the river — including:
+        </p>
+        <ul className="mt-6 flex flex-wrap gap-2 text-sm">
+          {[
+            { slug: "banksia-grove", name: "Banksia Grove" },
+            { slug: "joondalup", name: "Joondalup" },
+            { slug: "wanneroo", name: "Wanneroo" },
+            { slug: "mindarie", name: "Mindarie" },
+          ].map((s) => (
+            <li key={s.slug}>
+              <Link
+                href={`/concrete-flooring/${s.slug}`}
+                className="inline-block rounded-full border border-stone-200 bg-white px-3.5 py-1.5 font-medium text-stone-700 hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-800 transition-colors"
+              >
+                Epoxy flake {s.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       {/* BOTTOM CTA */}
       <section className="mt-16 rounded-3xl bg-stone-950 p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <div>

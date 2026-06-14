@@ -1,41 +1,44 @@
 import type { MetadataRoute } from "next";
+import { suburbs } from "./lib/suburbs";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://perthconcretecare.com.au";
-  const lastModified = new Date();
+const baseUrl = "https://perthconcretecare.com.au";
 
-  const routes = [
-  "/",
-  "/epoxy-flake-flooring-perth",
-  "/epoxy-floor-visualiser-perth",
-  "/concrete-grinding-perth",
-  "/metallic-epoxy-flooring-perth",
-  "/concrete-polishing-perth",
-  "/honed-concrete-perth",
-  "/contact"
+type ChangeFreq = MetadataRoute.Sitemap[number]["changeFrequency"];
+
+// Stable last-modified dates per route. Bump the date for a page only when you
+// meaningfully change its content — don't let it auto-stamp every build, which
+// tells Google every page changed when it didn't.
+const corePages: Array<{
+  path: string;
+  lastModified: string;
+  changeFrequency: ChangeFreq;
+  priority: number;
+}> = [
+  { path: "/", lastModified: "2026-06-15", changeFrequency: "weekly", priority: 1 },
+  { path: "/epoxy-flake-flooring-perth", lastModified: "2026-06-13", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/metallic-epoxy-flooring-perth", lastModified: "2026-06-13", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/epoxy-floor-visualiser-perth", lastModified: "2026-06-13", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/concrete-grinding-perth", lastModified: "2026-06-13", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/concrete-polishing-perth", lastModified: "2026-06-13", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/honed-concrete-perth", lastModified: "2026-06-13", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/contact", lastModified: "2026-06-13", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/privacy", lastModified: "2026-06-15", changeFrequency: "yearly", priority: 0.3 },
 ];
 
-  return routes.map((path) => {
-    const url = path === "/" ? `${baseUrl}/` : `${baseUrl}${path}`;
-    const priority =
-      path === "/"
-        ? 1
-        : path.startsWith("/epoxy-")
-          ? 0.9
-          : path.startsWith("/concrete-")
-            ? 0.85
-            : path === "/contact"
-              ? 0.7
-              : 0.8;
+export default function sitemap(): MetadataRoute.Sitemap {
+  const core = corePages.map((p) => ({
+    url: p.path === "/" ? `${baseUrl}/` : `${baseUrl}${p.path}`,
+    lastModified: p.lastModified,
+    changeFrequency: p.changeFrequency,
+    priority: p.priority,
+  }));
 
-    const changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] =
-      path === "/" ? "weekly" : "monthly";
+  const suburbPages = suburbs.map((s) => ({
+    url: `${baseUrl}/concrete-flooring/${s.slug}`,
+    lastModified: s.updated,
+    changeFrequency: "monthly" as ChangeFreq,
+    priority: 0.8,
+  }));
 
-    return {
-      url,
-      lastModified,
-      changeFrequency,
-      priority,
-    };
-  });
+  return [...core, ...suburbPages];
 }

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { business, trustSignals } from "./lib/site";
+import { suburbs } from "./lib/suburbs";
 import GoogleReviewsCarousel from "./components/GoogleReviewsCarousel";
 
 // index.tsx — Single-file React page for Perth Concrete Care
@@ -614,6 +615,25 @@ export default function HomeClient() {
                 <span className="px-3 py-1 rounded-full border bg-emerald-50 text-emerald-800 border-emerald-200">
                   Fully insured
                 </span>
+              </div>
+
+              {/* Areas we serve — internal links to suburb landing pages */}
+              <div className="mt-7">
+                <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-emerald-700">
+                  Areas we serve
+                </h3>
+                <ul className="mt-3 flex flex-wrap gap-2 text-sm">
+                  {suburbs.map((s) => (
+                    <li key={s.slug}>
+                      <Link
+                        href={`/concrete-flooring/${s.slug}`}
+                        className="inline-block rounded-full border border-stone-200 bg-white px-3.5 py-1.5 font-medium text-stone-700 hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-800 transition-colors"
+                      >
+                        Concrete flooring {s.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
 

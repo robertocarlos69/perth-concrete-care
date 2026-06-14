@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { business, services, trustSignals } from "../lib/site";
+import { suburbs } from "../lib/suburbs";
 
 export default function SiteFooter() {
   return (
@@ -55,6 +56,26 @@ export default function SiteFooter() {
           <p className="mt-3 text-sm leading-6 text-stone-400">
             {business.serviceAreaLong}
           </p>
+
+          {suburbs.length > 0 && (
+            <>
+              <div className="mt-4 text-xs font-semibold uppercase tracking-wide text-stone-500">
+                Areas we serve
+              </div>
+              <ul className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-sm text-stone-300">
+                {suburbs.map((s) => (
+                  <li key={s.slug}>
+                    <Link
+                      href={`/concrete-flooring/${s.slug}`}
+                      className="hover:text-emerald-300 transition-colors"
+                    >
+                      {s.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
         </div>
 
         <div className="lg:col-span-2">
@@ -109,9 +130,9 @@ export default function SiteFooter() {
             <a className="hover:text-emerald-300 transition-colors" href={business.googleReviewsUrl} target="_blank" rel="noopener noreferrer">
               Leave a Google review
             </a>
-            <a className="hover:text-emerald-300 transition-colors" href="#">
+            <Link className="hover:text-emerald-300 transition-colors" href="/privacy">
               Privacy
-            </a>
+            </Link>
           </div>
         </div>
       </div>

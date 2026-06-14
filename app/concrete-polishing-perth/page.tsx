@@ -406,6 +406,17 @@ export default function ConcretePolishingPerthPage() {
               <Link href="/epoxy-flake-flooring-perth" className="rounded-xl border border-stone-200 bg-white px-4 py-3 hover:bg-stone-50 hover:border-emerald-300 hover:translate-x-1 transition-all duration-200">Epoxy flake floors →</Link>
               <Link href="/contact" className="rounded-xl border border-stone-200 bg-white px-4 py-3 hover:bg-stone-50 hover:border-emerald-300 hover:translate-x-1 transition-all duration-200">Contact →</Link>
             </div>
+
+            <div className="mt-5 border-t border-stone-200 pt-4">
+              <div className="text-xs font-bold uppercase tracking-[0.14em] text-emerald-700">
+                Areas we serve
+              </div>
+              <div className="mt-3 grid gap-3 text-sm">
+                <Link href="/concrete-flooring/duncraig" className="rounded-xl border border-stone-200 bg-white px-4 py-3 hover:bg-stone-50 hover:border-emerald-300 hover:translate-x-1 transition-all duration-200">Concrete flooring Duncraig →</Link>
+                <Link href="/concrete-flooring/joondalup" className="rounded-xl border border-stone-200 bg-white px-4 py-3 hover:bg-stone-50 hover:border-emerald-300 hover:translate-x-1 transition-all duration-200">Concrete flooring Joondalup →</Link>
+                <Link href="/concrete-flooring/scarborough" className="rounded-xl border border-stone-200 bg-white px-4 py-3 hover:bg-stone-50 hover:border-emerald-300 hover:translate-x-1 transition-all duration-200">Concrete flooring Scarborough →</Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
