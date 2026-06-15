@@ -146,7 +146,7 @@ export default function Page() {
           very differently underfoot and in Perth’s climate. This guide explains
           how each finish is actually made, where it works best, and how to pick
           the right one. It’s written from what we see day to day grinding, honing
-          and coating floors north of the river.
+          and coating floors across the Perth metro area.
         </p>
 
         {/* Honed */}

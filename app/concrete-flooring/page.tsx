@@ -8,12 +8,12 @@ import { suburbs } from "../lib/suburbs";
 const pageUrl = `${siteUrl}/concrete-flooring`;
 
 export const metadata: Metadata = {
-  title: "Areas We Serve — Concrete Flooring Across Perth",
+  title: "Areas We Serve: Concrete Flooring Across Perth",
   description:
-    "Concrete polishing, grinding, epoxy flake, metallic epoxy and hone & seal across Perth's northern suburbs — from Butler and Yanchep to Osborne Park and the CBD. Find your suburb.",
+    "Concrete polishing, grinding, epoxy flake, metallic epoxy and hone & seal across the Perth metro area, north and south of the river. Find your suburb.",
   alternates: { canonical: pageUrl },
   openGraph: {
-    title: "Areas We Serve — Concrete Flooring Across Perth | Perth Concrete Care",
+    title: "Areas We Serve: Concrete Flooring Across Perth | Perth Concrete Care",
     description:
       "Concrete flooring, epoxy and polishing across Perth's northern suburbs. Find your suburb and see what we offer locally.",
     url: pageUrl,
@@ -65,15 +65,16 @@ export default function AreasIndexPage() {
 
         <div className="mt-6 max-w-3xl">
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-stone-900">
-            Concrete Flooring Across Perth&apos;s Northern Suburbs
+            Concrete Flooring Across the Perth Metro Area
           </h1>
           <p className="mt-5 text-lg text-stone-700 leading-relaxed">
             We install epoxy flake, metallic epoxy, polished concrete, honed
-            concrete and grind-and-seal finishes across Perth north of the river
-            — from the Butler corridor and Yanchep on the coast, through
-            Joondalup and Wanneroo, to the Osborne Park, Wangara and Malaga
-            commercial precincts. Find your suburb below to see what we do
-            locally, or call {business.phoneDisplay} for a free quote.
+            concrete and grind-and-seal finishes across the Perth metro area,
+            north and south of the river. That spans the Butler corridor,
+            Yanchep and the northern coast, through Joondalup, Wanneroo and the
+            city, down to southern suburbs like Rossmoyne, Willetton, Canning
+            Vale and Fremantle. Find your suburb below to see what we do locally,
+            or call {business.phoneDisplay} for a free quote.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <a
@@ -123,7 +124,7 @@ export default function AreasIndexPage() {
               Don&apos;t see your suburb?
             </h2>
             <p className="mt-2 text-stone-300 max-w-xl">
-              We cover all of Perth north of the river. Send photos and
+              We cover the whole Perth metro area, north and south of the river. Send photos and
               measurements and we&apos;ll come back with a clear scope and a
               fixed written price.
             </p>

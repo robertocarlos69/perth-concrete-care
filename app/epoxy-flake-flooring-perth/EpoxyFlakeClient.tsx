@@ -365,8 +365,8 @@ export default function EpoxyFlakeClient({ faqs }: { faqs: Faq[] }) {
           Epoxy flake floors across Perth&apos;s northern suburbs
         </h2>
         <p className="mt-2 text-sm text-stone-600">
-          We install epoxy flake garage and workshop floors right across Perth
-          north of the river — including:
+          We install epoxy flake garage and workshop floors right across the
+          Perth metro area, including:
         </p>
         <ul className="mt-6 flex flex-wrap gap-2 text-sm">
           {[

@@ -22,7 +22,7 @@ export default function SiteFooter() {
           </div>
 
           <p className="mt-4 max-w-xl text-sm leading-6 text-stone-400">
-            Concrete grinding, honing, polishing, epoxy floors and surface preparation across Perth north of the river. Service area only, no showroom.
+            Concrete grinding, honing, polishing, epoxy floors and surface preparation across the Perth metro area. Service area only, no showroom.
           </p>
 
           <div className="mt-5 flex flex-wrap gap-2">

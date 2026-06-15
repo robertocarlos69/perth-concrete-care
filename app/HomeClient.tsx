@@ -214,7 +214,7 @@ export default function HomeClient() {
 
               <p className="mt-5 text-lg md:text-xl text-stone-300 leading-relaxed max-w-2xl">
                 Perth specialists in concrete polishing, epoxy flooring and
-                grind-and-seal systems across Perth north of the river.
+                grind-and-seal systems across the Perth metro area.
               </p>
 
               <ul className="mt-5 space-y-2.5 text-[15px] text-stone-200">

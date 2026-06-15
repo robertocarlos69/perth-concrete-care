@@ -59,7 +59,7 @@ export const suburbs: Suburb[] = [
     localFaqs: [
       {
         q: "Do you charge extra to travel to Joondalup?",
-        a: "No. Joondalup sits right in the middle of our service area, so there's no travel surcharge — you get the same fixed-price quote as anywhere else north of the river.",
+        a: "No. Joondalup sits right in the middle of our service area, so there's no travel surcharge, and you get the same fixed-price quote as anywhere else we cover.",
       },
       {
         q: "Can you finish a Joondalup garage floor quickly?",
@@ -523,6 +523,113 @@ export const suburbs: Suburb[] = [
       {
         q: "Can you both hone my concrete and do my garage in Wembley Downs?",
         a: "Yes, we often combine jobs — for example honing and sealing an outdoor area while installing a flake floor in the garage on the same visit, which is exactly what we did for a recent Wembley Downs customer.",
+      },
+    ],
+  },
+  {
+    slug: "rossmoyne",
+    name: "Rossmoyne",
+    region: "Rossmoyne & the southern riverside suburbs",
+    updated: "2026-06-15",
+    metaDescription:
+      "Concrete flooring in Rossmoyne — epoxy flake garage floors, polished concrete and hone & seal south of the river. Happy local Rossmoyne customers. Free quotes.",
+    heroIntro:
+      "Rossmoyne is one of Perth's sought-after riverside suburbs south of the river, and we've already installed standout epoxy flake garages here for happy local customers. We coat, grind, polish and hone-and-seal floors throughout Rossmoyne.",
+    localContext:
+      "Rossmoyne is an established, leafy suburb of substantial family homes, so we see a real mix of work: epoxy flake and metallic floors in garages, polished concrete during renovations, and hone-and-seal on alfresco areas and pool surrounds. Many homes here have older slabs that benefit from grinding back previous coatings before a fresh system goes on. Now that we cover the full Perth metro area, Rossmoyne and the surrounding southern riverside suburbs are well within our reach.",
+    image: "/gallery/epoxy-flake-garage-floor-joondalup-perth.webp",
+    imageAlt: "Grey epoxy flake garage floor finished by Perth Concrete Care",
+    imageLabel: "Epoxy flake garage floor",
+    nearby: ["willetton", "canning-vale", "fremantle"],
+    localFaqs: [
+      {
+        q: "Do you have customers in Rossmoyne?",
+        a: "Yes. We installed a river stone flake garage floor in Rossmoyne for a customer who left us a five-star review. Ask when you enquire and we'll talk you through it.",
+      },
+      {
+        q: "Do you travel south of the river to Rossmoyne?",
+        a: "Yes. We now cover the full Perth metro area, north and south of the river, so Rossmoyne is well within our service area with no travel surcharge.",
+      },
+    ],
+  },
+  {
+    slug: "willetton",
+    name: "Willetton",
+    region: "Willetton & the southern suburbs",
+    updated: "2026-06-15",
+    metaDescription:
+      "Concrete flooring in Willetton — honed concrete patios, epoxy flake garages and polished concrete south of the river. Local installer, free quotes.",
+    heroIntro:
+      "Willetton is a popular established family suburb south of the river, where we've honed and sealed outdoor concrete and finished garage floors for local homeowners. We grind, hone, coat and polish floors throughout Willetton.",
+    localContext:
+      "Willetton's established homes often have dated outdoor concrete and exposed-aggregate patios that we smooth and seal into a comfortable honed finish, plus garages that suit a hard-wearing epoxy flake floor. As with any older suburb, the prep is the key variable: we grind back previous coatings and profile the slab correctly before sealing or coating. It's a typical southern-suburbs job for us now that we cover the whole Perth metro area.",
+    image: "/gallery/honed-concrete-patio-Willetton-perth.webp",
+    imageAlt:
+      "Honed and sealed concrete patio finished in Willetton, Perth",
+    imageLabel: "Honed concrete patio — Willetton",
+    nearby: ["rossmoyne", "canning-vale", "fremantle"],
+    localFaqs: [
+      {
+        q: "Can you smooth a rough patio in Willetton?",
+        a: "Yes. We've honed and sealed outdoor concrete in Willetton. We grind back the rough surface and seal it for a smoother, easier-to-clean finish that's kinder on bare feet.",
+      },
+      {
+        q: "Do you service Willetton south of the river?",
+        a: "Yes. We cover the full Perth metro area now, so Willetton and the surrounding southern suburbs are part of our regular service area.",
+      },
+    ],
+  },
+  {
+    slug: "fremantle",
+    name: "Fremantle",
+    region: "Fremantle & the southern coast",
+    updated: "2026-06-15",
+    metaDescription:
+      "Concrete flooring in Fremantle — polished concrete, epoxy, hone & seal and warehouse floor prep for homes and commercial spaces south of the river. Free quotes.",
+    heroIntro:
+      "Fremantle blends heritage homes, coastal living and a busy commercial and warehouse scene, so we work on everything here from polished concrete in renovations to industrial floor prep. We grind, coat, polish and hone-and-seal across Fremantle.",
+    localContext:
+      "Fremantle is a real mix: character homes being renovated where polished concrete suits the style, coastal properties where UV-stable hone-and-seal handles sun and salt, and a strong commercial and warehouse base needing grind-and-seal or epoxy floors. Older Freo slabs often carry previous coatings or tile adhesive that we grind back before refinishing. Being coastal, we always specify UV-stable sealers and topcoats on outdoor work.",
+    image: "/gallery/polished-concrete-floor-perth.webp",
+    imageAlt:
+      "Polished concrete floor with a satin finish by Perth Concrete Care",
+    imageLabel: "Polished concrete floor",
+    nearby: ["rossmoyne", "willetton", "canning-vale"],
+    localFaqs: [
+      {
+        q: "Do you cover Fremantle south of the river?",
+        a: "Yes. We service the full Perth metro area, so Fremantle and the surrounding southern and coastal suburbs are within our regular service area.",
+      },
+      {
+        q: "Can you handle heritage or commercial floors in Fremantle?",
+        a: "Yes. We polish and refinish floors in character home renovations and prepare commercial and warehouse slabs across Fremantle for epoxy, polyaspartic or polished finishes.",
+      },
+    ],
+  },
+  {
+    slug: "canning-vale",
+    name: "Canning Vale",
+    region: "Canning Vale & the southern corridor",
+    updated: "2026-06-15",
+    metaDescription:
+      "Concrete flooring in Canning Vale — warehouse and workshop floor prep, epoxy, polished concrete and epoxy flake garages south of the river. Free quotes.",
+    heroIntro:
+      "Canning Vale pairs large family-home estates with one of Perth's biggest southern industrial areas, so we cover both garage flake floors and warehouse floor prep here. We grind, coat, seal and polish floors throughout Canning Vale.",
+    localContext:
+      "Canning Vale gives us two kinds of work: residential garages and alfrescos in the estates, and warehouse, workshop and showroom slabs across the industrial area. Industrial slabs here are often dusty, oil-stained or previously coated, so mechanical grinding and degreasing come first, then a grind-and-seal, epoxy or polyaspartic system matched to the load. Homes get flake garages and hone-and-seal outdoor areas. It's a core southern suburb for us now that we cover the full metro.",
+    image: "/gallery/grind-and-seal-concrete-noranda.webp",
+    imageAlt:
+      "Grind and seal concrete warehouse floor by Perth Concrete Care",
+    imageLabel: "Grind & seal concrete floor",
+    nearby: ["rossmoyne", "willetton", "fremantle"],
+    localFaqs: [
+      {
+        q: "Do you coat warehouse floors in Canning Vale?",
+        a: "Yes. Canning Vale's industrial area is core work for us. We grind back oil, dust and old coatings, then apply a grind-and-seal, epoxy or polyaspartic system suited to forklifts and heavy traffic.",
+      },
+      {
+        q: "Do you service Canning Vale south of the river?",
+        a: "Yes. We cover the full Perth metro area, so Canning Vale and the surrounding southern suburbs are part of our regular service area, with no travel surcharge.",
       },
     ],
   },

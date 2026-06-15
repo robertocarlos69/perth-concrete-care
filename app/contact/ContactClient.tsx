@@ -51,7 +51,7 @@ export default function ContactClient() {
         <div className="lg:col-span-2 rounded-3xl border bg-white p-7">
           <h2 className="text-2xl font-bold">Request a free quote</h2>
           <p className="mt-3 text-neutral-700">
-            Send dimensions and a couple of photos. We service Perth north of the river — Butler corridor, Joondalup/Wanneroo, Osborne Park, North Perth and Perth CBD.
+            Send dimensions and a couple of photos. We service the Perth metro area, north and south of the river, from Joondalup and Wanneroo through the city to Rossmoyne, Willetton and Fremantle.
           </p>
 
           <form className="mt-6 grid md:grid-cols-2 gap-4" onSubmit={handleSubmit} encType="multipart/form-data">
@@ -133,7 +133,7 @@ export default function ContactClient() {
           <div className="mt-4 space-y-2 text-neutral-700">
             <a className="block hover:underline" href="tel:+61448483226">0448 483 226</a>
             <a className="block hover:underline" href="mailto:sales@perthconcretecare.com.au">sales@perthconcretecare.com.au</a>
-            <div className="text-sm text-neutral-600">Service area only (no shopfront) — Perth north of the river.</div>
+            <div className="text-sm text-neutral-600">Service area only (no shopfront), across the Perth metro area.</div>
           </div>
 
           <div className="mt-6 rounded-2xl bg-neutral-50 p-5">

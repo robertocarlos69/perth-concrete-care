@@ -91,7 +91,7 @@ export default function Page() {
     name: "Concrete Grinding Perth",
     serviceType: "Concrete grinding and mechanical surface preparation",
     description:
-      "Concrete grinding and mechanical surface preparation across Perth north of the river. Remove coatings, level high spots and prepare CSP profiles for epoxy, polyaspartic and sealers.",
+      "Concrete grinding and mechanical surface preparation across the Perth metro area. Remove coatings, level high spots and prepare CSP profiles for epoxy, polyaspartic and sealers.",
     url: `${siteUrl}/concrete-grinding-perth`,
     breadcrumbName: "Concrete Grinding Perth",
     faqs,
@@ -217,8 +217,9 @@ export default function Page() {
           <div className="rounded-3xl border border-stone-200 bg-white p-7 md:p-8 shadow-sm">
             <h2 className="text-xl font-bold text-stone-900">Service area</h2>
             <p className="mt-4 text-sm text-stone-700 leading-relaxed">
-              Perth north of the river — Butler corridor, Joondalup/Wanneroo,
-              Osborne Park, North Perth and Perth CBD.
+              The Perth metro area, north and south of the river, from the
+              Butler corridor and Joondalup to Rossmoyne, Canning Vale and
+              Fremantle.
             </p>
             <h3 className="mt-6 text-sm font-bold text-stone-800">Typical jobs</h3>
             <ul className="mt-3 list-disc pl-5 text-sm text-stone-700 space-y-1.5">

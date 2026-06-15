@@ -87,7 +87,7 @@ export default function Page() {
     name: "Metallic Epoxy Flooring Perth",
     serviceType: "Metallic epoxy flooring",
     description:
-      "Metallic epoxy flooring across Perth north of the river for showrooms, feature garages, studios and decorative interior floors with durable topcoats.",
+      "Metallic epoxy flooring across the Perth metro area for showrooms, feature garages, studios and decorative interior floors with durable topcoats.",
     url: `${siteUrl}/metallic-epoxy-flooring-perth`,
     breadcrumbName: "Metallic Epoxy Flooring Perth",
     faqs,
@@ -289,8 +289,9 @@ export default function Page() {
           <div className="rounded-3xl border border-stone-200 bg-white p-7 md:p-8 shadow-sm">
             <h2 className="text-xl font-bold text-stone-900">Service area</h2>
             <p className="mt-4 text-sm text-stone-700 leading-relaxed">
-              Perth north of the river - Butler corridor, Joondalup/Wanneroo,
-              Osborne Park, North Perth and Perth CBD.
+              The Perth metro area, north and south of the river, from the
+              Butler corridor and Joondalup to Rossmoyne, Canning Vale and
+              Fremantle.
             </p>
             <h3 className="mt-6 text-sm font-bold text-stone-800">Typical metallic jobs</h3>
             <ul className="mt-3 list-disc pl-5 text-sm text-stone-700 space-y-1.5">

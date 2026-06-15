@@ -65,7 +65,7 @@ export default function EpoxyFlakeFlooringPerthPage() {
     name: "Epoxy Flake Flooring Perth",
     serviceType: "Epoxy flake flooring",
     description:
-      "Epoxy flake flooring for garages, workshops, patios and commercial spaces across Perth north of the river.",
+      "Epoxy flake flooring for garages, workshops, patios and commercial spaces across the Perth metro area.",
     url: `${siteUrl}/epoxy-flake-flooring-perth`,
     breadcrumbName: "Epoxy Flake Floors",
     faqs,

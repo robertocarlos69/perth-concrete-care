@@ -73,7 +73,7 @@ export default function BlogIndexPage() {
           Straight answers on concrete finishes for Perth homes and businesses:
           how each finish is made, what it costs, where it works and how to
           choose. Written by the team that does the grinding, honing and coating
-          north of the river.
+          across the Perth metro area.
         </p>
       </section>
 

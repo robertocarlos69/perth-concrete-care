@@ -8,9 +8,9 @@ export const business = {
   phoneHref: "+61448483226",
   phoneSchema: "+61 448 483 226",
   email: "sales@perthconcretecare.com.au",
-  serviceAreaShort: "Perth north of the river — Butler to Perth CBD",
+  serviceAreaShort: "Across the Perth metro area, north & south of the river",
   serviceAreaLong:
-    "Perth north of the river, including the Butler corridor, Joondalup, Wanneroo, Wangara, Malaga, Osborne Park, North Perth and Perth CBD.",
+    "Across the Perth metro area, north and south of the river, from the Butler corridor, Joondalup and Wanneroo through the city to southern suburbs like Rossmoyne, Willetton, Canning Vale and Fremantle.",
   hoursDisplay: "Mon–Sat 7:00am–6:00pm",
   priceRange: "$$-$$$",
   instagramUrl: "https://www.instagram.com/perthconcretecare/",
@@ -38,6 +38,16 @@ export const serviceAreas = [
   "Scarborough WA",
   "North Perth WA",
   "Perth CBD WA",
+  "Rossmoyne WA",
+  "Willetton WA",
+  "Canning Vale WA",
+  "Fremantle WA",
+  "Cannington WA",
+  "Booragoon WA",
+  "Bull Creek WA",
+  "Bibra Lake WA",
+  "Melville WA",
+  "Bentley WA",
 ];
 
 export const trustSignals = [
@@ -55,41 +65,41 @@ export const services = [
     serviceType: "Exposed aggregate honing and sealing",
     url: `${siteUrl}/honed-concrete-perth`,
     description:
-      "Honing and sealing rough exposed or washed aggregate to smooth sharp stones and protect outdoor concrete across Perth north of the river.",
+      "Honing and sealing rough exposed or washed aggregate to smooth sharp stones and protect outdoor concrete across the Perth metro area.",
   },
   {
     name: "Concrete grinding Perth",
     serviceType: "Concrete grinding and surface preparation",
     url: `${siteUrl}/concrete-grinding-perth`,
     description:
-      "Concrete grinding, coating removal, slab preparation, profile control and dust-controlled surface preparation across Perth north of the river.",
+      "Concrete grinding, coating removal, slab preparation, profile control and dust-controlled surface preparation across the Perth metro area.",
   },
   {
     name: "Concrete polishing Perth",
     serviceType: "Concrete polishing",
     url: `${siteUrl}/concrete-polishing-perth`,
     description:
-      "Mechanical polished concrete for homes, warehouses, showrooms and commercial interiors across Perth north of the river.",
+      "Mechanical polished concrete for homes, warehouses, showrooms and commercial interiors across the Perth metro area.",
   },
   {
     name: "Honed concrete Perth",
     serviceType: "Honed concrete and grind-and-seal flooring",
     url: `${siteUrl}/honed-concrete-perth`,
     description:
-      "Honed concrete and grind-and-seal finishes for alfresco areas, driveways, paths and outdoor concrete around Perth north of the river.",
+      "Honed concrete and grind-and-seal finishes for alfresco areas, driveways, paths and outdoor concrete around the Perth metro area.",
   },
   {
     name: "Epoxy flake flooring Perth",
     serviceType: "Epoxy flake flooring",
     url: `${siteUrl}/epoxy-flake-flooring-perth`,
     description:
-      "Epoxy flake flooring for garages, workshops, patios and commercial spaces across Perth north of the river.",
+      "Epoxy flake flooring for garages, workshops, patios and commercial spaces across the Perth metro area.",
   },
   {
     name: "Metallic epoxy flooring Perth",
     serviceType: "Metallic epoxy flooring",
     url: `${siteUrl}/metallic-epoxy-flooring-perth`,
     description:
-      "Decorative metallic epoxy floors with custom movement patterns, mechanical preparation and durable topcoats across Perth north of the river.",
+      "Decorative metallic epoxy floors with custom movement patterns, mechanical preparation and durable topcoats across the Perth metro area.",
   },
 ];

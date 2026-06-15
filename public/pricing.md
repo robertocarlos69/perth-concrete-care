@@ -3,7 +3,7 @@
 All prices in AUD per square metre, supply and install, residential guide rates.
 Final pricing confirmed after a free on-site inspection. Larger areas achieve a
 lower per-m² rate; small or heavily detailed jobs price higher per m².
-Service area: Perth north of the river (Butler to Perth CBD).
+Service area: Perth metropolitan area, north and south of the river.
 Quotes: free, fixed-price, written. Phone 0448 483 226 or
 sales@perthconcretecare.com.au.
 

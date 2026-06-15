@@ -5,7 +5,7 @@ import ContactClient from "./ContactClient";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Request a free quote for epoxy flooring, concrete grinding, honed concrete, polishing or metallic epoxy across Perth north of the river. Call 0448 483 226.",
+    "Request a free quote for epoxy flooring, concrete grinding, honed concrete, polishing or metallic epoxy across the Perth metro area. Call 0448 483 226.",
   alternates: { canonical: "https://perthconcretecare.com.au/contact" },
   openGraph: {
     images: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     ],
         title: "Contact | Perth Concrete Care",
     description:
-      "Request a free quote for epoxy flooring, concrete grinding, honed concrete, polishing or metallic epoxy across Perth north of the river.",
+      "Request a free quote for epoxy flooring, concrete grinding, honed concrete, polishing or metallic epoxy across the Perth metro area.",
     url: "https://perthconcretecare.com.au/contact",
     siteName: "Perth Concrete Care",
     type: "website",
@@ -47,7 +47,7 @@ export default function Page() {
         </h1>
         <p className="mt-4 max-w-3xl text-lg text-neutral-700">
           Get a clear scope and written quote for epoxy flooring, concrete grinding, honing, polishing or metallic epoxy.
-          We service Perth <strong>north of the river</strong> — Butler corridor, Joondalup, Wanneroo, Osborne Park, North Perth and Perth CBD.
+          We service the <strong>Perth metro area</strong>, north and south of the river, from Joondalup and Wanneroo through the city to Rossmoyne, Willetton and Fremantle.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           <a href="tel:+61448483226" className="rounded-xl bg-emerald-600 px-5 py-3 font-semibold text-white hover:bg-emerald-700 shadow-sm transition-colors">

@@ -6,7 +6,7 @@ import { siteUrl } from "./lib/site";
 export const metadata: Metadata = {
   title: "Concrete Polishing, Grinding & Epoxy Flooring Perth",
   description:
-    "Perth Concrete Care provides concrete polishing, concrete grinding, honed concrete, epoxy flake flooring and metallic epoxy floors across Perth north of the river. Free quotes for residential and commercial floors.",
+    "Perth Concrete Care provides concrete polishing, concrete grinding, honed concrete, epoxy flake flooring and metallic epoxy floors across the Perth metro area. Free quotes for residential and commercial floors.",
   alternates: {
     canonical: "https://perthconcretecare.com.au/",
   },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     ],
         title: "Concrete Polishing, Grinding & Epoxy Flooring Perth",
     description:
-      "Concrete polishing, grinding, honed concrete, epoxy flake flooring and metallic epoxy floors across Perth north of the river by Perth Concrete Care.",
+      "Concrete polishing, grinding, honed concrete, epoxy flake flooring and metallic epoxy floors across the Perth metro area by Perth Concrete Care.",
     url: "https://perthconcretecare.com.au/",
     siteName: "Perth Concrete Care",
     type: "website",
@@ -47,7 +47,7 @@ const homeJsonLd = {
       name: "Concrete polishing, grinding and epoxy flooring Perth",
       serviceType: "Concrete flooring services",
       description:
-        "Concrete grinding, polishing, honing, exposed aggregate honing, epoxy flake flooring and metallic epoxy flooring across Perth north of the river.",
+        "Concrete grinding, polishing, honing, exposed aggregate honing, epoxy flake flooring and metallic epoxy flooring across the Perth metro area.",
       url: `${siteUrl}/`,
     }),
     breadcrumbSchema([{ name: "Home", url: `${siteUrl}/` }], `${siteUrl}/`),

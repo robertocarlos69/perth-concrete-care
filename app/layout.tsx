@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: "%s | Perth Concrete Care",
   },
   description:
-    "Perth Concrete Care delivers epoxy flooring, flake floors, metallic epoxy, concrete grinding and polished concrete across Perth. Residential and commercial finishes north of the river. Free quotes.",
+    "Perth Concrete Care delivers epoxy flooring, flake floors, metallic epoxy, concrete grinding and polished concrete across Perth. Residential and commercial finishes north and south of the river. Free quotes.",
   keywords: [
     "epoxy flooring Perth",
     "epoxy flake flooring Perth",
@@ -48,6 +48,10 @@ export const metadata: Metadata = {
     "epoxy flooring Butler",
     "epoxy flooring Subiaco",
     "concrete grinding Osborne Park",
+    "epoxy flooring Rossmoyne",
+    "concrete flooring Willetton",
+    "polished concrete Fremantle",
+    "concrete grinding Canning Vale",
   ],
   alternates: {
     canonical: "https://perthconcretecare.com.au/",
@@ -65,14 +69,14 @@ export const metadata: Metadata = {
     title:
       "Concrete Polishing, Grinding & Epoxy Flooring Perth | Perth Concrete Care",
     description:
-      "Concrete polishing, concrete grinding, epoxy flake floors and metallic epoxy specialists for Perth north of the river: Butler to Perth CBD. Free quotes.",
+      "Concrete polishing, concrete grinding, epoxy flake floors and metallic epoxy specialists across the Perth metro area, north and south of the river. Free quotes.",
   },
   twitter: {
     card: "summary_large_image",
     title:
       "Concrete Polishing, Grinding & Epoxy Flooring Perth | Perth Concrete Care",
     description:
-      "Concrete polishing, grinding and epoxy flooring specialists for Perth north of the river: Butler to Perth CBD. Free quotes.",
+      "Concrete polishing, grinding and epoxy flooring specialists across the Perth metro area, north and south of the river. Free quotes.",
   },
   robots: {
     index: true,
