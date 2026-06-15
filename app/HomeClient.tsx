@@ -600,9 +600,7 @@ export default function HomeClient() {
               </h2>
               <p className="mt-3 text-neutral-600 text-sm md:text-base">
                 We install honed concrete, polished concrete, epoxy garage
-                floors, epoxy flake systems and washed aggregate across Perth
-                north of the river, including Joondalup, Wanneroo, Alkimos, Butler, Yanchep,
-                Ellenbrook, Wangara, Malaga, Osborne Park, North Perth and Perth CBD.
+                floors, epoxy flake and washed aggregate across Perth.
               </p>
 
               <div className="mt-4 flex flex-wrap gap-2 text-sm">

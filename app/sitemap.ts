@@ -15,6 +15,7 @@ const corePages: Array<{
   priority: number;
 }> = [
   { path: "/", lastModified: "2026-06-15", changeFrequency: "weekly", priority: 1 },
+  { path: "/concrete-flooring", lastModified: "2026-06-15", changeFrequency: "monthly", priority: 0.75 },
   { path: "/epoxy-flake-flooring-perth", lastModified: "2026-06-13", changeFrequency: "monthly", priority: 0.9 },
   { path: "/metallic-epoxy-flooring-perth", lastModified: "2026-06-13", changeFrequency: "monthly", priority: 0.9 },
   { path: "/epoxy-floor-visualiser-perth", lastModified: "2026-06-13", changeFrequency: "monthly", priority: 0.8 },

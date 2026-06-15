@@ -419,6 +419,113 @@ export const suburbs: Suburb[] = [
       },
     ],
   },
+  {
+    slug: "ellenbrook",
+    name: "Ellenbrook",
+    region: "Ellenbrook & the Swan Valley fringe",
+    updated: "2026-06-15",
+    metaDescription:
+      "Concrete flooring in Ellenbrook — epoxy flake garage floors, polished concrete and hone & seal for this growing northern community. Local installer, free quotes.",
+    heroIntro:
+      "Ellenbrook is one of Perth's largest master-planned communities, full of family homes and fresh slabs ready for a proper finish. We install epoxy flake garages, polished concrete and hone-and-seal alfresco areas across Ellenbrook and the surrounding Swan Valley fringe.",
+    localContext:
+      "Ellenbrook is a sprawling, mostly newer community, so much of our work here is on near-new garage and alfresco slabs that need correct profiling and a moisture-tolerant primer rather than coating removal. Newer slabs can still hold construction moisture, and some pockets nearer the Swan Valley sit on more reactive ground, so we test and check for cracking before coating. Full-flake garage floors and slip-rated hone-and-seal alfrescos are the most popular choices for Ellenbrook families.",
+    image: "/gallery/epoxy-flake-garage-banksia-grove.webp",
+    imageAlt:
+      "Epoxy flake garage floor with a fine glitter finish by Perth Concrete Care",
+    imageLabel: "Epoxy flake garage floor",
+    nearby: ["malaga", "wanneroo", "banksia-grove"],
+    localFaqs: [
+      {
+        q: "My Ellenbrook home is a new build — when can I coat the garage?",
+        a: "Once the slab has cured (usually about 28 days) and passes a moisture check, a new Ellenbrook garage is quick to coat because there's no old coating to grind off. We confirm exact timing on site.",
+      },
+      {
+        q: "Do you travel out to Ellenbrook?",
+        a: "Yes, Ellenbrook is within our service area and there's no travel surcharge. We cover the whole northern and north-eastern corridor.",
+      },
+    ],
+  },
+  {
+    slug: "malaga",
+    name: "Malaga",
+    region: "Malaga industrial & commercial area",
+    updated: "2026-06-15",
+    metaDescription:
+      "Concrete flooring in Malaga — warehouse and workshop floor prep, epoxy, grind & seal and polished concrete for industrial and trade premises. Free quotes.",
+    heroIntro:
+      "Malaga is one of Perth's biggest industrial and trade estates, packed with warehouses, workshops and showrooms that need tough, low-dust floors. We grind, coat and seal industrial slabs across Malaga for epoxy, polyaspartic and polished systems.",
+    localContext:
+      "Malaga work is overwhelmingly commercial and industrial — warehouse and workshop floors rather than home garages. Bare industrial slabs here are often dusty, oil-stained or carrying old failed coatings, so mechanical grinding and degreasing come first. From there we match the system to the use: grind-and-seal or epoxy for warehouses, anti-slip coatings for wet and trade areas, and polished concrete for showrooms. H-class dust extraction keeps the rest of your operation running while we work.",
+    image: "/gallery/grind-and-seal-concrete-noranda.webp",
+    imageAlt: "Grind and seal concrete warehouse floor by Perth Concrete Care",
+    imageLabel: "Grind & seal concrete floor",
+    nearby: ["wangara", "osborne-park", "ellenbrook"],
+    localFaqs: [
+      {
+        q: "Do you coat warehouse floors in Malaga?",
+        a: "Yes — industrial slabs are our core work in Malaga. We grind back oil, dust and old coatings, then apply a grind-and-seal, epoxy or polyaspartic system suited to forklifts, chemical exposure or heavy foot traffic.",
+      },
+      {
+        q: "Can you work around our trading hours in Malaga?",
+        a: "Usually, yes. We stage industrial jobs and use H-class dust control to limit disruption, and plan timing around your operation to minimise downtime.",
+      },
+    ],
+  },
+  {
+    slug: "yanchep",
+    name: "Yanchep",
+    region: "Yanchep & the far northern coast",
+    updated: "2026-06-15",
+    metaDescription:
+      "Concrete flooring in Yanchep — UV-stable epoxy flake garages and hone & seal alfresco for coastal new-build homes up the northern line. Free quotes.",
+    heroIntro:
+      "Yanchep sits at the far northern end of the coastal corridor we serve, where new estates meet ocean air. We install UV-stable epoxy flake garages, hone-and-seal alfresco areas and pool surrounds built for Yanchep's coastal conditions.",
+    localContext:
+      "Yanchep is one of the fastest-growing coastal suburbs, so most homes are recent builds with clean garage slabs that just need correct profiling and a moisture-tolerant primer. Because it's right on the coast, exposure is the key factor: we specify UV-stable polyaspartic or polyurethane topcoats that resist yellowing in the strong sun, and add anti-slip additives around pools and alfresco areas. A new slab plus a marine-grade finish gives the longest-lasting result this far north on the coast.",
+    image: "/gallery/Epoxy-Flake-Floor-Wanneroo.webp",
+    imageAlt:
+      "Black and white epoxy flake garage floor by Perth Concrete Care",
+    imageLabel: "Epoxy flake garage floor",
+    nearby: ["alkimos", "butler", "clarkson"],
+    localFaqs: [
+      {
+        q: "Is Yanchep too far for you?",
+        a: "No — Yanchep is the northern edge of our service area and we regularly work up the coast. There's no travel surcharge; you get the same fixed-price quote as anywhere else we cover.",
+      },
+      {
+        q: "Will a Yanchep floor handle the coastal sun and salt?",
+        a: "Yes, with the right topcoat. We use UV-stable, salt-tolerant finishes for Yanchep so the floor resists fading and yellowing despite the strong coastal exposure.",
+      },
+    ],
+  },
+  {
+    slug: "wembley-downs",
+    name: "Wembley Downs",
+    region: "Wembley Downs & the western suburbs",
+    updated: "2026-06-15",
+    metaDescription:
+      "Concrete flooring in Wembley Downs — epoxy flake garages, honed concrete and polished floors for established western-suburb homes. Local installer, free quotes.",
+    heroIntro:
+      "Wembley Downs is an established western-suburbs pocket near City Beach, and we've already honed concrete and installed epoxy flake garages here for happy local customers. We grind, coat, hone-and-seal and polish floors throughout Wembley Downs.",
+    localContext:
+      "Wembley Downs is a settled, leafy suburb of established homes, so we see a real mix of work — honing and resealing older exposed-aggregate and concrete, refreshing tired garages with flake, and polishing slabs during renovations. Many slabs here are older, which makes grinding back previous coatings and getting the prep right the difference between a finish that lasts and one that lifts. Its proximity to the coast also means UV-stable sealers are worth specifying on outdoor work.",
+    image: "/gallery/honed-concrete-perth.webp",
+    imageAlt:
+      "Honed and sealed concrete floor finished by Perth Concrete Care",
+    imageLabel: "Honed concrete finish",
+    nearby: ["scarborough", "duncraig", "osborne-park"],
+    localFaqs: [
+      {
+        q: "Do you have customers in Wembley Downs?",
+        a: "Yes — we've honed concrete and installed an epoxy flake garage in Wembley Downs for a customer who left us a five-star review. Ask when you enquire and we'll talk you through it.",
+      },
+      {
+        q: "Can you both hone my concrete and do my garage in Wembley Downs?",
+        a: "Yes, we often combine jobs — for example honing and sealing an outdoor area while installing a flake floor in the garage on the same visit, which is exactly what we did for a recent Wembley Downs customer.",
+      },
+    ],
+  },
 ];
 
 export function getSuburb(slug: string): Suburb | undefined {

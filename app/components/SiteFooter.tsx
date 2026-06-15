@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { business, services, trustSignals } from "../lib/site";
-import { suburbs } from "../lib/suburbs";
 
 export default function SiteFooter() {
   return (
@@ -57,25 +56,14 @@ export default function SiteFooter() {
             {business.serviceAreaLong}
           </p>
 
-          {suburbs.length > 0 && (
-            <>
-              <div className="mt-4 text-xs font-semibold uppercase tracking-wide text-stone-500">
-                Areas we serve
-              </div>
-              <ul className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-sm text-stone-300">
-                {suburbs.map((s) => (
-                  <li key={s.slug}>
-                    <Link
-                      href={`/concrete-flooring/${s.slug}`}
-                      className="hover:text-emerald-300 transition-colors"
-                    >
-                      {s.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </>
-          )}
+          <div className="mt-4">
+            <Link
+              href="/concrete-flooring"
+              className="inline-flex items-center gap-1 text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition-colors"
+            >
+              Areas we serve →
+            </Link>
+          </div>
         </div>
 
         <div className="lg:col-span-2">
