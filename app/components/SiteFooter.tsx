@@ -115,6 +115,9 @@ export default function SiteFooter() {
         <div className="max-w-7xl mx-auto px-4 py-6 text-xs text-stone-400 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} {business.name}. All rights reserved.</span>
           <div className="flex flex-wrap gap-4">
+            <Link className="hover:text-emerald-300 transition-colors" href="/blog">
+              Guides
+            </Link>
             <a className="hover:text-emerald-300 transition-colors" href={business.googleReviewsUrl} target="_blank" rel="noopener noreferrer">
               Leave a Google review
             </a>
