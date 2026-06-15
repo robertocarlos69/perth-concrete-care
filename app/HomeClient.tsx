@@ -4,8 +4,21 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { business, trustSignals } from "./lib/site";
-import { suburbs } from "./lib/suburbs";
+import { getSuburb } from "./lib/suburbs";
 import GoogleReviewsCarousel from "./components/GoogleReviewsCarousel";
+
+// Featured suburbs for the homepage "Areas we serve" row (commercial /
+// industrial focus). The full list lives on the /concrete-flooring hub page.
+const featuredAreas = [
+  "osborne-park",
+  "malaga",
+  "wangara",
+  "balcatta",
+  "ellenbrook",
+  "joondalup",
+]
+  .map((slug) => getSuburb(slug))
+  .filter((s): s is NonNullable<ReturnType<typeof getSuburb>> => Boolean(s));
 
 // index.tsx — Single-file React page for Perth Concrete Care
 // Pure TSX. Drop into Next.js (e.g. app/page.tsx) or Vite entry.
@@ -620,8 +633,8 @@ export default function HomeClient() {
                 <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-emerald-700">
                   Areas we serve
                 </h3>
-                <ul className="mt-3 flex flex-wrap gap-2 text-sm">
-                  {suburbs.map((s) => (
+                <ul className="mt-3 flex flex-wrap items-center gap-2 text-sm">
+                  {featuredAreas.map((s) => (
                     <li key={s.slug}>
                       <Link
                         href={`/concrete-flooring/${s.slug}`}
@@ -631,6 +644,14 @@ export default function HomeClient() {
                       </Link>
                     </li>
                   ))}
+                  <li>
+                    <Link
+                      href="/concrete-flooring"
+                      className="inline-flex items-center gap-1 rounded-full bg-emerald-600 px-4 py-1.5 font-semibold text-white hover:bg-emerald-700 transition-colors"
+                    >
+                      View all areas →
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>
