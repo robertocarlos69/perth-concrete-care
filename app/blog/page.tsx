@@ -11,7 +11,7 @@ const pageUrl = `${siteUrl}/blog`;
 export const metadata: Metadata = {
   title: "Concrete Flooring Guides & Advice",
   description:
-    "Practical guides on concrete finishes for Perth homes and businesses — honed concrete, polished concrete, epoxy, exposed aggregate, costs, prep and slip ratings.",
+    "Practical guides on concrete finishes for Perth homes and businesses: honed concrete, polished concrete, epoxy, exposed aggregate, costs, prep and slip ratings.",
   alternates: { canonical: pageUrl },
   openGraph: {
     title: "Concrete Flooring Guides & Advice | Perth Concrete Care",
@@ -37,7 +37,7 @@ export default function BlogIndexPage() {
       {
         "@type": "Blog",
         "@id": `${pageUrl}#blog`,
-        name: "Perth Concrete Care — Guides",
+        name: "Perth Concrete Care Guides",
         url: pageUrl,
         blogPost: blogPosts.map((p) => ({
           "@type": "BlogPosting",
@@ -70,7 +70,7 @@ export default function BlogIndexPage() {
           Concrete Flooring Guides &amp; Advice
         </h1>
         <p className="mt-5 max-w-3xl text-lg text-stone-700 leading-relaxed">
-          Straight answers on concrete finishes for Perth homes and businesses —
+          Straight answers on concrete finishes for Perth homes and businesses:
           how each finish is made, what it costs, where it works and how to
           choose. Written by the team that does the grinding, honing and coating
           north of the river.
