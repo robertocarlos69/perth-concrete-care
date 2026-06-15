@@ -125,7 +125,7 @@ export default function EpoxyFlakeClient({ faqs }: { faqs: Faq[] }) {
         </h1>
         <p className="mt-5 text-lg text-stone-700 leading-relaxed">
           Durable, non-slip epoxy flake flooring for garages, workshops and
-          homes across Perth — from $80/m². The finish is only as good as the
+          homes across Perth, from $80/m². The finish is only as good as the
           prep, so we mechanically grind, repair and profile the slab before
           applying your chosen flake system and a UV-stable, stain-resistant
           protective topcoat.
@@ -136,7 +136,7 @@ export default function EpoxyFlakeClient({ faqs }: { faqs: Faq[] }) {
             "Hard-wearing, hot-tyre and chemical resistant",
             "Non-slip texture, easy to mop clean",
             "20+ flake colours across Ultra & Hyper ranges",
-            "UV-stable topcoat made for Perth sun — won't yellow",
+            "UV-stable topcoat made for Perth sun that won't yellow",
           ].map((line) => (
             <li key={line} className="flex items-start gap-2.5">
               <svg className="mt-1 h-4 w-4 shrink-0 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -199,7 +199,7 @@ export default function EpoxyFlakeClient({ faqs }: { faqs: Faq[] }) {
         </h2>
         <p className="mt-2 text-stone-600 max-w-3xl leading-relaxed">
           Below are popular flake blends commonly chosen for Perth garages,
-          workshops and alfresco areas. Colours may vary slightly on screens —
+          workshops and alfresco areas. Colours may vary slightly on screens, so
           we help confirm your choice during the site visit.
         </p>
 
@@ -240,8 +240,8 @@ export default function EpoxyFlakeClient({ faqs }: { faqs: Faq[] }) {
         </h2>
         <p className="mt-2 text-stone-600 leading-relaxed">
           Our Hyper Flake blends offer a denser mix and stronger contrast for
-          extra depth and a more premium finish — ideal for feature garages,
-          workshops and commercial spaces. Colours may vary slightly on screens —
+          extra depth and a more premium finish, ideal for feature garages,
+          workshops and commercial spaces. Colours may vary slightly on screens, so
           we help confirm your choice during the site visit.
         </p>
 

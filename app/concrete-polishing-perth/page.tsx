@@ -32,11 +32,11 @@ export const metadata: Metadata = {
 const benefits = [
   {
     title: "Built to last decades",
-    desc: "A properly polished slab is one of the most durable floors you can own — no coating to peel or wear through, just hardened, refined concrete that handles heavy foot traffic and furniture.",
+    desc: "A properly polished slab is one of the most durable floors you can own, with no coating to peel or wear through, just hardened, refined concrete that handles heavy foot traffic and furniture.",
   },
   {
     title: "Low maintenance",
-    desc: "No waxing, no stripping, no recoating. Day-to-day care is a dust mop and the occasional damp mop — which is why warehouses and showrooms choose it.",
+    desc: "No waxing, no stripping, no recoating. Day-to-day care is a dust mop and the occasional damp mop, which is why warehouses and showrooms choose it.",
   },
   {
     title: "Bright, clean interiors",
@@ -44,15 +44,15 @@ const benefits = [
   },
   {
     title: "Healthier underfoot",
-    desc: "A sealed, dense polished floor doesn't harbour dust, allergens or mould the way carpet does — a genuine plus for allergy-prone households.",
+    desc: "A sealed, dense polished floor doesn't harbour dust, allergens or mould the way carpet does, a genuine plus for allergy-prone households.",
   },
   {
     title: "Choice of look",
-    desc: "From a subtle cream finish to full stone exposure, and from a soft satin sheen to a high mirror gloss — we dial the finish to the room.",
+    desc: "From a subtle cream finish to full stone exposure, and from a soft satin sheen to a high mirror gloss, we dial the finish to the room.",
   },
   {
     title: "Uses the slab you have",
-    desc: "If your existing slab is sound, polishing turns it into the finished floor — no new flooring material, no landfill, lower cost.",
+    desc: "If your existing slab is sound, polishing turns it into the finished floor, with no new flooring material, no landfill and lower cost.",
   },
 ];
 
@@ -78,7 +78,7 @@ const exposureLevels = [
   },
   {
     name: "Salt & pepper",
-    desc: "A light cut revealing fine aggregate for a subtle speckle — the most popular residential choice.",
+    desc: "A light cut revealing fine aggregate for a subtle speckle, and the most popular residential choice.",
   },
   {
     name: "Full aggregate",
@@ -119,7 +119,7 @@ export default function ConcretePolishingPerthPage() {
     },
     {
       q: "How long does polished concrete last?",
-      a: "A correctly polished and densified floor can last decades — there's no coating to peel or wear off. Periodic re-polishing of high-traffic zones restores sheen if it ever dulls, but the floor itself is permanent.",
+      a: "A correctly polished and densified floor can last decades, with no coating to peel or wear off. Periodic re-polishing of high-traffic zones restores sheen if it ever dulls, but the floor itself is permanent.",
     },
     {
       q: "Is polished concrete slippery?",
@@ -164,7 +164,7 @@ export default function ConcretePolishingPerthPage() {
             <p className="mt-5 max-w-2xl text-lg text-stone-700 leading-relaxed">
               Premium mechanically polished concrete for homes, warehouses,
               showrooms and commercial interiors across Perth. A proper grind,
-              densify and refine process — not a quick shine-and-seal shortcut —
+              densify and refine process, not a quick shine-and-seal shortcut,
               for a durable, low-maintenance floor that lasts decades.
             </p>
 
@@ -173,7 +173,7 @@ export default function ConcretePolishingPerthPage() {
                 "Full mechanical grind, densify and polish system",
                 "Satin to high-gloss sheen, cream to full-stone exposure",
                 "Residential & commercial interiors, north of river to CBD",
-                "From $140/m² — a permanent floor, no coating to peel",
+                "From $140/m², a permanent floor with no coating to peel",
               ].map((line) => (
                 <li key={line} className="flex items-start gap-2.5">
                   <svg className="mt-1 h-4 w-4 shrink-0 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -210,7 +210,7 @@ export default function ConcretePolishingPerthPage() {
               />
             </div>
             <figcaption className="mt-3 text-sm text-stone-600">
-              Polished concrete interior — Cottesloe, Perth
+              Polished concrete interior, Cottesloe, Perth
             </figcaption>
           </figure>
         </div>
@@ -224,7 +224,7 @@ export default function ConcretePolishingPerthPage() {
           </h2>
           <p className="mt-3 max-w-3xl text-stone-600 leading-relaxed">
             Polished concrete is the low-maintenance, long-life choice for indoor
-            floors. It turns your existing slab into the finished surface — no
+            floors. It turns your existing slab into the finished surface, with no
             coating to peel, nothing to replace, and a clean, premium look that
             brightens the room.
           </p>
@@ -245,7 +245,7 @@ export default function ConcretePolishingPerthPage() {
           Choose your sheen level
         </h2>
         <p className="mt-3 max-w-3xl text-stone-600 leading-relaxed">
-          Polishing lets you dial the reflectivity to suit the space — from a
+          Polishing lets you dial the reflectivity to suit the space, from a
           soft, understated satin to a full mirror gloss.
         </p>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -373,7 +373,7 @@ export default function ConcretePolishingPerthPage() {
             <p className="mt-3 text-sm text-stone-600 leading-relaxed">
               Typical installed price for polished concrete. Final pricing
               depends on slab condition, area, exposure level, repairs and
-              access — larger areas get a better per-m² rate.
+              access. Larger areas get a better per-m² rate.
             </p>
             <Link href="/#quote" className="mt-6 inline-block w-full rounded-xl bg-emerald-600 px-4 py-3 text-center font-bold text-white hover:bg-emerald-700 transition-colors">
               Request a free quote
@@ -444,7 +444,7 @@ export default function ConcretePolishingPerthPage() {
             </h2>
             <p className="mt-2 text-stone-300 max-w-xl">
               Send dimensions, photos and your suburb and we&apos;ll come back
-              with a clear scope and a fixed written price — usually within 24
+              with a clear scope and a fixed written price, usually within 24
               hours.
             </p>
           </div>

@@ -32,7 +32,7 @@ const whatYouGet = [
   ["CSP2–CSP3 mechanical profile", "The right surface roughness for epoxy, polyurethane, polyaspartic and sealer systems to bond and stay bonded."],
   ["Coating, paint & glue removal", "Old paint, epoxy, tile adhesive and carpet glue ground back to clean concrete wherever feasible."],
   ["High-spot levelling", "Slab undulations and trip points ground down to a flatter, safer, coat-ready surface."],
-  ["Dust-controlled grinding", "H-class HEPA extraction keeps airborne silica dust down — cleaner for you and safer for us."],
+  ["Dust-controlled grinding", "H-class HEPA extraction keeps airborne silica dust down, cleaner for you and safer for us."],
   ["Hardness assessment", "We test the slab and select the right diamond tooling so the profile is correct, not guessed."],
   ["Edge & detail work", "Hand grinders take the prep right into corners, edges and tight areas the big machines can't reach."],
 ];
@@ -49,7 +49,7 @@ const useCases = [
 const processSteps = [
   ["Site inspection", "We identify coatings, contaminants, slab condition and the target finish so the prep matches the coating system going on top."],
   ["Grind & level", "Coarse diamonds remove laitance, old coatings and high spots, opening the slab up for proper adhesion."],
-  ["Profile to spec", "We dial in the CSP and scratch pattern the chosen coating manufacturer requires — the difference between a floor that lasts and one that peels."],
+  ["Profile to spec", "We dial in the CSP and scratch pattern the chosen coating manufacturer requires. That's the difference between a floor that lasts and one that peels."],
   ["Detail work", "Edges, corners and tight areas are ground by hand so the whole floor is prepped, not just the open middle."],
   ["Vacuum & clean", "Thorough dust removal so primer and coatings bond to clean concrete, not a dusty surface."],
   ["Ready for coating", "Final inspection and a clean, profiled substrate handed over ready for installation."],
@@ -67,7 +67,7 @@ export default function Page() {
     },
     {
       q: "Can you remove old paint, epoxy or tile glue?",
-      a: "Yes — coating and adhesive removal is one of the most common reasons people call us. We grind back old paint, failed epoxy, tile adhesive and carpet glue to clean concrete wherever the slab allows.",
+      a: "Yes. Coating and adhesive removal is one of the most common reasons people call us. We grind back old paint, failed epoxy, tile adhesive and carpet glue to clean concrete wherever the slab allows.",
     },
     {
       q: "Can you grind new concrete?",
@@ -75,11 +75,11 @@ export default function Page() {
     },
     {
       q: "Will grinding make my slab perfectly level?",
-      a: "Grinding corrects many high spots and minor undulations and removes trip points. Major level problems — like a slab that falls the wrong way — may need patching, self-levelling compound or resurfacing, which we'll flag on inspection.",
+      a: "Grinding corrects many high spots and minor undulations and removes trip points. Major level problems, like a slab that falls the wrong way, may need patching, self-levelling compound or resurfacing, which we'll flag on inspection.",
     },
     {
       q: "Do you control the dust?",
-      a: "Yes. We grind with H-class HEPA vacuum extraction connected to the machines, which captures the bulk of the fine silica dust at the source — far cleaner than uncontrolled grinding.",
+      a: "Yes. We grind with H-class HEPA vacuum extraction connected to the machines, which captures the bulk of the fine silica dust at the source, far cleaner than uncontrolled grinding.",
     },
     {
       q: "How much does concrete grinding cost in Perth?",
@@ -119,7 +119,7 @@ export default function Page() {
           <p className="mt-5 text-lg text-stone-700 leading-relaxed">
             Industrial diamond grinding for slab preparation, coating removal and
             profile control across Perth. A coating is only as good as the prep
-            beneath it — and prep is what we do properly, to the CSP profile your
+            beneath it, and prep is what we do properly, to the CSP profile your
             floor system actually requires.
           </p>
 
@@ -233,8 +233,8 @@ export default function Page() {
           <div className="rounded-3xl border border-stone-200 bg-white p-7 md:p-8 shadow-sm">
             <h2 className="text-xl font-bold text-stone-900">Free quotes</h2>
             <p className="mt-4 text-sm text-stone-700 leading-relaxed">
-              Send dimensions and a few photos — including any existing coating or
-              damage — and we&apos;ll give you a clear scope and price.
+              Send dimensions and a few photos, including any existing coating or
+              damage, and we&apos;ll give you a clear scope and price.
             </p>
             <Link href="/#quote" className="mt-6 inline-block w-full rounded-xl bg-emerald-600 px-4 py-3 text-center font-bold text-white hover:bg-emerald-700 transition-colors">
               Request a quote

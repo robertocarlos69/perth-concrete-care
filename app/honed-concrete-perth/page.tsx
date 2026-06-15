@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 const benefits = [
   {
     title: "Uses the slab you already have",
-    desc: "Honing transforms existing concrete — no demolition, no new pour. It's a fraction of the cost of replacing the slab, with far less mess and downtime.",
+    desc: "Honing transforms existing concrete, with no demolition and no new pour. It's a fraction of the cost of replacing the slab, with far less mess and downtime.",
   },
   {
     title: "Kind to bare feet",
@@ -40,7 +40,7 @@ const benefits = [
   },
   {
     title: "Slip ratings for wet areas",
-    desc: "We tune the finish and sealer to achieve P3–P5 slip ratings — suitable for pool surrounds, alfresco areas and other zones that get wet.",
+    desc: "We tune the finish and sealer to achieve P3–P5 slip ratings, suitable for pool surrounds, alfresco areas and other zones that get wet.",
   },
   {
     title: "Built for Perth sun",
@@ -48,7 +48,7 @@ const benefits = [
   },
   {
     title: "Stain and mark resistance",
-    desc: "Sealed honed concrete shrugs off the marks that stain raw concrete — barbecue drips, leaf tannins, red wine and pot stains clean up far more easily.",
+    desc: "Sealed honed concrete shrugs off the marks that stain raw concrete. Barbecue drips, leaf tannins, red wine and pot stains clean up far more easily.",
   },
   {
     title: "Easy to keep clean",
@@ -59,11 +59,11 @@ const benefits = [
 const finishLevels = [
   {
     name: "Nil / cream exposure",
-    desc: "A light hone that keeps the smooth cream surface of the slab. Subtle, modern and uniform — popular for new pours with a tight finish.",
+    desc: "A light hone that keeps the smooth cream surface of the slab. Subtle, modern and uniform, and popular for new pours with a tight finish.",
   },
   {
     name: "Salt & pepper",
-    desc: "A shallow cut revealing fine sands and small stone — the most popular choice. A natural, speckled look that hides everyday dust and footprints well.",
+    desc: "A shallow cut revealing fine sands and small stone, and the most popular choice. A natural, speckled look that hides everyday dust and footprints well.",
   },
   {
     name: "Full stone exposure",
@@ -74,7 +74,7 @@ const finishLevels = [
 const sealerOptions = [
   {
     name: "Natural / penetrating",
-    desc: "Sits within the concrete rather than on top. Keeps the matte, natural look and is very low-maintenance — a great choice for driveways.",
+    desc: "Sits within the concrete rather than on top. Keeps the matte, natural look and is very low-maintenance, and a great choice for driveways.",
   },
   {
     name: "Enhanced ‘wet look’",
@@ -88,7 +88,7 @@ const sealerOptions = [
 
 const processSteps = [
   ["Inspect & plan", "We confirm the cut level, slip requirements and sealer on-site, and cut a small sample so you can see your actual finish before committing."],
-  ["Grind / hone", "Mechanical diamond grinding through the required grits — dust-controlled with H-class HEPA extraction."],
+  ["Grind / hone", "Mechanical diamond grinding through the required grits, dust-controlled with H-class HEPA extraction."],
   ["Repair & detail", "Cracks, pits and edges are addressed so the sealed result looks resolved, not patched."],
   ["Clean & dry", "The surface is vacuumed and prepared so the sealer bonds evenly with no blotching."],
   ["Seal (+ anti-slip)", "Penetrating or film-forming sealer as specified, with traction additive in wet zones."],
@@ -103,11 +103,11 @@ export default function Page() {
     },
     {
       q: "How is honing different to polishing?",
-      a: "Honing is a lower-sheen grind-and-seal — ideal outdoors because the sealer handles UV and weather. Polishing uses densifiers and higher grits to reach a shinier finish, usually indoors.",
+      a: "Honing is a lower-sheen grind-and-seal, ideal outdoors because the sealer handles UV and weather. Polishing uses densifiers and higher grits to reach a shinier finish, usually indoors.",
     },
     {
       q: "Can you hone my rough exposed aggregate?",
-      a: "Yes — this is one of our most requested jobs. We grind the sharp stone tips smooth, then seal. The result keeps the exposed-aggregate character but is far kinder to bare feet and easier to clean.",
+      a: "Yes. This is one of our most requested jobs. We grind the sharp stone tips smooth, then seal. The result keeps the exposed-aggregate character but is far kinder to bare feet and easier to clean.",
     },
     {
       q: "Will the sealer change the colour?",
@@ -115,7 +115,7 @@ export default function Page() {
     },
     {
       q: "Can this be done on older slabs?",
-      a: "Yes — as long as the concrete is sound. We assess coatings, contamination, cracks and repairs first, and tell you honestly if a slab isn't a good candidate.",
+      a: "Yes, as long as the concrete is sound. We assess coatings, contamination, cracks and repairs first, and tell you honestly if a slab isn't a good candidate.",
     },
     {
       q: "How long does a honed concrete job take?",
@@ -123,11 +123,11 @@ export default function Page() {
     },
     {
       q: "How long does the sealer last?",
-      a: "Typically 2–5 years outdoors depending on the product, sun exposure and traffic. Resealing is quick and inexpensive compared to the initial hone — we advise the right interval at handover.",
+      a: "Typically 2–5 years outdoors depending on the product, sun exposure and traffic. Resealing is quick and inexpensive compared to the initial hone, and we advise the right interval at handover.",
     },
     {
       q: "How much does honed concrete cost in Perth?",
-      a: "Hone-and-seal for outdoor areas typically costs $60–$80 per square metre in Perth. Final pricing depends on area size, slab hardness, access, existing coatings and the exposure level you choose — larger areas achieve a lower per-m² rate.",
+      a: "Hone-and-seal for outdoor areas typically costs $60–$80 per square metre in Perth. Final pricing depends on area size, slab hardness, access, existing coatings and the exposure level you choose. Larger areas achieve a lower per-m² rate.",
     },
   ];
 
@@ -164,17 +164,17 @@ export default function Page() {
             <p className="mt-5 max-w-2xl text-lg text-stone-700 leading-relaxed">
               Turn the concrete you already have into the best-looking surface
               on the street. Honing is a controlled diamond grind that smooths
-              and refines your slab — alfresco, pool surround, driveway or
-              path — then locks it in with a sealer chosen for Perth
+              and refines your slab, whether alfresco, pool surround, driveway or
+              path, then locks it in with a sealer chosen for Perth
               conditions.
             </p>
 
             <ul className="mt-6 space-y-3 text-[15px] text-stone-700">
               {[
-                "Smooths sharp, rough aggregate — comfortable on bare feet",
+                "Smooths sharp, rough aggregate for comfort on bare feet",
                 "P3–P5 slip-rated options for pools and wet areas",
                 "UV-stable, stain-resistant sealers made for WA sun",
-                "From $60/m² — far cheaper than replacing the slab",
+                "From $60/m², far cheaper than replacing the slab",
               ].map((line) => (
                 <li key={line} className="flex items-start gap-2.5">
                   <svg
@@ -227,7 +227,7 @@ export default function Page() {
               />
             </div>
             <figcaption className="mt-3 text-sm text-stone-600">
-              Honed concrete patio — Willetton, Perth
+              Honed concrete patio, Willetton, Perth
             </figcaption>
           </figure>
         </div>
@@ -268,7 +268,7 @@ export default function Page() {
         <p className="mt-3 max-w-3xl text-stone-600 leading-relaxed">
           How deep we grind determines how much stone shows. We cut a sample
           area on your slab first, so you choose from what your concrete
-          actually looks like — not a brochure.
+          actually looks like, not a brochure.
         </p>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {finishLevels.map((f, i) => (
@@ -338,7 +338,7 @@ export default function Page() {
                 </tr>
                 <tr className="border-b border-stone-100">
                   <td className="px-5 py-4 font-semibold text-stone-900">Cleaning</td>
-                  <td className="px-5 py-4">Easy — sealed surface</td>
+                  <td className="px-5 py-4">Easy, sealed surface</td>
                   <td className="px-5 py-4">Traps dirt in texture</td>
                   <td className="px-5 py-4">Easy</td>
                 </tr>
@@ -359,7 +359,7 @@ export default function Page() {
           </div>
           <p className="mt-4 text-sm text-stone-600">
             Not sure which suits your slab? Send a photo with your enquiry and
-            we&apos;ll tell you straight — including if honing isn&apos;t the
+            we&apos;ll tell you straight, including if honing isn&apos;t the
             right call.
           </p>
         </div>
@@ -421,7 +421,7 @@ export default function Page() {
                 />
               </div>
               <figcaption className="px-4 py-3 text-sm text-stone-600">
-                Grind &amp; seal concrete — Noranda
+                Grind &amp; seal concrete, Noranda
               </figcaption>
             </figure>
             <figure className="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-sm">
@@ -436,7 +436,7 @@ export default function Page() {
                 />
               </div>
               <figcaption className="px-4 py-3 text-sm text-stone-600">
-                Hone &amp; seal exposed aggregate — Balcatta
+                Hone &amp; seal exposed aggregate, Balcatta
               </figcaption>
             </figure>
             <figure className="rounded-2xl overflow-hidden border border-stone-200 bg-white shadow-sm sm:max-lg:hidden lg:block">
@@ -451,7 +451,7 @@ export default function Page() {
                 />
               </div>
               <figcaption className="px-4 py-3 text-sm text-stone-600">
-                Exposed / washed aggregate driveway — Ashby
+                Exposed / washed aggregate driveway, Ashby
               </figcaption>
             </figure>
           </div>
@@ -486,7 +486,7 @@ export default function Page() {
             <p className="mt-3 text-sm text-stone-600 leading-relaxed">
               Typical hone-and-seal for outdoor areas. Final price depends on
               area size, slab hardness, access, existing coatings and the
-              exposure level — larger areas get a better per-m² rate.
+              exposure level. Larger areas get a better per-m² rate.
             </p>
             <Link
               href="/#quote"
@@ -568,7 +568,7 @@ export default function Page() {
             </h2>
             <p className="mt-2 text-stone-300 max-w-xl">
               Send a couple of photos and a rough m² and we&apos;ll come back
-              with a clear scope and a fixed written price — usually within 24
+              with a clear scope and a fixed written price, usually within 24
               hours.
             </p>
           </div>

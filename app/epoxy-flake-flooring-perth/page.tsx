@@ -4,7 +4,7 @@ import { servicePageJsonLd } from "../lib/schema";
 import { siteUrl } from "../lib/site";
 
 export const metadata: Metadata = {
-  title: "Epoxy Flake Flooring Perth — From $80/m²",
+  title: "Epoxy Flake Flooring Perth: From $80/m²",
   description:
     "Durable, non-slip epoxy flake flooring for Perth garages & workshops, from $80/m². 20+ flake colours, UV-stable topcoat, free quotes. Preview colours online.",
   alternates: {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     ],
     type: "website",
     url: "https://perthconcretecare.com.au/epoxy-flake-flooring-perth",
-    title: "Epoxy Flake Flooring Perth — From $80/m² | Perth Concrete Care",
+    title: "Epoxy Flake Flooring Perth: From $80/m² | Perth Concrete Care",
     description:
       "Durable, non-slip epoxy flake flooring for Perth garages & workshops, from $80/m². 20+ flake colours, UV-stable topcoat, free quotes. Preview colours online.",
   },

@@ -7,7 +7,7 @@ import { servicePageJsonLd } from "../lib/schema";
 import { siteUrl } from "../lib/site";
 
 export const metadata: Metadata = {
-  title: "Metallic Epoxy Flooring Perth — From $160/m²",
+  title: "Metallic Epoxy Flooring Perth: From $160/m²",
   description:
     "Metallic epoxy flooring Perth for showrooms, feature garages and living areas. High-gloss, marbled 3D resin floors with custom colours and durable topcoats. Free quotes.",
   alternates: {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         alt: "High-gloss metallic epoxy floor with marbled effect in Wanneroo, Perth",
       },
     ],
-    title: "Metallic Epoxy Flooring Perth — From $160/m² | Perth Concrete Care",
+    title: "Metallic Epoxy Flooring Perth: From $160/m² | Perth Concrete Care",
     description:
       "Metallic epoxy flooring Perth for showrooms, feature garages and living areas. High-gloss, marbled 3D resin floors with custom colours and durable topcoats. Free quotes.",
     url: "https://perthconcretecare.com.au/metallic-epoxy-flooring-perth",
