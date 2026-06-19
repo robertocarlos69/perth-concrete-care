@@ -30,6 +30,22 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "concrete-slab-moisture-testing-perth",
+    title: "Concrete Slab Moisture Testing in Perth: Standards, Values and Cost",
+    description:
+      "How we moisture-test concrete slabs in Perth to AS 1884 and ASTM F2170 before hybrid, vinyl, timber or carpet flooring. The RH and pH values to expect, the process, and a flat $250 per slab.",
+    excerpt:
+      "Laying hybrid, vinyl or timber over a slab that's too wet is the fastest way to wreck a new floor and void the warranty. Here's how we test to Australian Standards, the RH and pH values to expect, and what it costs.",
+    date: "2026-06-16",
+    updated: "2026-06-16",
+    dateDisplay: "16 June 2026",
+    readTime: "7 min read",
+    category: "Slab preparation",
+    image: "/gallery/before-1.jpg",
+    imageAlt:
+      "Bare concrete slab in a Perth garage before flooring is installed",
+  },
+  {
     slug: "honed-vs-polished-vs-exposed-aggregate-perth",
     title: "Honed vs Polished Concrete vs Exposed Aggregate: A Perth Guide",
     description:
