@@ -41,9 +41,9 @@ export const blogPosts: BlogPost[] = [
     dateDisplay: "16 June 2026",
     readTime: "7 min read",
     category: "Slab preparation",
-    image: "/gallery/before-1.jpg",
+    image: "/gallery/concrete-moisture-testing-perth.webp",
     imageAlt:
-      "Bare concrete slab in a Perth garage before flooring is installed",
+      "In-situ concrete slab moisture testing with a relative humidity probe in Perth",
   },
   {
     slug: "honed-vs-polished-vs-exposed-aggregate-perth",
