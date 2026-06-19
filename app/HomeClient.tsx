@@ -1245,7 +1245,7 @@ const supportServices = [
     title: "Floor Levelling Prep",
     icon: "level",
     desc: "Self-leveller or grind correction to achieve a flatter, ready-to-finish substrate.",
-    bullets: ["Laser level checks", "Self-levelling compounds", "Prep for tiles, timber, vinyl, carpet or epoxy"],
+    bullets: ["Slab moisture, RH & pH testing", "Laser level checks", "Self-levelling compounds", "Prep for tiles, timber, vinyl, carpet or epoxy"],
   },
   {
     title: "Water Pressure Cleaning",
