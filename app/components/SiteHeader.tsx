@@ -37,7 +37,7 @@ export default function SiteHeader() {
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z" />
               <circle cx="12" cy="10" r="3" />
             </svg>
-            North Perth metro
+            Perth metro
           </span>
 
           <div className="flex items-center gap-4">
