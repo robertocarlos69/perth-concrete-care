@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 import FaqAccordion from "../components/FaqAccordion";
 import { servicePageJsonLd } from "../lib/schema";
@@ -112,45 +113,64 @@ export default function Page() {
           <span className="text-stone-900">Concrete Grinding Perth</span>
         </div>
 
-        <div className="mt-6 max-w-3xl">
-          <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-stone-900">
-            Concrete Grinding Perth
-          </h1>
-          <p className="mt-5 text-lg text-stone-700 leading-relaxed">
-            Industrial diamond grinding for slab preparation, coating removal and
-            profile control across Perth. A coating is only as good as the prep
-            beneath it, and prep is what we do properly, to the CSP profile your
-            floor system actually requires.
-          </p>
+        <div className="mt-6 grid items-center gap-10 lg:gap-14 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-stone-900">
+              Concrete Grinding Perth
+            </h1>
+            <p className="mt-5 text-lg text-stone-700 leading-relaxed">
+              Industrial diamond grinding for slab preparation, coating removal and
+              profile control across Perth. A coating is only as good as the prep
+              beneath it, and prep is what we do properly, to the CSP profile your
+              floor system actually requires.
+            </p>
 
-          <ul className="mt-6 grid gap-3 sm:grid-cols-2 text-[15px] text-stone-700">
-            {[
-              "CSP2–CSP3 profiling for epoxy & polyaspartic",
-              "Old paint, epoxy, tile & carpet glue removal",
-              "High-spot levelling & trip-hazard removal",
-              "H-class HEPA dust-controlled grinding",
-            ].map((line) => (
-              <li key={line} className="flex items-start gap-2.5">
-                <svg className="mt-1 h-4 w-4 shrink-0 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
-                {line}
-              </li>
-            ))}
-          </ul>
+            <ul className="mt-6 grid gap-3 sm:grid-cols-2 text-[15px] text-stone-700">
+              {[
+                "CSP2–CSP3 profiling for epoxy & polyaspartic",
+                "Old paint, epoxy, tile & carpet glue removal",
+                "High-spot levelling & trip-hazard removal",
+                "H-class HEPA dust-controlled grinding",
+              ].map((line) => (
+                <li key={line} className="flex items-start gap-2.5">
+                  <svg className="mt-1 h-4 w-4 shrink-0 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                  {line}
+                </li>
+              ))}
+            </ul>
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href="tel:+61448483226" className="rounded-xl bg-emerald-600 px-6 py-3.5 font-bold text-white hover:bg-emerald-700 shadow-sm transition-colors">
-              Call 0448 483 226
-            </a>
-            <Link href="/#quote" className="rounded-xl border border-emerald-300 bg-white px-6 py-3.5 font-semibold text-emerald-800 hover:bg-emerald-50 transition-colors">
-              Get a free quote
-            </Link>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href="tel:+61448483226" className="rounded-xl bg-emerald-600 px-6 py-3.5 font-bold text-white hover:bg-emerald-700 shadow-sm transition-colors">
+                Call 0448 483 226
+              </a>
+              <Link href="/#quote" className="rounded-xl border border-emerald-300 bg-white px-6 py-3.5 font-semibold text-emerald-800 hover:bg-emerald-50 transition-colors">
+                Get a free quote
+              </Link>
+            </div>
+            <p className="mt-4 text-sm text-stone-500">
+              Free on-site quotes · Most enquiries answered within 24 hours ·
+              Page updated June 2026
+            </p>
           </div>
-          <p className="mt-4 text-sm text-stone-500">
-            Free on-site quotes · Most enquiries answered within 24 hours ·
-            Page updated June 2026
-          </p>
+
+          {/* Recent project photo */}
+          <figure>
+            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-stone-200 shadow-lg">
+              <Image
+                src="/gallery/woodvale-honed-and-sealed-concrete.webp"
+                alt="Concrete slab in Woodvale diamond-ground then honed and sealed by Perth Concrete Care"
+                fill
+                priority
+                className="object-cover"
+                sizes="(min-width: 1024px) 45vw, 100vw"
+              />
+            </div>
+            <figcaption className="mt-3 text-sm text-stone-600">
+              Diamond-ground and sealed concrete, Woodvale, Perth
+            </figcaption>
+          </figure>
         </div>
       </section>
 
