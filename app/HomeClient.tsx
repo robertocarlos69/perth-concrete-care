@@ -336,7 +336,9 @@ export default function HomeClient() {
             </h2>
 
             <p className="mt-2 text-neutral-700">
-              Perth Concrete Care provides end-to-end concrete preparation and finishes – from concrete grinding and honing
+              Perth Concrete Care provides end-to-end concrete preparation and finishes – from{" "}
+              <Link href="/concrete-grinding-perth" className="font-semibold text-emerald-700 hover:underline">concrete grinding</Link>{" "}
+              and <Link href="/honed-concrete-perth" className="font-semibold text-emerald-700 hover:underline">honing</Link>{" "}
               through to polished concrete, epoxy garage floors and outdoor washed aggregate / exposed concrete.
               All floor preparation is carried out to Australian Standards (AS 1884, AS 3730, AS 3610 and CSP/ICRI profiles)
               so coatings and sealers bond properly and don&apos;t peel.

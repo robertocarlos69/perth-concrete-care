@@ -86,6 +86,18 @@ export default function Page() {
       q: "How much does concrete grinding cost in Perth?",
       a: "Grinding is usually priced as part of the floor preparation for a coating or polishing job rather than on its own, because cost depends heavily on what's being removed, slab hardness, area and access. Send photos and measurements and we'll give you a clear scope and price.",
     },
+    {
+      q: "How long does concrete grinding take?",
+      a: "A typical residential garage or room is ground and prepped in a day. Larger areas, heavy coating removal or extensive crack repairs take longer. We confirm timing when we quote so you can plan the coating or flooring that follows.",
+    },
+    {
+      q: "Can I grind the concrete myself?",
+      a: "You can hire a hand grinder, but matching the correct CSP profile, keeping the slab flat, controlling silica dust and reaching the edges is where DIY jobs usually fall down, and a coating over a poorly prepped slab is what peels. For any floor you want to last, mechanical grinding with the right tooling and dust extraction is worth getting done properly.",
+    },
+    {
+      q: "Do you prep slabs for tilers and other trades?",
+      a: "Yes. We regularly prepare slabs for tilers, flooring installers and builders, including grinding back adhesives and correcting levels, so the next trade starts on a clean, sound, correctly profiled surface.",
+    },
   ];
 
   const jsonLd = servicePageJsonLd({
@@ -228,6 +240,40 @@ export default function Page() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      {/* COST — stone band */}
+      <section className="mx-auto max-w-6xl px-4 py-16 md:py-20">
+        <h2 className="text-2xl md:text-3xl font-extrabold text-stone-900">
+          How much does concrete grinding cost in Perth?
+        </h2>
+        <p className="mt-4 max-w-3xl text-stone-700 leading-relaxed">
+          Grinding is priced per square metre, and it&apos;s usually quoted as
+          part of the floor you&apos;re building rather than on its own, because
+          the cost depends on what we&apos;re removing and how hard the slab is.
+          A clean, bare slab that only needs a CSP profile is quick and
+          inexpensive to prep. Stripping failed epoxy, thick paint or stubborn
+          tile and carpet adhesive takes more passes and tooling, so it costs
+          more.
+        </p>
+        <p className="mt-4 max-w-3xl text-stone-700 leading-relaxed">
+          The factors that move the price are total area (larger areas earn a
+          better rate per m²), slab hardness, how much old coating or glue has to
+          come off, any crack and repair work, and site access. Where grinding is
+          the prep for a finished floor, the finished-floor prices are the
+          easiest guide:{" "}
+          <Link href="/honed-concrete-perth" className="font-semibold text-emerald-700 hover:underline">hone-and-seal from $60/m²</Link>,{" "}
+          <Link href="/concrete-polishing-perth" className="font-semibold text-emerald-700 hover:underline">polished concrete from $140/m²</Link>{" "}
+          and{" "}
+          <Link href="/epoxy-flake-flooring-perth" className="font-semibold text-emerald-700 hover:underline">epoxy flake from $80/m²</Link>. For
+          grinding and coating removal on its own, send a few photos and rough
+          measurements and we&apos;ll come back with a fixed written price.
+        </p>
+        <div className="mt-6">
+          <Link href="/#quote" className="inline-block rounded-xl bg-emerald-600 px-6 py-3.5 font-bold text-white hover:bg-emerald-700 shadow-sm transition-colors">
+            Get a fixed grinding quote
+          </Link>
         </div>
       </section>
 
