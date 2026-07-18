@@ -102,4 +102,11 @@ export const services = [
     description:
       "Decorative metallic epoxy floors with custom movement patterns, mechanical preparation and durable topcoats across the Perth metro area.",
   },
+  {
+    name: "Concrete repair Perth",
+    serviceType: "Concrete crack and joint repair",
+    url: `${siteUrl}/concrete-repair-perth`,
+    description:
+      "Concrete crack injection, control-joint repair and spalling repair with two-part epoxy resin across the Perth metro area, as a standalone fix or before grinding and coating.",
+  },
 ];

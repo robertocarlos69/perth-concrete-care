@@ -30,6 +30,37 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-to-prep-garage-floor-before-epoxy-perth",
+    title: "How to Prep a Garage Floor Before Epoxy in Perth",
+    description:
+      "The steps to prepare a Perth garage slab before epoxy or flake flooring: cleaning, moisture testing, diamond grinding to the right CSP, crack repair and priming, so the coating actually lasts.",
+    excerpt:
+      "A garage epoxy floor is only as good as the slab under it. Here's how we prep a Perth garage the right way, from moisture testing to diamond grinding, so the coating bonds and doesn't peel.",
+    date: "2026-07-18",
+    updated: "2026-07-18",
+    dateDisplay: "18 July 2026",
+    readTime: "8 min read",
+    category: "Slab preparation",
+    image: "/gallery/epoxy-flake-garage-floor-joondalup-perth.webp",
+    imageAlt: "Prepared garage slab with a new epoxy flake floor in Perth",
+  },
+  {
+    slug: "concrete-surface-profile-csp-explained-perth",
+    title: "Concrete Surface Profile (CSP) Explained: Why Coatings Peel",
+    description:
+      "What Concrete Surface Profile (CSP) means, the ICRI CSP 1 to 9 scale, why the wrong profile makes epoxy and sealers peel, and how we grind Perth slabs to the profile your floor system needs.",
+    excerpt:
+      "CSP is the single biggest reason floor coatings stick or peel, and almost nobody outside the trade has heard of it. Here's what it is and why it decides whether your epoxy lasts.",
+    date: "2026-07-18",
+    updated: "2026-07-18",
+    dateDisplay: "18 July 2026",
+    readTime: "6 min read",
+    category: "Slab preparation",
+    image: "/gallery/garage-concrete-floor-after-grinding-perth.webp",
+    imageAlt:
+      "Garage concrete slab after diamond grinding, cleaned and profiled ready for coating in Perth",
+  },
+  {
     slug: "concrete-slab-moisture-testing-perth",
     title: "Concrete Slab Moisture Testing in Perth: Standards, Values and Cost",
     description:

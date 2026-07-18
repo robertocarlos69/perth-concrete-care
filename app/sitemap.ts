@@ -22,6 +22,7 @@ const corePages: Array<{
   { path: "/metallic-epoxy-flooring-perth", lastModified: "2026-06-13", changeFrequency: "monthly", priority: 0.9 },
   { path: "/epoxy-floor-visualiser-perth", lastModified: "2026-06-13", changeFrequency: "monthly", priority: 0.8 },
   { path: "/concrete-grinding-perth", lastModified: "2026-06-13", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/concrete-repair-perth", lastModified: "2026-07-18", changeFrequency: "monthly", priority: 0.85 },
   { path: "/concrete-polishing-perth", lastModified: "2026-06-13", changeFrequency: "monthly", priority: 0.85 },
   { path: "/honed-concrete-perth", lastModified: "2026-06-13", changeFrequency: "monthly", priority: 0.85 },
   { path: "/contact", lastModified: "2026-06-13", changeFrequency: "monthly", priority: 0.7 },
