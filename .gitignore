@@ -41,6 +41,10 @@ yarn-error.log*
 # local SEO backup snapshots (not for deployment)
 /_seo-backup-*
 
+# email signature kit (assets live in public/signature; source kit stays local)
+/pcc-signature-kit.zip
+/perth-concrete-care-signature.html
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
