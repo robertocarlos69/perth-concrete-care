@@ -30,6 +30,22 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "honing-exposed-aggregate-perth",
+    title: "Exposed Aggregate Too Rough? We Can Fix That",
+    description:
+      "Sharp, rough exposed aggregate can be mechanically honed and sealed instead of demolished. What honing costs in Perth, what it does to the colour, which slabs suit it and which don't.",
+    excerpt:
+      "If your exposed aggregate is killing your feet, you almost certainly don't need to rip it out. Existing washed aggregate can be honed and sealed into a completely different surface, for a fraction of the cost of a new slab.",
+    date: "2026-07-26",
+    updated: "2026-07-26",
+    dateDisplay: "26 July 2026",
+    readTime: "8 min read",
+    category: "Honed concrete",
+    image: "/gallery/hone-and-seal-exposed-aggregate-balcatta.webp",
+    imageAlt:
+      "Rough exposed aggregate honed and sealed to a smooth finish in Balcatta, Perth",
+  },
+  {
     slug: "how-to-prep-garage-floor-before-epoxy-perth",
     title: "How to Prep a Garage Floor Before Epoxy in Perth",
     description:

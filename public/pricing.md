@@ -18,7 +18,10 @@ sales@perthconcretecare.com.au.
 - Best for: garages, showrooms, living areas
 
 ## Hone & Seal / Honed Concrete (Outdoor)
-- Price: $60–$80/m²
+- Price: $60–$100/m², depending on what is being honed:
+  - Hone-and-seal, from $60/m²
+  - Slab poured to be honed from day one, around $75/m² for honing and sealing
+  - Honing existing exposed or washed aggregate, $80–$100/m² (cutting straight into hard stone is slower and harder on diamond tooling)
 - Includes: precision diamond-honed finish, UV-stable protective sealer, exterior-grade slip resistance (P3–P5 options)
 - Best for: alfresco areas, pool surrounds, paths, smoothing rough exposed aggregate
 

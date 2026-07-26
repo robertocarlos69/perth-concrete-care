@@ -581,7 +581,7 @@ export default function HomeClient() {
                         <Link href="/honed-concrete-perth" className="text-emerald-700 hover:underline">Hone &amp; seal</Link>
                       </td>
                       <td className="px-4 py-3">Alfresco, pool surrounds, driveways, rough exposed aggregate</td>
-                      <td className="px-4 py-3 whitespace-nowrap">$60–$80/m²</td>
+                      <td className="px-4 py-3 whitespace-nowrap">$60–$100/m²</td>
                       <td className="px-4 py-3">Smooth but slip-rated (P3–P5)</td>
                       <td className="px-4 py-3">Outdoor</td>
                     </tr>
@@ -1276,7 +1276,7 @@ const pricing = [
   },
   {
     name: "Hone & Seal (Outdoor)",
-    price: "$60–$80",
+    price: "$60–$100",
     unit: "/m²",
     href: "/honed-concrete-perth",
     features: ["Precision diamond-honed finish", "UV-stable protective sealer", "Durable Exterior-grade slip resistance"],

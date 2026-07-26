@@ -678,7 +678,7 @@ export function sharedSuburbFaqs(name: string): SuburbFaq[] {
   return [
     {
       q: `How much does a concrete floor cost in ${name}?`,
-      a: `${name} pricing is the same as the rest of our service area: epoxy flake from $80/m², hone-and-seal from $60/m², polished concrete from $140/m² and metallic epoxy from $160/m². The final price depends on area, slab condition, repairs and access — send photos and rough m² for a fixed written quote.`,
+      a: `${name} pricing is the same as the rest of our service area: epoxy flake from $80/m², hone-and-seal from $60/m², polished concrete from $140/m² and metallic epoxy from $160/m². The final price depends on area, slab condition, repairs and access, so send photos and rough m² for a fixed written quote.`,
     },
     {
       q: `Are you local to ${name}?`,

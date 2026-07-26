@@ -127,7 +127,7 @@ export default function Page() {
     },
     {
       q: "How much does honed concrete cost in Perth?",
-      a: "Hone-and-seal for outdoor areas typically costs $60–$80 per square metre in Perth. Final pricing depends on area size, slab hardness, access, existing coatings and the exposure level you choose. Larger areas achieve a lower per-m² rate.",
+      a: "It depends on what we're honing. Hone-and-seal for outdoor areas starts from $60 per square metre. A slab poured to be honed from day one runs around $75 per square metre, and honing existing exposed or washed aggregate is $80–$100 per square metre because we're cutting straight into quartz and hard stone from the first pass, which is slower and harder on tooling. Final pricing also depends on area size, access, edge and step work, and slab condition. Larger areas achieve a lower per-m² rate.",
     },
   ];
 
@@ -344,7 +344,7 @@ export default function Page() {
                 </tr>
                 <tr className="border-b border-stone-100">
                   <td className="px-5 py-4 font-semibold text-stone-900">Cost guide</td>
-                  <td className="px-5 py-4">$60–$80/m²</td>
+                  <td className="px-5 py-4">$60–$100/m²</td>
                   <td className="px-5 py-4">Part of new concrete cost</td>
                   <td className="px-5 py-4">$140–$220/m²</td>
                 </tr>
@@ -480,13 +480,14 @@ export default function Page() {
           <div className="rounded-3xl border border-stone-200 bg-white p-7 md:p-8 shadow-sm">
             <h2 className="text-xl font-bold text-stone-900">Price guide</h2>
             <div className="mt-4 flex items-baseline gap-1">
-              <span className="text-4xl font-extrabold text-stone-900">$60–$80</span>
+              <span className="text-4xl font-extrabold text-stone-900">$60–$100</span>
               <span className="text-sm font-medium text-stone-500">/m²</span>
             </div>
             <p className="mt-3 text-sm text-stone-600 leading-relaxed">
-              Typical hone-and-seal for outdoor areas. Final price depends on
-              area size, slab hardness, access, existing coatings and the
-              exposure level. Larger areas get a better per-m² rate.
+              Hone-and-seal for outdoor areas starts from $60/m². A slab poured
+              to be honed runs around $75/m², and honing existing exposed or
+              washed aggregate is $80–$100/m² because we cut straight into hard
+              stone. Larger areas get a better per-m² rate.
             </p>
             <Link
               href="/#quote"
