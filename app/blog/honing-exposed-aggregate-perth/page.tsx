@@ -122,9 +122,41 @@ export default function Page() {
           </div>
         </header>
 
-        <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm">
-          <Image src={post.image} alt={post.imageAlt} fill priority className="object-cover" sizes="(min-width: 768px) 768px, 100vw" />
-        </div>
+        <figure className="mt-8">
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm">
+              <Image
+                src="/gallery/exposed-aggregate-before-honing-perth.webp"
+                alt="Rough exposed aggregate alfresco in Perth before honing, with grinding equipment on site"
+                fill
+                priority
+                className="object-cover"
+                sizes="(min-width: 768px) 384px, 100vw"
+              />
+              <span className="absolute left-3 top-3 rounded-full bg-stone-900/80 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
+                Before honing
+              </span>
+            </div>
+            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm">
+              <Image
+                src="/gallery/exposed-aggregate-after-honing-perth.webp"
+                alt="Exposed aggregate alfresco honed and sealed to a smooth wet-look finish in Perth"
+                fill
+                priority
+                className="object-cover"
+                sizes="(min-width: 768px) 384px, 100vw"
+              />
+              <span className="absolute left-3 top-3 rounded-full bg-emerald-600 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
+                After honing
+              </span>
+            </div>
+          </div>
+          <figcaption className="mt-3 text-sm text-stone-600">
+            The same Perth alfresco before and after honing, shot from opposite
+            ends. No demolition and no new pour. That is the original slab,
+            ground back and sealed with a UV-stable topical sealer.
+          </figcaption>
+        </figure>
 
         <p className={`${p} mt-8 text-lg`}>
           If your exposed aggregate is killing your feet, you almost certainly
@@ -193,6 +225,41 @@ export default function Page() {
           honed slab looks better than the day it was laid, and it&apos;s the
           same concrete they were three days away from demolishing.
         </p>
+
+        <figure className="mt-8">
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm">
+              <Image
+                src="/gallery/exposed-aggregate-closeup-before-honing-perth.webp"
+                alt="Close up of rough exposed aggregate before honing, showing sharp uncut stone tops"
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 384px, 100vw"
+              />
+              <span className="absolute left-3 top-3 rounded-full bg-stone-900/80 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
+                Before honing
+              </span>
+            </div>
+            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm">
+              <Image
+                src="/gallery/exposed-aggregate-closeup-after-honing-perth.webp"
+                alt="Close up of honed exposed aggregate showing cut stone faces and colour brought out by grinding"
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 384px, 100vw"
+              />
+              <span className="absolute left-3 top-3 rounded-full bg-emerald-600 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
+                After honing
+              </span>
+            </div>
+          </div>
+          <figcaption className="mt-3 text-sm text-stone-600">
+            The same slab up close. On the left the stone tops are rough and
+            uncut. On the right the faces have been cut open, bringing out the
+            colour and detail that had been buried in that concrete since the
+            day it was poured.
+          </figcaption>
+        </figure>
 
         <div className="mt-10 rounded-3xl border border-emerald-200 bg-gradient-to-br from-emerald-50 via-white to-white p-6 md:p-8 shadow-sm">
           <h2 className="text-xl md:text-2xl font-bold text-stone-900">

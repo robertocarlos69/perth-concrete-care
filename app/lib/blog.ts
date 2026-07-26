@@ -41,9 +41,9 @@ export const blogPosts: BlogPost[] = [
     dateDisplay: "26 July 2026",
     readTime: "8 min read",
     category: "Honed concrete",
-    image: "/gallery/hone-and-seal-exposed-aggregate-balcatta.webp",
+    image: "/gallery/exposed-aggregate-after-honing-perth.webp",
     imageAlt:
-      "Rough exposed aggregate honed and sealed to a smooth finish in Balcatta, Perth",
+      "Exposed aggregate alfresco honed and sealed to a smooth wet-look finish in Perth",
   },
   {
     slug: "how-to-prep-garage-floor-before-epoxy-perth",
