@@ -30,6 +30,22 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "warehouse-floor-dust-control-perth",
+    title: "Warehouse Floor Dusting? Here's How to Stop It for Good",
+    description:
+      "Warehouse floor producing concrete dust? How auto scrubbing, densification and penetrating sealers stop dusting in Perth industrial floors.",
+    excerpt:
+      "That fine grey dust settling on your stock and racking isn't coming in from outside. It's coming off the slab itself, and in most cases the fix isn't a coating or a new floor. Here's how we stop it.",
+    date: "2026-07-30",
+    updated: "2026-07-30",
+    dateDisplay: "30 July 2026",
+    readTime: "8 min read",
+    category: "Industrial floors",
+    image: "/gallery/densified-warehouse-perth-concrete-care-wangara.webp",
+    imageAlt:
+      "Densified and sealed warehouse concrete floor in Wangara, Perth",
+  },
+  {
     slug: "honing-exposed-aggregate-perth",
     title: "Exposed Aggregate Too Rough? We Can Fix That",
     description:
