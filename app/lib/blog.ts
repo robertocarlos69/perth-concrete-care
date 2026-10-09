@@ -30,6 +30,70 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "cleaning-resealing-honed-exposed-aggregate-perth",
+    title: "Cleaning and Resealing Honed and Exposed Aggregate Concrete",
+    description:
+      "How to pressure wash and reseal honed concrete and exposed aggregate the right way in Perth, and how to tell when a stain needs honing instead of chemicals.",
+    excerpt:
+      "Honed concrete and exposed aggregate look their best for years if they're cleaned and resealed properly. Get the method wrong and a simple clean can leave etched paste, loose stones or a sealer that turns white within weeks.",
+    date: "2026-10-09",
+    updated: "2026-10-09",
+    dateDisplay: "9 October 2026",
+    readTime: "10 min read",
+    category: "Cleaning & sealing",
+    image: "/gallery/professional-concrete-driveway-cleaning-perth.webp",
+    imageAlt:
+      "Pressure cleaning an exposed aggregate driveway with a rotary surface cleaner in Perth",
+  },
+  {
+    slug: "remove-bore-water-stains-concrete-perth",
+    title: "How to Remove Bore Water Stains from Concrete",
+    description:
+      "What causes orange bore water stains on Perth concrete, how to remove them, and when staining is too deep for chemicals and needs honing out.",
+    excerpt:
+      "If your driveway or paths have orange staining near the sprinklers, it's almost certainly bore water. Light staining can be removed with the right product. Years of build-up may need to be honed out.",
+    date: "2026-10-09",
+    updated: "2026-10-09",
+    dateDisplay: "9 October 2026",
+    readTime: "6 min read",
+    category: "Cleaning & sealing",
+    image: "/gallery/residential-exposed-aggregate-pressure-cleaning-perth.webp",
+    imageAlt:
+      "Cleaning a residential exposed aggregate driveway with a surface cleaner in Perth",
+  },
+  {
+    slug: "exposed-aggregate-sealer-turned-white-perth",
+    title: "Why Has My Exposed Aggregate Sealer Turned White?",
+    description:
+      "The common causes of white, cloudy or milky sealer on exposed aggregate in Perth, how to tell which one you have, and how each is fixed.",
+    excerpt:
+      "White or milky patches in an exposed aggregate sealer are one of the most common complaints we see. The cause is usually moisture, but not always, and the fix depends on which problem you have.",
+    date: "2026-10-09",
+    updated: "2026-10-09",
+    dateDisplay: "9 October 2026",
+    readTime: "6 min read",
+    category: "Cleaning & sealing",
+    image: "/gallery/hone-and-seal-exposed-aggregate-balcatta.webp",
+    imageAlt:
+      "Exposed aggregate sealed to an even wet-look finish in Balcatta, Perth",
+  },
+  {
+    slug: "concrete-stains-honing-not-chemicals-perth",
+    title: "Concrete Stains That Need Honing Out, Not Chemicals",
+    description:
+      "Some concrete stains won't shift with any cleaner. How to tell which stains need honing, what honing can and can't fix, and what it means for exposed aggregate.",
+    excerpt:
+      "Most concrete stains respond to the right cleaner. Some don't, no matter how many products you try. For marks that are too deep, or damage rather than dirt, honing the surface back is often the only reliable fix.",
+    date: "2026-10-09",
+    updated: "2026-10-09",
+    dateDisplay: "9 October 2026",
+    readTime: "7 min read",
+    category: "Honed concrete",
+    image: "/gallery/exposed-aggregate-closeup-after-honing-perth.webp",
+    imageAlt:
+      "Close-up of exposed aggregate honed to a smooth, even finish in Perth",
+  },
+  {
     slug: "warehouse-floor-dust-control-perth",
     title: "Warehouse Floor Dusting? Here's How to Stop It for Good",
     description:
