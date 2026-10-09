@@ -563,7 +563,7 @@ export default function HomeClient() {
                         <Link href="/epoxy-flake-flooring-perth" className="text-emerald-700 hover:underline">Epoxy flake</Link>
                       </td>
                       <td className="px-4 py-3">Garages, workshops, patios</td>
-                      <td className="px-4 py-3 whitespace-nowrap">$80–$100/m²</td>
+                      <td className="px-4 py-3 whitespace-nowrap">$100–$120/m²</td>
                       <td className="px-4 py-3">Textured, hard-wearing, hides dirt</td>
                       <td className="px-4 py-3">Both</td>
                     </tr>
@@ -572,7 +572,7 @@ export default function HomeClient() {
                         <Link href="/metallic-epoxy-flooring-perth" className="text-emerald-700 hover:underline">Metallic epoxy</Link>
                       </td>
                       <td className="px-4 py-3">Showrooms, living areas, statement garages</td>
-                      <td className="px-4 py-3 whitespace-nowrap">$160–$180/m²</td>
+                      <td className="px-4 py-3 whitespace-nowrap">$220–$280/m²</td>
                       <td className="px-4 py-3">High-gloss marbled, 3D depth</td>
                       <td className="px-4 py-3">Indoor (mainly)</td>
                     </tr>
@@ -581,7 +581,7 @@ export default function HomeClient() {
                         <Link href="/honed-concrete-perth" className="text-emerald-700 hover:underline">Hone &amp; seal</Link>
                       </td>
                       <td className="px-4 py-3">Alfresco, pool surrounds, driveways, rough exposed aggregate</td>
-                      <td className="px-4 py-3 whitespace-nowrap">$60–$100/m²</td>
+                      <td className="px-4 py-3 whitespace-nowrap">$80–$100/m²</td>
                       <td className="px-4 py-3">Smooth but slip-rated (P3–P5)</td>
                       <td className="px-4 py-3">Outdoor</td>
                     </tr>
@@ -1262,21 +1262,21 @@ const services = [...primaryServices, ...supportServices];
 const pricing = [
   {
     name: "Epoxy Flake Floors",
-    price: "$80–$100",
+    price: "$100–$120",
     unit: "/m²",
     href: "/epoxy-flake-flooring-perth",
     features: ["Moisture-tolerant primer", "Flake (full, partial or sparse) broadcast", "UV / Oil / chemical resitant Polyaspartic topcoat"],
   },
   {
     name: "Metallic Epoxy Floors",
-    price: "$160–$180",
+    price: "$220–$280",
     unit: "/m²",
     href: "/metallic-epoxy-flooring-perth",
     features: ["100% solids metallic epoxy", "Custom blends, highlights & 3D effects", "UV-stable polyurethane topcoat"],
   },
   {
     name: "Hone & Seal (Outdoor)",
-    price: "$60–$100",
+    price: "$80–$100",
     unit: "/m²",
     href: "/honed-concrete-perth",
     features: ["Precision diamond-honed finish", "UV-stable protective sealer", "Durable Exterior-grade slip resistance"],

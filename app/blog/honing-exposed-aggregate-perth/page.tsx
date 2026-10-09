@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: "How much does honing exposed aggregate cost in Perth?",
-    a: "Honing existing washed aggregate runs about $80 to $100 per square metre, normally including sealing. The price moves with total area, access and side gate width, the amount of step and edge work needing hand grinding, how hard the aggregate is, and the condition of the slab. We confirm it with a fixed written quote after looking at the job.",
+    a: "Honing existing washed aggregate runs about $90 to $100 per square metre, normally including sealing. The price moves with total area, access and side gate width, the amount of step and edge work needing hand grinding, how hard the aggregate is, and the condition of the slab. We confirm it with a fixed written quote after looking at the job.",
   },
   {
     q: "Will honed concrete be slippery around my pool?",
@@ -283,7 +283,7 @@ export default function Page() {
         <h2 className={h2}>What it costs in Perth</h2>
         <p className={p}>
           Honing existing washed aggregate runs about{" "}
-          <strong>$80 to $100 per square metre</strong>, normally including
+          <strong>$90 to $100 per square metre</strong>, normally including
           sealing. The price moves with a handful of things:
         </p>
         <ul className={ul}>
@@ -298,7 +298,7 @@ export default function Page() {
           slab that was poured for it. It&apos;s what you&apos;re cutting. On
           washed aggregate you go straight into quartz and hard stone from the
           very first pass. It&apos;s slower and it chews through diamond tooling.
-          A slab poured to be honed from day one runs closer to $75/m² for the
+          A slab poured to be honed from day one runs closer to $80/m² for the
           honing and sealing.
         </p>
         <p className={p}>

@@ -125,7 +125,7 @@ export default function EpoxyFlakeClient({ faqs }: { faqs: Faq[] }) {
         </h1>
         <p className="mt-5 text-lg text-stone-700 leading-relaxed">
           Durable, non-slip epoxy flake flooring for garages, workshops and
-          homes across Perth, from $80/m². The finish is only as good as the
+          homes across Perth, from $100/m². The finish is only as good as the
           prep, so we mechanically grind, repair and profile the slab before
           applying your chosen flake system and a UV-stable, stain-resistant
           protective topcoat.
@@ -316,8 +316,8 @@ export default function EpoxyFlakeClient({ faqs }: { faqs: Faq[] }) {
               </tr>
               <tr>
                 <td className="px-5 py-4 font-semibold text-stone-900">Cost guide</td>
-                <td className="px-5 py-4">$80-$100/m2</td>
-                <td className="px-5 py-4">$160-$180/m2</td>
+                <td className="px-5 py-4">$100-$120/m2</td>
+                <td className="px-5 py-4">$220-$280/m2</td>
                 <td className="px-5 py-4">$140-$220/m2</td>
               </tr>
             </tbody>

@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     q: "How much does honed concrete cost in Perth?",
-    a: "As a guide, hone-and-seal finishes start from $60 per square metre, a slab poured to be honed runs around $75, and honing existing exposed or washed aggregate is $80 to $100 because we cut straight into hard stone. Polished concrete sits around $140 to $220 per square metre. Exposed aggregate is cheapest of all because it's created at the original pour. Final pricing depends on slab condition, aggregate type, repairs, access and area, so we confirm it after a site assessment.",
+    a: "As a guide, hone-and-seal finishes start from $80 per square metre, and honing existing exposed or washed aggregate is $90 to $100 because we cut straight into hard stone. Polished concrete sits around $140 to $220 per square metre. Exposed aggregate is cheapest of all because it's created at the original pour. Final pricing depends on slab condition, aggregate type, repairs, access and area, so we confirm it after a site assessment.",
   },
   {
     q: "What's the difference between exposed aggregate and washed aggregate?",
@@ -317,7 +317,7 @@ export default function Page() {
                 <td className="px-4 py-3 font-semibold text-stone-900">
                   <Link href="/honed-concrete-perth" className={aCls}>Hone &amp; seal</Link>
                 </td>
-                <td className="px-4 py-3 whitespace-nowrap">from $60 to $100/m²</td>
+                <td className="px-4 py-3 whitespace-nowrap">from $80 to $100/m²</td>
                 <td className="px-4 py-3">Pools, alfrescos, outdoor</td>
               </tr>
               <tr>

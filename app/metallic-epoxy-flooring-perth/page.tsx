@@ -7,7 +7,7 @@ import { servicePageJsonLd } from "../lib/schema";
 import { siteUrl } from "../lib/site";
 
 export const metadata: Metadata = {
-  title: "Metallic Epoxy Flooring Perth: From $160/m²",
+  title: "Metallic Epoxy Flooring Perth: From $220/m²",
   description:
     "Metallic epoxy flooring Perth for showrooms, feature garages and living areas. High-gloss, marbled 3D resin floors with custom colours and durable topcoats. Free quotes.",
   alternates: {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         alt: "High-gloss metallic epoxy floor with marbled effect in Wanneroo, Perth",
       },
     ],
-    title: "Metallic Epoxy Flooring Perth: From $160/m² | Perth Concrete Care",
+    title: "Metallic Epoxy Flooring Perth: From $220/m² | Perth Concrete Care",
     description:
       "Metallic epoxy flooring Perth for showrooms, feature garages and living areas. High-gloss, marbled 3D resin floors with custom colours and durable topcoats. Free quotes.",
     url: "https://perthconcretecare.com.au/metallic-epoxy-flooring-perth",
@@ -51,7 +51,7 @@ export default function Page() {
   const faqs = [
     {
       q: "How much does metallic epoxy flooring cost in Perth?",
-      a: "Metallic epoxy flooring in Perth typically costs $160-$180 per square metre installed, including surface preparation, base and metallic coats, and a protective topcoat. Highlights, multiple colours and complex effects sit at the upper end. Final pricing depends on slab condition, area and design.",
+      a: "Metallic epoxy flooring in Perth typically costs $220-$280 per square metre installed, including surface preparation, base and metallic coats, and a protective topcoat. Highlights, multiple colours and complex effects sit at the upper end. Final pricing depends on slab condition, area and design.",
     },
     {
       q: "Are metallic epoxy floors slippery?",
@@ -115,7 +115,7 @@ export default function Page() {
             </h1>
             <p className="mt-5 max-w-2xl text-lg text-stone-700 leading-relaxed">
               A premium decorative resin floor with depth, movement and
-              high-gloss shine - from $160/m&sup2;. Metallic pigments are worked
+              high-gloss shine - from $220/m&sup2;. Metallic pigments are worked
               into the coating to create a marbled, 3D effect like flowing stone
               or liquid metal. Every floor is one-of-one.
             </p>
@@ -230,8 +230,8 @@ export default function Page() {
               </tr>
               <tr>
                 <td className="px-5 py-4 font-semibold text-stone-900">Cost guide</td>
-                <td className="px-5 py-4">$160-$180/m2</td>
-                <td className="px-5 py-4">$80-$100/m2</td>
+                <td className="px-5 py-4">$220-$280/m2</td>
+                <td className="px-5 py-4">$100-$120/m2</td>
                 <td className="px-5 py-4">$140-$220/m2</td>
               </tr>
             </tbody>
@@ -270,7 +270,7 @@ export default function Page() {
           <div className="rounded-3xl border border-stone-200 bg-white p-7 md:p-8 shadow-sm">
             <h2 className="text-xl font-bold text-stone-900">Price guide</h2>
             <div className="mt-4 flex items-baseline gap-1">
-              <span className="text-4xl font-extrabold text-stone-900">$160-$180</span>
+              <span className="text-4xl font-extrabold text-stone-900">$220-$280</span>
               <span className="text-sm font-medium text-stone-500">/m&sup2;</span>
             </div>
             <p className="mt-3 text-sm text-stone-600 leading-relaxed">

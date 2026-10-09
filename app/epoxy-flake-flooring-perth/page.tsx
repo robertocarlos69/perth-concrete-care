@@ -4,9 +4,9 @@ import { servicePageJsonLd } from "../lib/schema";
 import { siteUrl } from "../lib/site";
 
 export const metadata: Metadata = {
-  title: "Epoxy Flake Flooring Perth: From $80/m²",
+  title: "Epoxy Flake Flooring Perth: From $100/m²",
   description:
-    "Durable, non-slip epoxy flake flooring for Perth garages & workshops, from $80/m². 20+ flake colours, UV-stable topcoat, free quotes. Preview colours online.",
+    "Durable, non-slip epoxy flake flooring for Perth garages & workshops, from $100/m². 20+ flake colours, UV-stable topcoat, free quotes. Preview colours online.",
   alternates: {
     canonical: "https://perthconcretecare.com.au/epoxy-flake-flooring-perth",
   },
@@ -19,16 +19,16 @@ export const metadata: Metadata = {
     ],
     type: "website",
     url: "https://perthconcretecare.com.au/epoxy-flake-flooring-perth",
-    title: "Epoxy Flake Flooring Perth: From $80/m² | Perth Concrete Care",
+    title: "Epoxy Flake Flooring Perth: From $100/m² | Perth Concrete Care",
     description:
-      "Durable, non-slip epoxy flake flooring for Perth garages & workshops, from $80/m². 20+ flake colours, UV-stable topcoat, free quotes. Preview colours online.",
+      "Durable, non-slip epoxy flake flooring for Perth garages & workshops, from $100/m². 20+ flake colours, UV-stable topcoat, free quotes. Preview colours online.",
   },
 };
 
 const faqs = [
   {
     q: "How much does epoxy flake flooring cost in Perth?",
-    a: "Epoxy flake flooring in Perth typically costs $80-$100 per square metre installed, including surface preparation, the flake system and a UV-stable protective topcoat. Final pricing depends on slab condition, area size, repairs and access - larger areas achieve a lower per-m2 rate.",
+    a: "Epoxy flake flooring in Perth typically costs $100-$120 per square metre installed, including surface preparation, the flake system and a UV-stable protective topcoat. Final pricing depends on slab condition, area size, repairs and access - larger areas achieve a lower per-m2 rate.",
   },
   {
     q: "How soon can I park on a new epoxy flake floor?",

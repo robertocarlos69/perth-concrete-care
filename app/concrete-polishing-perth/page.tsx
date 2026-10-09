@@ -315,8 +315,8 @@ export default function ConcretePolishingPerthPage() {
                 <tr>
                   <td className="px-5 py-4 font-semibold text-stone-900">Cost guide</td>
                   <td className="px-5 py-4">$140–$220/m²</td>
-                  <td className="px-5 py-4">$60–$100/m²</td>
                   <td className="px-5 py-4">$80–$100/m²</td>
+                  <td className="px-5 py-4">$100–$120/m²</td>
                 </tr>
               </tbody>
             </table>

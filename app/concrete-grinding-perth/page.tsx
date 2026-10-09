@@ -263,10 +263,10 @@ export default function Page() {
           come off, any crack and repair work, and site access. Where grinding is
           the prep for a finished floor, the finished-floor prices are the
           easiest guide:{" "}
-          <Link href="/honed-concrete-perth" className="font-semibold text-emerald-700 hover:underline">hone-and-seal from $60/m²</Link>,{" "}
+          <Link href="/honed-concrete-perth" className="font-semibold text-emerald-700 hover:underline">hone-and-seal from $80/m²</Link>,{" "}
           <Link href="/concrete-polishing-perth" className="font-semibold text-emerald-700 hover:underline">polished concrete from $140/m²</Link>{" "}
           and{" "}
-          <Link href="/epoxy-flake-flooring-perth" className="font-semibold text-emerald-700 hover:underline">epoxy flake from $80/m²</Link>. For
+          <Link href="/epoxy-flake-flooring-perth" className="font-semibold text-emerald-700 hover:underline">epoxy flake from $100/m²</Link>. For
           grinding and coating removal on its own, send a few photos and rough
           measurements and we&apos;ll come back with a fixed written price.
         </p>

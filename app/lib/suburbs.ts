@@ -645,19 +645,19 @@ export const suburbServices = [
     title: "Epoxy flake flooring",
     href: "/epoxy-flake-flooring-perth",
     blurb:
-      "Hard-wearing garage, shed and workshop floors with optional flake. From $80/m².",
+      "Hard-wearing garage, shed and workshop floors with optional flake. From $100/m².",
   },
   {
     title: "Metallic epoxy flooring",
     href: "/metallic-epoxy-flooring-perth",
     blurb:
-      "Showpiece high-gloss floors with marbled, 3D depth. From $160/m².",
+      "Showpiece high-gloss floors with marbled, 3D depth. From $220/m².",
   },
   {
     title: "Hone & seal concrete",
     href: "/honed-concrete-perth",
     blurb:
-      "Slip-rated alfresco, driveways and pool surrounds. From $60/m².",
+      "Slip-rated alfresco, driveways and pool surrounds. From $80/m².",
   },
   {
     title: "Polished concrete",
@@ -678,7 +678,7 @@ export function sharedSuburbFaqs(name: string): SuburbFaq[] {
   return [
     {
       q: `How much does a concrete floor cost in ${name}?`,
-      a: `${name} pricing is the same as the rest of our service area: epoxy flake from $80/m², hone-and-seal from $60/m², polished concrete from $140/m² and metallic epoxy from $160/m². The final price depends on area, slab condition, repairs and access, so send photos and rough m² for a fixed written quote.`,
+      a: `${name} pricing is the same as the rest of our service area: epoxy flake from $100/m², hone-and-seal from $80/m², polished concrete from $140/m² and metallic epoxy from $220/m². The final price depends on area, slab condition, repairs and access, so send photos and rough m² for a fixed written quote.`,
     },
     {
       q: `Are you local to ${name}?`,
